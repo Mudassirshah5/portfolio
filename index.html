@@ -3,166 +3,262 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Muhammad Mudassir Shah — Entrepreneur & Economics Student</title>
-  <meta name="description" content="Portfolio of Muhammad Mudassir Shah — Entrepreneur, Economics Student, Visionary & Strategist from Batkhela, Pakistan."/>
+  <title>Muhammad Mudassir Shah ??? Entrepreneur & Economics Student</title>
+  <meta name="description" content="Portfolio of Muhammad Mudassir Shah ??? Entrepreneur, Economics Student, Visionary & Strategist from Batkhela, Pakistan."/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
   <style>
-    /* ── Hero ── */
-    .hero {
-      min-height: calc(100vh - 68px);
-      display:flex; align-items:center;
-      padding: 60px 5% 80px;
-      position:relative; overflow:hidden;
-    }
-    .hero-content {
-      max-width:1200px; margin:0 auto; width:100%;
-      display:grid; grid-template-columns:1fr 1fr;
-      align-items:center; gap:4rem;
-    }
-    .hero-left { position:relative; z-index:1; }
-    .hero-tag {
-      display:inline-flex; align-items:center; gap:.5rem;
-      background:var(--teal-light); color:var(--teal);
-      border:1px solid rgba(26,188,156,0.3);
-      font-size:0.72rem; font-weight:600;
-      padding:6px 14px; border-radius:50px;
-      letter-spacing:1.2px; text-transform:uppercase;
-      margin-bottom:1.3rem;
-      animation: fadeUp .5s ease both;
-    }
-    .hero-tag i { font-size:0.75rem; }
-    .hero-name {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(2.2rem,5vw,3.6rem);
-      font-weight:900; line-height:1.1;
-      color:var(--text); margin-bottom:.6rem;
-      animation:fadeUp .6s ease both;
-    }
-    .hero-name span { color:var(--teal); }
-    .hero-typing {
-      font-size:1.1rem; font-weight:600;
-      color:var(--text2); margin-bottom:1.4rem;
-      min-height:1.8rem;
-      animation:fadeUp .7s ease both;
-    }
-    #typingText {
-      color:var(--teal);
-      border-right:2px solid var(--teal);
-      padding-right:3px;
-      animation: blink .75s step-end infinite;
-    }
-    .hero-desc {
-      font-size:0.93rem; color:var(--text2);
-      line-height:1.85; margin-bottom:1.4rem;
-      max-width:480px;
-      animation:fadeUp .8s ease both;
-    }
-    .hero-looking {
-      background:var(--teal-light);
-      border:1px solid rgba(26,188,156,0.25);
-      border-left:3px solid var(--teal);
-      border-radius:8px; padding:12px 16px;
-      font-size:0.82rem; color:var(--text2);
-      margin-bottom:2rem; line-height:1.6;
-      animation:fadeUp .85s ease both;
-    }
-    .hero-looking strong { color:var(--teal); }
-    .hero-btns {
-      display:flex; flex-wrap:wrap; gap:1rem;
-      animation:fadeUp .9s ease both;
-    }
-    /* Right — Photo */
-    .hero-right {
-      display:flex; justify-content:center; align-items:center;
-      animation:fadeIn 1s ease both;
-    }
-    .hero-photo-wrap {
-      position:relative; width:340px; height:340px;
-    }
-    .hero-photo-ring {
-      position:absolute; inset:-12px;
-      border-radius:50%;
-      border:2px dashed rgba(26,188,156,0.35);
-      animation: spin 18s linear infinite;
-    }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    .hero-photo-ring2 {
-      position:absolute; inset:-28px;
-      border-radius:50%;
-      border:1px solid rgba(26,188,156,0.15);
-      animation: spin 30s linear infinite reverse;
-    }
-    .hero-photo {
-      width:100%; height:100%; border-radius:50%;
-      object-fit:cover;
-      border:4px solid var(--teal);
-      box-shadow:0 0 40px var(--teal-glow);
-      animation:float 4s ease-in-out infinite;
-    }
-    .hero-photo-placeholder {
-      width:100%; height:100%; border-radius:50%;
-      background:linear-gradient(135deg, var(--teal-light), var(--card));
-      border:4px solid var(--teal);
-      box-shadow:0 0 40px var(--teal-glow);
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      gap:.5rem; color:var(--teal);
-      animation:float 4s ease-in-out infinite;
-    }
-    .hero-photo-placeholder i { font-size:4rem; opacity:0.5; }
-    .hero-photo-placeholder span { font-size:0.75rem; opacity:0.6; font-weight:500; }
-    .hero-dot {
-      position:absolute; bottom:16px; right:16px;
-      width:18px; height:18px; border-radius:50%;
-      background:var(--teal);
-      border:3px solid var(--bg);
-      animation:pulse 2s infinite;
-    }
-    /* Quote */
-    .hero-quote {
-      margin-top:3rem; padding:2rem 5%;
-      background:var(--card);
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      text-align:center;
-    }
-    .hero-quote blockquote {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(1.2rem,2.5vw,1.7rem);
-      font-weight:700; color:var(--text);
-      font-style:italic; max-width:600px; margin:0 auto;
-    }
-    .hero-quote blockquote span { color:var(--teal); }
-    /* Quick Stats */
-    .hero-stats {
-      padding:3rem 5%; max-width:1200px; margin:0 auto;
-      display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
-    }
-    .stat-card {
-      text-align:center; padding:1.8rem 1rem;
-    }
-    .stat-num {
-      font-family:'Playfair Display',serif;
-      font-size:2.2rem; font-weight:900;
-      color:var(--teal); display:block;
-    }
-    .stat-label { font-size:0.8rem; color:var(--text2); font-weight:500; margin-top:.3rem; }
+/* ============================================================
+   Muhammad Mudassir Shah ??? Portfolio  |  style.css (inlined)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root{--teal:#1abc9c;--teal-dark:#16a085;--teal-light:rgba(26,188,156,0.12);--teal-glow:rgba(26,188,156,0.25);--bg:#f4f6f5;--bg2:#ffffff;--card:#ffffff;--text:#111111;--text2:#555555;--border:#e0e0e0;--shadow:0 6px 30px rgba(0,0,0,0.08);--nav-bg:rgba(244,246,245,0.93);}
+[data-theme="dark"]{--bg:#0c0c0c;--bg2:#161616;--card:#1a1a1a;--text:#f0f0f0;--text2:#999999;--border:#2a2a2a;--shadow:0 6px 30px rgba(0,0,0,0.5);--nav-bg:rgba(12,12,12,0.95);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;overflow-x:hidden;min-height:100vh;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--teal);border-radius:10px;}
+.bg-pattern{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 15% 20%,rgba(26,188,156,0.06) 0%,transparent 45%),radial-gradient(circle at 85% 75%,rgba(26,188,156,0.05) 0%,transparent 40%),linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:100% 100%,100% 100%,50px 50px,50px 50px;opacity:0.6;transition:opacity .3s;}
+[data-theme="dark"] .bg-pattern{opacity:0.3;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background .3s,border-color .3s;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--text);text-decoration:none;letter-spacing:-0.5px;}
+.nav-logo span{color:var(--teal);}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;font-size:0.82rem;font-weight:500;color:var(--text2);transition:color .2s;letter-spacing:0.3px;position:relative;padding-bottom:3px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .25s;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-right{display:flex;align-items:center;gap:1rem;}
+.dark-toggle{width:44px;height:24px;border-radius:12px;background:var(--teal-light);border:1px solid var(--teal);cursor:pointer;position:relative;transition:background .3s;}
+.dark-toggle::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--teal);transition:transform .3s;}
+[data-theme="dark"] .dark-toggle::after{transform:translateX(20px);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:999;flex-direction:column;gap:1rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{text-decoration:none;font-size:0.9rem;font-weight:500;color:var(--text2);transition:color .2s;padding:.4rem 0;border-bottom:1px solid var(--border);}
+.mobile-menu a:hover{color:var(--teal);}
+.page-wrapper{padding-top:68px;min-height:100vh;}
+.section{padding:80px 5%;max-width:1200px;margin:0 auto;}
+.section-tag{display:inline-block;background:var(--teal-light);color:var(--teal);border:1px solid rgba(26,188,156,0.3);font-size:0.72rem;font-weight:600;padding:5px 14px;border-radius:50px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:var(--text);margin-bottom:0.5rem;line-height:1.15;}
+.section-title span{color:var(--teal);}
+.section-subtitle{font-size:0.95rem;color:var(--text2);max-width:580px;line-height:1.75;margin-bottom:3rem;}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,var(--teal),transparent);margin:1rem 0 2.5rem;border-radius:2px;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:12px 26px;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .25s;letter-spacing:0.3px;}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 4px 15px var(--teal-glow);}
+.btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 6px 20px var(--teal-glow);}
+.btn-outline{background:transparent;color:var(--teal);border:2px solid var(--teal);}
+.btn-outline:hover{background:var(--teal-light);transform:translateY(-2px);}
+.btn-ghost{background:var(--card);color:var(--text);border:1px solid var(--border);box-shadow:var(--shadow);}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.8rem;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s,border-color .25s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,188,156,0.12);border-color:rgba(26,188,156,0.3);}
+.badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:0.7rem;font-weight:600;letter-spacing:0.5px;}
+.badge-active{background:rgba(26,188,156,0.12);color:var(--teal);}
+.badge-paused{background:rgba(255,165,0,0.12);color:#e67e22;}
+.badge-completed{background:rgba(52,152,219,0.12);color:#3498db;}
+.badge-current{background:rgba(26,188,156,0.15);color:var(--teal);border:1px solid rgba(26,188,156,0.3);}
+.badge-attempted{background:rgba(149,165,166,0.15);color:#7f8c8d;}
+.badge-failed{background:rgba(231,76,60,0.1);color:#e74c3c;}
+.badge-family{background:rgba(155,89,182,0.1);color:#9b59b6;}
+.badge-client{background:rgba(52,152,219,0.1);color:#2980b9;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5%;text-align:center;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap;justify-content:center;}
+.footer-links a{font-size:0.82rem;color:var(--text2);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--teal);}
+.footer-social{display:flex;gap:1rem;}
+.social-icon{width:38px;height:38px;border-radius:50%;background:var(--teal-light);border:1px solid rgba(26,188,156,0.2);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.85rem;text-decoration:none;transition:all .25s;}
+.social-icon:hover{background:var(--teal);color:#fff;transform:translateY(-3px);}
+.footer-copy{font-size:0.78rem;color:var(--text2);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes blink{50%{border-color:transparent;}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--teal-glow);}50%{box-shadow:0 0 0 10px transparent;}}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.section{padding:60px 5%;}}
+@media(max-width:480px){.section{padding:50px 4%;}.btn{padding:10px 20px;font-size:0.8rem;}}
 
-    @media(max-width:900px) {
-      .hero-content { grid-template-columns:1fr; text-align:center; gap:2.5rem; }
-      .hero-desc { margin:0 auto 1.4rem; }
-      .hero-looking { text-align:left; }
-      .hero-btns { justify-content:center; }
-      .hero-right { order:-1; }
-      .hero-photo-wrap { width:240px; height:240px; }
-      .hero-stats { grid-template-columns:repeat(2,1fr); }
-    }
-    @media(max-width:480px) {
-      .hero-stats { grid-template-columns:repeat(2,1fr); gap:1rem; }
-      .hero-photo-wrap { width:200px; height:200px; }
-    }
+/* ?????? Hero (from index.html) ?????? */
+.hero{min-height:calc(100vh - 68px);display:flex;align-items:center;padding:60px 5% 80px;position:relative;overflow:hidden;}
+.hero-content{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;}
+.hero-left{position:relative;z-index:1;}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-light);color:var(--teal);border:1px solid rgba(26,188,156,0.3);font-size:0.72rem;font-weight:600;padding:6px 14px;border-radius:50px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:1.3rem;animation:fadeUp .5s ease both;}
+.hero-tag i{font-size:0.75rem;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:.6rem;animation:fadeUp .6s ease both;}
+.hero-name span{color:var(--teal);}
+.hero-typing{font-size:1.1rem;font-weight:600;color:var(--text2);margin-bottom:1.4rem;min-height:1.8rem;animation:fadeUp .7s ease both;}
+#typingText{color:var(--teal);border-right:2px solid var(--teal);padding-right:3px;animation:blink .75s step-end infinite;}
+.hero-desc{font-size:0.93rem;color:var(--text2);line-height:1.85;margin-bottom:1.4rem;max-width:480px;animation:fadeUp .8s ease both;}
+.hero-looking{background:var(--teal-light);border:1px solid rgba(26,188,156,0.25);border-left:3px solid var(--teal);border-radius:8px;padding:12px 16px;font-size:0.82rem;color:var(--text2);margin-bottom:2rem;line-height:1.6;animation:fadeUp .85s ease both;}
+.hero-looking strong{color:var(--teal);}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;animation:fadeUp .9s ease both;}
+.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeIn 1s ease both;}
+.hero-photo-wrap{position:relative;width:340px;height:340px;}
+.hero-photo-ring{position:absolute;inset:-12px;border-radius:50%;border:2px dashed rgba(26,188,156,0.35);animation:spin 18s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-photo-ring2{position:absolute;inset:-28px;border-radius:50%;border:1px solid rgba(26,188,156,0.15);animation:spin 30s linear infinite reverse;}
+.hero-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--teal);box-shadow:0 0 40px var(--teal-glow);animation:float 4s ease-in-out infinite;}
+.hero-photo-placeholder{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--teal-light),var(--card));border:4px solid var(--teal);box-shadow:0 0 40px var(--teal-glow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--teal);animation:float 4s ease-in-out infinite;}
+.hero-dot{position:absolute;bottom:16px;right:16px;width:18px;height:18px;border-radius:50%;background:var(--teal);border:3px solid var(--bg);animation:pulse 2s infinite;}
+.hero-quote{margin-top:3rem;padding:2rem 5%;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.hero-quote blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:700;color:var(--text);font-style:italic;max-width:600px;margin:0 auto;}
+.hero-quote blockquote span{color:var(--teal);}
+.hero-stats{padding:3rem 5%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.stat-card{text-align:center;padding:1.8rem 1rem;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--teal);display:block;}
+.stat-label{font-size:0.8rem;color:var(--text2);font-weight:500;margin-top:.3rem;}
+@media(max-width:900px){.hero-content{grid-template-columns:1fr;text-align:center;gap:2.5rem;}.hero-desc{margin:0 auto 1.4rem;}.hero-looking{text-align:left;}.hero-btns{justify-content:center;}.hero-right{order:-1;}.hero-photo-wrap{width:240px;height:240px;}.hero-stats{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:1rem;}.hero-photo-wrap{width:200px;height:200px;}}
+
+/* ?????? About (from about.html) ?????? */
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:3.5rem;align-items:start;}
+.about-photo-wrap{position:relative;}
+.about-photo{width:100%;border-radius:16px;object-fit:cover;box-shadow:var(--shadow);border:3px solid var(--teal);}
+.about-photo-placeholder{width:100%;aspect-ratio:3/4;border-radius:16px;background:linear-gradient(135deg,var(--teal-light),var(--card));border:3px solid var(--teal);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--teal);}
+.about-photo-placeholder i{font-size:5rem;opacity:0.4;}
+.about-photo-placeholder span{font-size:0.8rem;opacity:0.6;}
+.about-badge-wrap{position:absolute;bottom:-16px;right:-16px;background:var(--teal);color:#fff;padding:14px 18px;border-radius:12px;font-size:0.8rem;font-weight:700;box-shadow:0 4px 20px var(--teal-glow);text-align:center;line-height:1.4;}
+.about-badge-wrap span{display:block;font-size:1.4rem;font-weight:900;}
+.about-text p{font-size:0.93rem;color:var(--text2);line-height:1.85;margin-bottom:1.2rem;}
+.about-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.info-item{display:flex;align-items:center;gap:.75rem;}
+.info-icon{width:36px;height:36px;border-radius:8px;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
+.info-label{font-size:0.72rem;color:var(--text2);display:block;}
+.info-value{font-size:0.85rem;font-weight:600;color:var(--text);}
+.timeline{position:relative;padding-left:2rem;margin-top:1rem;}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--teal),transparent);}
+.timeline-item{position:relative;margin-bottom:2rem;}
+.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:4px;width:12px;height:12px;border-radius:50%;background:var(--teal);border:2px solid var(--bg);box-shadow:0 0 0 3px var(--teal-light);}
+.timeline-year{font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem;}
+.timeline-title{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:.25rem;}
+.timeline-sub{font-size:0.82rem;color:var(--text2);}
+.timeline-result{display:inline-block;margin-top:.3rem;font-size:0.75rem;font-weight:600;color:var(--teal);background:var(--teal-light);padding:2px 10px;border-radius:50px;}
+.work-card{margin-bottom:1.2rem;}
+.work-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem;}
+.work-role{font-size:1rem;font-weight:700;color:var(--text);}
+.work-company{font-size:0.85rem;color:var(--teal);font-weight:600;}
+.work-duration{font-size:0.78rem;color:var(--text2);background:var(--teal-light);padding:3px 10px;border-radius:50px;}
+.work-desc{font-size:0.85rem;color:var(--text2);line-height:1.7;}
+.work-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+.work-tag{font-size:0.72rem;background:var(--bg);color:var(--text2);border:1px solid var(--border);padding:3px 10px;border-radius:50px;}
+.lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+.lang-card{text-align:center;padding:1.5rem 1rem;}
+.lang-flag{font-size:2rem;margin-bottom:.5rem;display:block;}
+.lang-name{font-size:0.9rem;font-weight:700;color:var(--text);}
+.lang-level{font-size:0.75rem;color:var(--teal);margin-top:.2rem;}
+.interests-grid{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem;}
+.interest-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--card);border:1px solid var(--border);padding:8px 14px;border-radius:50px;font-size:0.82rem;color:var(--text2);transition:all .2s;}
+.interest-tag:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light);}
+.interest-tag i{color:var(--teal);font-size:0.8rem;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}.about-badge-wrap{bottom:-12px;right:12px;}}
+@media(max-width:480px){.about-info-grid{grid-template-columns:1fr;}.lang-grid{grid-template-columns:1fr 1fr 1fr;}}
+
+/* ?????? Skills (from skills.html) ?????? */
+.skills-categories{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;margin-top:1rem;}
+.skill-cat-card{padding:2rem;}
+.skill-cat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+.skill-cat-icon{width:42px;height:42px;border-radius:10px;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.skill-cat-title{font-size:1rem;font-weight:700;color:var(--text);}
+.skill-item{margin-bottom:1.1rem;}
+.skill-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;}
+.skill-name{font-size:0.82rem;font-weight:500;color:var(--text);}
+.skill-pct{font-size:0.75rem;font-weight:700;color:var(--teal);}
+.skill-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
+.skill-bar-fill{height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--teal-dark));transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.6rem;}
+.skill-pill{display:inline-flex;align-items:center;gap:.35rem;background:var(--bg);border:1px solid var(--border);color:var(--text2);font-size:0.78rem;font-weight:500;padding:6px 12px;border-radius:50px;transition:all .2s;cursor:default;}
+.skill-pill:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light);}
+.skill-pill i{font-size:0.75rem;color:var(--teal);}
+@media(max-width:768px){.skills-categories{grid-template-columns:1fr;}}
+
+/* ?????? Projects (from projects.html) ?????? */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;}
+.project-card{padding:2rem;position:relative;overflow:hidden;}
+.project-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--teal);}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
+.project-icon{width:48px;height:48px;border-radius:12px;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.project-badges{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;}
+.project-title{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.3rem;}
+.project-subtitle{font-size:0.8rem;color:var(--teal);font-weight:600;margin-bottom:.75rem;}
+.project-desc{font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1rem;}
+.project-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.project-tag{font-size:0.72rem;background:var(--bg);color:var(--text2);border:1px solid var(--border);padding:3px 10px;border-radius:50px;transition:all .2s;}
+.project-tag:hover{border-color:var(--teal);color:var(--teal);}
+.lesson-box{margin-top:1rem;padding:10px 14px;background:var(--teal-light);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;font-size:0.78rem;color:var(--text2);line-height:1.6;}
+.lesson-box strong{color:var(--teal);}
+.lovcus-placeholder{width:40px;height:40px;border-radius:10px;background:var(--teal-light);border:1px solid rgba(26,188,156,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:700;color:var(--teal);letter-spacing:0.5px;}
+@media(max-width:768px){.projects-grid{grid-template-columns:1fr;}}
+
+/* ?????? Certifications (from certifications.html) ?????? */
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.cert-card{cursor:pointer;text-align:center;padding:2rem 1.5rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.cert-card:hover{transform:translateY(-6px);border-color:var(--teal);box-shadow:0 12px 40px rgba(26,188,156,0.15);}
+.cert-card::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:12px;right:14px;font-size:0.8rem;color:var(--teal);opacity:0;transition:opacity .2s;}
+.cert-card:hover::after{opacity:1;}
+.cert-img-wrap{width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin-bottom:1.2rem;border:1px solid var(--border);background:linear-gradient(135deg,var(--teal-light),var(--bg));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;}
+.cert-img-wrap img{width:100%;height:100%;object-fit:cover;display:none;}
+.cert-img-wrap i{font-size:2.5rem;color:var(--teal);opacity:0.5;}
+.cert-img-wrap .cert-placeholder-text{font-size:0.72rem;color:var(--text2);font-weight:500;padding:0 1rem;text-align:center;line-height:1.5;}
+.cert-issuer{font-size:0.72rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;}
+.cert-name{font-size:0.9rem;font-weight:700;color:var(--text);line-height:1.4;}
+.cert-modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:2rem;}
+.cert-modal.open{display:flex;}
+.cert-modal-inner{position:relative;max-width:700px;width:100%;}
+.cert-modal-inner img{width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.cert-modal-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;}
+.upload-instructions{background:var(--teal-light);border:1px dashed rgba(26,188,156,0.4);border-radius:12px;padding:1.5rem 2rem;margin-bottom:2.5rem;font-size:0.85rem;color:var(--text2);line-height:1.8;}
+.upload-instructions strong{color:var(--teal);}
+.upload-instructions code{background:var(--card);border:1px solid var(--border);padding:2px 8px;border-radius:4px;font-family:monospace;font-size:0.82rem;color:var(--text);}
+@media(max-width:768px){.certs-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.certs-grid{grid-template-columns:1fr 1fr;}}
+
+/* ?????? Blog (from blog.html) ?????? */
+.coming-soon-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;}
+.coming-soon-box{text-align:center;max-width:500px;}
+.coming-soon-icon{width:90px;height:90px;border-radius:50%;background:var(--teal-light);border:2px solid rgba(26,188,156,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-size:2.5rem;color:var(--teal);animation:float 3s ease-in-out infinite;}
+.coming-soon-box h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--text);margin-bottom:.75rem;}
+.coming-soon-box h1 span{color:var(--teal);}
+.coming-soon-box p{font-size:0.93rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;}
+.topics-preview{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2rem;}
+.topic-tag{background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:0.8rem;padding:6px 14px;border-radius:50px;transition:all .2s;}
+.topic-tag:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light);}
+
+/* ?????? Contact (from contact.html) ?????? */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:start;}
+.contact-info-cards{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+.contact-info-item{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;}
+.contact-info-icon{width:44px;height:44px;border-radius:10px;flex-shrink:0;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.contact-info-label{font-size:0.72rem;color:var(--text2);display:block;font-weight:500;}
+.contact-info-value{font-size:0.9rem;font-weight:600;color:var(--text);}
+.contact-info-value a{color:var(--text);text-decoration:none;transition:color .2s;}
+.contact-info-value a:hover{color:var(--teal);}
+.social-connect{margin-top:1.5rem;}
+.social-connect h3{font-size:0.85rem;font-weight:600;color:var(--text2);margin-bottom:1rem;}
+.social-links{display:flex;gap:.75rem;flex-wrap:wrap;}
+.social-link{display:inline-flex;align-items:center;gap:.5rem;padding:9px 16px;border-radius:8px;background:var(--card);border:1px solid var(--border);color:var(--text2);font-size:0.8rem;font-weight:500;text-decoration:none;transition:all .2s;}
+.social-link:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light);transform:translateY(-2px);}
+.social-link i{font-size:0.9rem;}
+.contact-form{display:flex;flex-direction:column;gap:1.2rem;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;}
+.form-group label{font-size:0.8rem;font-weight:600;color:var(--text);}
+.form-group input,.form-group textarea,.form-group select{padding:12px 16px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;font-size:0.85rem;transition:border-color .2s,box-shadow .2s;outline:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-light);}
+.form-group textarea{resize:vertical;min-height:130px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-success{display:none;padding:14px 18px;border-radius:8px;background:rgba(26,188,156,0.12);border:1px solid rgba(26,188,156,0.3);color:var(--teal);font-size:0.85rem;font-weight:500;text-align:center;}
+.map-wrap{margin-top:3.5rem;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);}
+.map-wrap iframe{width:100%;height:350px;border:none;display:block;}
+.map-label{background:var(--card);padding:1rem 1.5rem;display:flex;align-items:center;gap:.6rem;font-size:0.85rem;font-weight:500;color:var(--text2);}
+.map-label i{color:var(--teal);}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -170,15 +266,15 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <a href="#home" class="nav-logo">M<span>.</span>Mudassir</a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
@@ -188,17 +284,19 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a>
-  <a href="certifications.html">Certifications</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
 </div>
 
-<!-- HERO -->
 <div class="page-wrapper">
+
+<!-- ????????????????????????????????????????????? HOME SECTION ????????????????????????????????????????????? -->
+<section id="home">
   <section class="hero">
     <div class="hero-content">
       <div class="hero-left">
@@ -215,8 +313,8 @@
           Also seeking roles that challenge me and sharpen my skills in business, marketing, and strategy.
         </div>
         <div class="hero-btns">
-          <a href="projects.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
-          <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
           <a href="assets/docs/MyCv.pdf" download class="btn btn-ghost"><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
@@ -255,19 +353,631 @@
       <span class="stat-label">Languages</span>
     </div>
   </div>
+</section>
+
+<!-- ????????????????????????????????????????????? ABOUT SECTION ????????????????????????????????????????????? -->
+<section id="about">
+  <div class="section">
+
+    <!-- ABOUT ME -->
+    <div class="about-grid fade-up">
+      <div class="about-photo-wrap">
+        <!-- Replace with: <img src="assets/images/profile.jpg" alt="Muhammad Mudassir Shah" class="about-photo"/> -->
+        <div class="about-photo-placeholder">
+          <i class="fas fa-user"></i>
+          <span>Add your photo here</span>
+        </div>
+        <div class="about-badge-wrap">
+          <span>3.4</span>CGPA
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I <span>Am</span></h2>
+        <div class="divider"></div>
+        <p>I am Muhammad Mudassir Shah ??? a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.</p>
+        <p>My journey has been one of learning through action ??? from helping digitize my father's business in Saudi Arabia, to launching and experimenting with my own ventures, to working with a UK-based company as a CSR. Every experience has added a new layer to my thinking.</p>
+        <p>I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter and grow into a well-rounded entrepreneur, strategist, and leader.</p>
+
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-calendar"></i></div>
+            <div><span class="info-label">Date of Birth</span><span class="info-value">3rd July 2006</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><span class="info-label">Location</span><span class="info-value">Batkhela, Pakistan</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div><span class="info-label">Degree</span><span class="info-value">BS Economics</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-university"></i></div>
+            <div><span class="info-label">University</span><span class="info-value">University of Malakand</span></div>
+          </div>
+        </div>
+
+        <a href="assets/docs/MyCv.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+    </div>
+
+    <!-- EDUCATION TIMELINE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Education</span>
+      <h2 class="section-title">Academic <span>Journey</span></h2>
+      <div class="divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2024 ??? Present</div>
+          <div class="timeline-title">BS Economics</div>
+          <div class="timeline-sub">University of Malakand, Pakistan</div>
+          <span class="timeline-result">CGPA: 3.4 &nbsp;??&nbsp; <span class="badge badge-current">Current</span></span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paused</div>
+          <div class="timeline-title">Bachelor of Business Administration (BBA)</div>
+          <div class="timeline-sub">University of the People ??? US-based Online University</div>
+          <span class="badge badge-paused">Paused</span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Completed</div>
+          <div class="timeline-title">FSC (Higher Secondary)</div>
+          <div class="timeline-sub">Oxford Education Academy, Batkhela</div>
+          <span class="timeline-result">74% &nbsp;??&nbsp; <span class="badge badge-completed">Completed</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <div class="divider"></div>
+
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Cold Caller / Customer Service Representative</div>
+            <div class="work-company"><i class="fas fa-building"></i> Finit Training &amp; Recruitment ??? UK</div>
+          </div>
+          <span class="work-duration">~2 months</span>
+        </div>
+        <p class="work-desc">Handled English-speaking UK clients remotely, promoting ACCA and AAT accounting courses and certifications. Developed professional communication skills, client handling techniques, and English fluency through real-world sales calls.</p>
+        <div class="work-tags">
+          <span class="work-tag">Cold Calling</span>
+          <span class="work-tag">English Communication</span>
+          <span class="work-tag">Client Management</span>
+          <span class="work-tag">ACCA / AAT Courses</span>
+          <span class="work-tag">Remote Work</span>
+        </div>
+      </div>
+
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Pharmacy Assistant &amp; Stock Manager</div>
+            <div class="work-company"><i class="fas fa-clinic-medical"></i> Farooq Enterprises, Batkhela</div>
+          </div>
+          <span class="work-duration">3???4 months</span>
+        </div>
+        <p class="work-desc">Managed pharmacy stock inventory, assisted customers in locating and dispensing medicines, and handled day-to-day store operations. Left to pursue personal growth, new skills, and entrepreneurial opportunities.</p>
+        <div class="work-tags">
+          <span class="work-tag">Stock Management</span>
+          <span class="work-tag">Customer Service</span>
+          <span class="work-tag">Inventory Control</span>
+          <span class="work-tag">Medicine Dispensing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Languages</span>
+      <h2 class="section-title">Languages I <span>Speak</span></h2>
+      <div class="divider"></div>
+      <div class="lang-grid">
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">????????</span>
+          <div class="lang-name">Pashto</div>
+          <div class="lang-level">Native</div>
+        </div>
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">????????</span>
+          <div class="lang-name">Urdu</div>
+          <div class="lang-level">Fluent</div>
+        </div>
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">????????</span>
+          <div class="lang-name">English</div>
+          <div class="lang-level">Intermediate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERESTS -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Interests</span>
+      <h2 class="section-title">What Drives <span>Me</span></h2>
+      <div class="divider"></div>
+      <div class="interests-grid">
+        <span class="interest-tag"><i class="fas fa-lightbulb"></i> Motivational Content</span>
+        <span class="interest-tag"><i class="fas fa-chart-line"></i> Business &amp; Investment Learning</span>
+        <span class="interest-tag"><i class="fas fa-wallet"></i> Personal Finance</span>
+        <span class="interest-tag"><i class="fas fa-tv"></i> Shark Tank (PK, IN, USA)</span>
+        <span class="interest-tag"><i class="fab fa-youtube"></i> YouTube Business Content</span>
+        <span class="interest-tag"><i class="fas fa-microchip"></i> Exploring New Technologies</span>
+        <span class="interest-tag"><i class="fas fa-book"></i> Reading About Entrepreneurs</span>
+        <span class="interest-tag"><i class="fas fa-compass"></i> Exploring New Ideas &amp; Things</span>
+        <span class="interest-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ????????????????????????????????????????????? SKILLS SECTION ????????????????????????????????????????????? -->
+<section id="skills">
+  <div class="section">
+    <span class="section-tag">What I Can Do</span>
+    <h1 class="section-title">My <span>Skills</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">A mix of business, digital, design, and communication skills built through real-world experience, self-study, and entrepreneurship.</p>
+
+    <div class="skills-categories">
+
+      <!-- Social Media & Marketing -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="skill-cat-title">Social Media &amp; Marketing</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">FB/IG Business Pages</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Caption &amp; Content Writing</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Google Business Profile &amp; SEO</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Hashtag Research</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Email Marketing (Basic)</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Facebook/Instagram Ads</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div></div>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-palette"></i></div>
+          <div class="skill-cat-title">Design &amp; Creative</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Logo Design (Canva)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Business Card Design</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Poster &amp; Banner Design</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">CV / Resume Design</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Presentation Design</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="78"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Basic Photo Editing</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div></div>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="skill-cat-title">Tech &amp; Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-robot"></i> ChatGPT &amp; AI Tools</span>
+          <span class="skill-pill"><i class="fas fa-pen-fancy"></i> Prompt Writing</span>
+          <span class="skill-pill"><i class="fas fa-globe"></i> Blogger / Landing Pages</span>
+          <span class="skill-pill"><i class="fab fa-whatsapp"></i> WhatsApp Business</span>
+          <span class="skill-pill"><i class="fas fa-store"></i> Daraz / Haraj / OLX</span>
+          <span class="skill-pill"><i class="fab fa-google"></i> Google Docs &amp; Sheets</span>
+          <span class="skill-pill"><i class="fab fa-microsoft"></i> MS Word &amp; Excel</span>
+          <span class="skill-pill"><i class="fas fa-video"></i> Video Editing (Reels)</span>
+          <span class="skill-pill"><i class="fab fa-canva"></i> Canva</span>
+        </div>
+      </div>
+
+      <!-- Business Skills -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="skill-cat-title">Business</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-phone"></i> Cold Calling &amp; Sales</span>
+          <span class="skill-pill"><i class="fas fa-users"></i> Customer Handling</span>
+          <span class="skill-pill"><i class="fas fa-search-dollar"></i> Market Research</span>
+          <span class="skill-pill"><i class="fas fa-tags"></i> Product Pricing &amp; Costing</span>
+          <span class="skill-pill"><i class="fas fa-boxes"></i> Inventory Management</span>
+          <span class="skill-pill"><i class="fas fa-file-contract"></i> Business Proposals</span>
+          <span class="skill-pill"><i class="fas fa-lightbulb"></i> Business Planning</span>
+          <span class="skill-pill"><i class="fas fa-handshake"></i> Client Relations</span>
+        </div>
+      </div>
+
+      <!-- Writing & Communication -->
+      <div class="card skill-cat-card fade-up" style="grid-column:1/-1;">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-pen"></i></div>
+          <div class="skill-cat-title">Writing &amp; Communication</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-envelope"></i> English Business Writing</span>
+          <span class="skill-pill"><i class="fas fa-keyboard"></i> Urdu Writing &amp; Typing</span>
+          <span class="skill-pill"><i class="fas fa-file-alt"></i> Report Writing</span>
+          <span class="skill-pill"><i class="fas fa-spell-check"></i> Article Editing &amp; Proofreading</span>
+          <span class="skill-pill"><i class="fas fa-language"></i> Translation (Urdu / English / Arabic)</span>
+          <span class="skill-pill"><i class="fas fa-comments"></i> Pashto Communication</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ????????????????????????????????????????????? PROJECTS SECTION ????????????????????????????????????????????? -->
+<section id="projects">
+  <div class="section">
+    <span class="section-tag">What I've Built</span>
+    <h1 class="section-title">Projects &amp; <span>Ventures</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Every project ??? successful or not ??? has been a stepping stone. Here's an honest look at what I've built, attempted, and learned from.</p>
+
+    <div class="projects-grid">
+
+      <!-- Fazal Stone Shining -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-gem"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-family">Family Business</span>
+            <span class="badge badge-completed">Completed</span>
+          </div>
+        </div>
+        <div class="project-title">Fazal Stone Shining</div>
+        <div class="project-subtitle">Digital Presence Setup ??? Saudi Arabia</div>
+        <p class="project-desc">Helped digitize my father's marble and tile cleaning business in KSA. Designed a professional logo, set up a WhatsApp Business account for client communication, and created a Haraj marketplace account for client hunting and lead generation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Logo Design</span>
+          <span class="project-tag">WhatsApp Business</span>
+          <span class="project-tag">Haraj Marketplace</span>
+          <span class="project-tag">Digital Marketing</span>
+        </div>
+      </div>
+
+      <!-- LOVCUS -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <div class="project-icon"><i class="fas fa-ring"></i></div>
+            <!-- Replace with: <img src="assets/images/lovcus-logo.png" alt="LOVCUS" class="lovcus-logo"/> -->
+            <div class="lovcus-placeholder">LOVCUS</div>
+          </div>
+          <div class="project-badges">
+            <span class="badge badge-active">Active</span>
+          </div>
+        </div>
+        <div class="project-title">LOVCUS</div>
+        <div class="project-subtitle">Artificial Beaded Jewelry Brand</div>
+        <p class="project-desc">Founded and currently running LOVCUS ??? an artificial beaded jewelry brand selling locally and online. Managing everything from product design and pricing to customer orders and marketing. Navigating challenges around investment, competition, and scaling.</p>
+        <div class="project-tags">
+          <span class="project-tag">Entrepreneurship</span>
+          <span class="project-tag">Product Design</span>
+          <span class="project-tag">Pricing &amp; Costing</span>
+          <span class="project-tag">Local &amp; Online Sales</span>
+          <span class="project-tag">Brand Building</span>
+        </div>
+      </div>
+
+      <!-- Local Business Digital Setup -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-solar-panel"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-client">Client Project</span>
+            <span class="badge badge-completed">Completed</span>
+          </div>
+        </div>
+        <div class="project-title">Local Business ??? Digital Setup</div>
+        <div class="project-subtitle">Google Business Profile + Social Media</div>
+        <p class="project-desc">Set up a complete digital presence for a local business ??? including Google Business Profile creation and optimization for local search visibility, plus social media account setup and initial content strategy.</p>
+        <div class="project-tags">
+          <span class="project-tag">Google Business Profile</span>
+          <span class="project-tag">Local SEO</span>
+          <span class="project-tag">Social Media Setup</span>
+          <span class="project-tag">Client Work</span>
+        </div>
+      </div>
+
+      <!-- Fiverr -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-attempted">Freelance Attempt</span>
+          </div>
+        </div>
+        <div class="project-title">Fiverr ??? Freelance Design</div>
+        <div class="project-subtitle">Business Card Design Gig</div>
+        <p class="project-desc">Created and launched a freelance business card design gig on Fiverr. While the gig did not generate orders at the time, the experience taught me about positioning services, writing gig descriptions, and understanding the freelance marketplace.</p>
+        <div class="project-tags">
+          <span class="project-tag">Canva</span>
+          <span class="project-tag">Business Card Design</span>
+          <span class="project-tag">Freelancing</span>
+          <span class="project-tag">Marketplace Strategy</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Positioning and reviews matter more than the product itself on competitive platforms.</div>
+      </div>
+
+      <!-- Blogging -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-blog"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-attempted">Attempted Venture</span>
+          </div>
+        </div>
+        <div class="project-title">Blogging</div>
+        <div class="project-subtitle">Multi-Topic English Blog ??? Blogger Platform</div>
+        <p class="project-desc">Researched, built, and published English blog posts on Blogger covering business, lifestyle, and technology topics. Paused after realizing the investment needed for a custom domain and the time required conflicted with studies.</p>
+        <div class="project-tags">
+          <span class="project-tag">Content Writing</span>
+          <span class="project-tag">Blogger</span>
+          <span class="project-tag">Research</span>
+          <span class="project-tag">SEO Basics</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Consistency and investment are prerequisites for blogging success ??? timing matters.</div>
+      </div>
+
+      <!-- Dry Fruits -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-seedling"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-failed">Early-Stage Experiment</span>
+          </div>
+        </div>
+        <div class="project-title">Dry Fruits Processing</div>
+        <div class="project-subtitle">Dehydrated Fruit Venture</div>
+        <p class="project-desc">Independently conceived and launched a fruit dehydration business ??? processing mangoes, bananas, and strawberries for local and online sale. After operational challenges with production speed and efficiency, the venture was closed.</p>
+        <div class="project-tags">
+          <span class="project-tag">Product Development</span>
+          <span class="project-tag">Market Research</span>
+          <span class="project-tag">Operations</span>
+          <span class="project-tag">Own Initiative</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Validating production capacity before scaling is critical ??? key lessons learned about operations.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ????????????????????????????????????????????? CERTIFICATIONS SECTION ????????????????????????????????????????????? -->
+<section id="certifications">
+  <div class="section">
+    <span class="section-tag">Credentials</span>
+    <h1 class="section-title">My <span>Certifications</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Certified across business, technology, leadership, and communication. Click any certificate to view it.</p>
+
+    <!-- Upload instructions -->
+    <div class="upload-instructions">
+      <strong>???? How to add your certificate images:</strong><br>
+      Save your certificate images in the <code>assets/images/</code> folder and name them:<br>
+      <code>cert-1.jpg</code>, <code>cert-2.jpg</code>, <code>cert-3.jpg</code>, <code>cert-4.jpg</code>, <code>cert-5.jpg</code>, <code>cert-6.jpg</code><br>
+      They will automatically appear and become clickable. You can delete this instructions box after uploading.
+    </div>
+
+    <div class="certs-grid">
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-1.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-1.jpg" alt="AI for Beginners" onerror="this.style.display='none'"/>
+          <i class="fas fa-robot"></i>
+          <div class="cert-placeholder-text">Upload cert-1.jpg</div>
+        </div>
+        <div class="cert-issuer">HP Foundation</div>
+        <div class="cert-name">AI for Beginners</div>
+      </div>
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-2.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-2.jpg" alt="Resume Writing" onerror="this.style.display='none'"/>
+          <i class="fas fa-file-alt"></i>
+          <div class="cert-placeholder-text">Upload cert-2.jpg</div>
+        </div>
+        <div class="cert-issuer">HP Foundation</div>
+        <div class="cert-name">Resume Writing &amp; Job Interviewing</div>
+      </div>
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-3.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-3.jpg" alt="Cyber Security" onerror="this.style.display='none'"/>
+          <i class="fas fa-shield-alt"></i>
+          <div class="cert-placeholder-text">Upload cert-3.jpg</div>
+        </div>
+        <div class="cert-issuer">HP Foundation</div>
+        <div class="cert-name">Introduction to Cyber Security Awareness</div>
+      </div>
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-4.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-4.jpg" alt="Starting a Small Business" onerror="this.style.display='none'"/>
+          <i class="fas fa-store"></i>
+          <div class="cert-placeholder-text">Upload cert-4.jpg</div>
+        </div>
+        <div class="cert-issuer">HP Foundation</div>
+        <div class="cert-name">Starting a Small Business</div>
+      </div>
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-5.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-5.jpg" alt="Effective Leadership" onerror="this.style.display='none'"/>
+          <i class="fas fa-crown"></i>
+          <div class="cert-placeholder-text">Upload cert-5.jpg</div>
+        </div>
+        <div class="cert-issuer">HP Foundation</div>
+        <div class="cert-name">Effective Leadership</div>
+      </div>
+
+      <div class="card cert-card fade-up" data-src="assets/images/cert-6.jpg">
+        <div class="cert-img-wrap">
+          <img src="assets/images/cert-6.jpg" alt="English Communication" onerror="this.style.display='none'"/>
+          <i class="fas fa-comments"></i>
+          <div class="cert-placeholder-text">Upload cert-6.jpg</div>
+        </div>
+        <div class="cert-issuer">Fondi App</div>
+        <div class="cert-name">English Communication</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Cert Modal -->
+<div class="cert-modal" id="certModal">
+  <div class="cert-modal-inner">
+    <button class="cert-modal-close" id="certModalClose"><i class="fas fa-times"></i></button>
+    <img src="" alt="Certificate" id="certModalImg"/>
+  </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ????????????????????????????????????????????? BLOG SECTION ????????????????????????????????????????????? -->
+<section id="blog">
+  <div class="section">
+    <div class="coming-soon-wrap fade-up">
+      <div class="coming-soon-box">
+        <div class="coming-soon-icon"><i class="fas fa-pen-nib"></i></div>
+        <h1>Blog &amp; <span>Insights</span></h1>
+        <p>I'm working on sharing my thoughts on entrepreneurship, business building, lessons from my ventures, and everything I'm learning along the way. Check back soon.</p>
+
+        <div class="topics-preview">
+          <span class="topic-tag">???? Entrepreneurship</span>
+          <span class="topic-tag">???? Business Strategy</span>
+          <span class="topic-tag">???? AI &amp; Technology</span>
+          <span class="topic-tag">???? Personal Finance</span>
+          <span class="topic-tag">???? Startup Lessons</span>
+          <span class="topic-tag">???? Self Improvement</span>
+        </div>
+
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-bell"></i> Get Notified</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ????????????????????????????????????????????? CONTACT SECTION ????????????????????????????????????????????? -->
+<section id="contact">
+  <div class="section">
+    <span class="section-tag">Get In Touch</span>
+    <h1 class="section-title">Let's <span>Connect</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Whether you want to collaborate on a startup, discuss a project, or simply connect ??? I'd love to hear from you.</p>
+
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div>
+        <div class="contact-info-cards">
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <!-- Replace with your actual email -->
+              <span class="contact-info-value"><a href="mailto:youremail@example.com">youremail@example.com</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <span class="contact-info-label">WhatsApp</span>
+              <!-- Replace with your actual number -->
+              <span class="contact-info-value"><a href="https://wa.me/92XXXXXXXXXX">+92 XXX XXX XXXX</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Batkhela, KPK, Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-connect fade-up">
+          <h3>Connect on social media</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://x.com/MMudassirsha" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="card fade-up" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;">Send me a message</h3>
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="fname" placeholder="e.g. Ahmed Khan"/>
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" id="femail" placeholder="you@example.com"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="fsubject">
+              <option value="">Select a reason...</option>
+              <option>Startup Collaboration</option>
+              <option>Freelance / Project Work</option>
+              <option>Job Opportunity</option>
+              <option>General Inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="fmessage" placeholder="Tell me what's on your mind..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-success" id="formSuccess">
+            ??? Message sent! I'll get back to you soon.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13134.5!2d71.9818!3d34.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d91e9e9e9e9e9e%3A0x1!2sBatkhela%2C+Khyber+Pakhtunkhwa%2C+Pakistan!5e0!3m2!1sen!2s!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="map-label">
+        <i class="fas fa-map-marker-alt"></i>
+        Batkhela, Malakand District, Khyber Pakhtunkhwa, Pakistan
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /page-wrapper -->
+
+<!-- ????????????????????????????????????????????? FOOTER ????????????????????????????????????????????? -->
 <footer>
   <div class="footer-inner">
     <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -275,10 +985,161 @@
       <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
       <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+    <p class="footer-copy">?? 2026 Muhammad Mudassir Shah ?? Batkhela, Pakistan</p>
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+// ============================================================
+//  Muhammad Mudassir Shah ??? Portfolio  |  script.js (inlined)
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ?????? Dark Mode ??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+  const html = document.documentElement;
+  const toggle = document.getElementById('darkToggle');
+  const saved = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  // ?????? Hamburger Menu ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
+
+  // ?????? Scroll Fade-Up Animations ??????????????????????????????????????????????????????????????????????????????????????????
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ?????? Typing Effect (Hero) ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+  const typingEl = document.getElementById('typingText');
+  if (typingEl) {
+    const texts = [
+      'Entrepreneur',
+      'Economics Student',
+      'Visionary',
+      'Strategist',
+      'Business Builder'
+    ];
+    let i = 0, charIndex = 0, deleting = false;
+    const speed = 90, deleteSpeed = 50, pause = 1800;
+
+    function type() {
+      const current = texts[i];
+      if (!deleting) {
+        typingEl.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(type, pause);
+          return;
+        }
+      } else {
+        typingEl.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          i = (i + 1) % texts.length;
+        }
+      }
+      setTimeout(type, deleting ? deleteSpeed : speed);
+    }
+    type();
+  }
+
+  // ?????? Skill Bar Animation ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => { bar.style.width = width + '%'; }, 200);
+        skillObserver.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.3 });
+  skillBars.forEach(bar => skillObserver.observe(bar));
+
+  // ?????? Smooth Nav Highlight on Scroll ???????????????????????????????????????????????????????????????????????????
+  const sections = document.querySelectorAll('section[id]');
+  if (sections.length > 0) {
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+  }
+
+  // ?????? Cert Modal (lightbox) ??????????????????????????????????????????????????????????????????????????????????????????????????????
+  const modal = document.getElementById('certModal');
+  const modalImg = document.getElementById('certModalImg');
+  const modalClose = document.getElementById('certModalClose');
+
+  document.querySelectorAll('.cert-card[data-src]').forEach(card => {
+    card.addEventListener('click', () => {
+      if (modal && modalImg) {
+        modalImg.src = card.getAttribute('data-src');
+        modal.classList.add('open');
+      }
+    });
+  });
+  if (modalClose) modalClose.addEventListener('click', () => modal.classList.remove('open'));
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+
+  // ?????? Navbar shadow on scroll ????????????????????????????????????????????????????????????????????????????????????????????????
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
+  });
+
+});
+
+// ?????? Contact Form Submit ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+function submitForm() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fsubject').value = '';
+  document.getElementById('fmessage').value = '';
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+}
+</script>
 </body>
 </html>
