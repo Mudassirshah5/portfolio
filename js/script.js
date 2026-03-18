@@ -1,6 +1,5 @@
 // ============================================================
-//  Muhammad Mudassir Shah — Portfolio
-//  script.js
+//  Muhammad Mudassir Shah — Portfolio  |  script.js
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,12 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('theme', next);
     });
   }
-
-  // ── Active Nav Link ────────────────────────────────────────
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
-    if (a.getAttribute('href') === currentPage) a.classList.add('active');
-  });
 
   // ── Hamburger Menu ─────────────────────────────────────────
   const hamburger = document.getElementById('hamburger');
@@ -104,19 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
   skillBars.forEach(bar => skillObserver.observe(bar));
 
-  // ── Smooth Nav Highlight on Scroll (single page only) ─────
+  // ── Active Nav Highlight on Scroll ─────────────────────────
   const sections = document.querySelectorAll('section[id]');
-  if (sections.length > 0) {
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-      });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    let currentId = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) {
+        currentId = sec.id;
+      }
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
     });
   }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav(); // run once on load
 
   // ── Cert Modal (lightbox) ──────────────────────────────────
   const modal = document.getElementById('certModal');
@@ -141,3 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// ── Contact Form Submit ────────────────────────────────────
+function submitForm() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fsubject').value = '';
+  document.getElementById('fmessage').value = '';
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+}
