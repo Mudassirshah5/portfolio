@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blog — Muhammad Mudassir Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .coming-soon-wrap {
+      min-height:70vh; display:flex; align-items:center; justify-content:center;
+    }
+    .coming-soon-box { text-align:center; max-width:500px; }
+    .coming-soon-icon {
+      width:90px; height:90px; border-radius:50%;
+      background:var(--teal-light); border:2px solid rgba(26,188,156,0.3);
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 2rem; font-size:2.5rem; color:var(--teal);
+      animation:float 3s ease-in-out infinite;
+    }
+    .coming-soon-box h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3rem); font-weight:900;
+      color:var(--text); margin-bottom:.75rem;
+    }
+    .coming-soon-box h1 span { color:var(--teal); }
+    .coming-soon-box p { font-size:0.93rem; color:var(--text2); line-height:1.8; margin-bottom:2rem; }
+
+    .topics-preview { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:2rem; }
+    .topic-tag {
+      background:var(--card); border:1px solid var(--border);
+      color:var(--text2); font-size:0.8rem; padding:6px 14px; border-radius:50px;
+      transition:all .2s;
+    }
+    .topic-tag:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle"></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrapper">
+  <div class="section">
+    <div class="coming-soon-wrap fade-up">
+      <div class="coming-soon-box">
+        <div class="coming-soon-icon"><i class="fas fa-pen-nib"></i></div>
+        <h1>Blog & <span>Insights</span></h1>
+        <p>I'm working on sharing my thoughts on entrepreneurship, business building, lessons from my ventures, and everything I'm learning along the way. Check back soon.</p>
+
+        <div class="topics-preview">
+          <span class="topic-tag">💡 Entrepreneurship</span>
+          <span class="topic-tag">📈 Business Strategy</span>
+          <span class="topic-tag">🤖 AI & Technology</span>
+          <span class="topic-tag">💰 Personal Finance</span>
+          <span class="topic-tag">🚀 Startup Lessons</span>
+          <span class="topic-tag">🧠 Self Improvement</span>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-bell"></i> Get Notified</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

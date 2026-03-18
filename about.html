@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About — Muhammad Mudassir Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* About Grid */
+    .about-grid {
+      display:grid; grid-template-columns:1fr 1.6fr; gap:3.5rem; align-items:start;
+    }
+    .about-photo-wrap { position:relative; }
+    .about-photo {
+      width:100%; border-radius:16px;
+      object-fit:cover; box-shadow:var(--shadow);
+      border:3px solid var(--teal);
+    }
+    .about-photo-placeholder {
+      width:100%; aspect-ratio:3/4; border-radius:16px;
+      background:linear-gradient(135deg, var(--teal-light), var(--card));
+      border:3px solid var(--teal);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:.5rem; color:var(--teal);
+    }
+    .about-photo-placeholder i { font-size:5rem; opacity:0.4; }
+    .about-photo-placeholder span { font-size:0.8rem; opacity:0.6; }
+    .about-badge-wrap {
+      position:absolute; bottom:-16px; right:-16px;
+      background:var(--teal); color:#fff;
+      padding:14px 18px; border-radius:12px;
+      font-size:0.8rem; font-weight:700;
+      box-shadow:0 4px 20px var(--teal-glow);
+      text-align:center; line-height:1.4;
+    }
+    .about-badge-wrap span { display:block; font-size:1.4rem; font-weight:900; }
+
+    .about-text p { font-size:0.93rem; color:var(--text2); line-height:1.85; margin-bottom:1.2rem; }
+
+    .about-info-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0;
+    }
+    .info-item { display:flex; align-items:center; gap:.75rem; }
+    .info-icon {
+      width:36px; height:36px; border-radius:8px;
+      background:var(--teal-light); color:var(--teal);
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.85rem; flex-shrink:0;
+    }
+    .info-label { font-size:0.72rem; color:var(--text2); display:block; }
+    .info-value { font-size:0.85rem; font-weight:600; color:var(--text); }
+
+    /* Timeline */
+    .timeline { position:relative; padding-left:2rem; margin-top:1rem; }
+    .timeline::before {
+      content:''; position:absolute; left:8px; top:0; bottom:0;
+      width:2px; background:linear-gradient(to bottom, var(--teal), transparent);
+    }
+    .timeline-item { position:relative; margin-bottom:2rem; }
+    .timeline-item::before {
+      content:''; position:absolute; left:-1.65rem; top:4px;
+      width:12px; height:12px; border-radius:50%;
+      background:var(--teal); border:2px solid var(--bg);
+      box-shadow:0 0 0 3px var(--teal-light);
+    }
+    .timeline-year {
+      font-size:0.72rem; font-weight:700; color:var(--teal);
+      text-transform:uppercase; letter-spacing:1px; margin-bottom:.3rem;
+    }
+    .timeline-title { font-size:0.95rem; font-weight:700; color:var(--text); margin-bottom:.25rem; }
+    .timeline-sub { font-size:0.82rem; color:var(--text2); }
+    .timeline-result {
+      display:inline-block; margin-top:.3rem;
+      font-size:0.75rem; font-weight:600;
+      color:var(--teal); background:var(--teal-light);
+      padding:2px 10px; border-radius:50px;
+    }
+
+    /* Work Experience */
+    .work-card { margin-bottom:1.2rem; }
+    .work-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:.5rem; margin-bottom:.5rem; }
+    .work-role { font-size:1rem; font-weight:700; color:var(--text); }
+    .work-company { font-size:0.85rem; color:var(--teal); font-weight:600; }
+    .work-duration { font-size:0.78rem; color:var(--text2); background:var(--teal-light); padding:3px 10px; border-radius:50px; }
+    .work-desc { font-size:0.85rem; color:var(--text2); line-height:1.7; }
+    .work-tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem; }
+    .work-tag {
+      font-size:0.72rem; background:var(--bg); color:var(--text2);
+      border:1px solid var(--border); padding:3px 10px; border-radius:50px;
+    }
+
+    /* Languages */
+    .lang-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+    .lang-card { text-align:center; padding:1.5rem 1rem; }
+    .lang-flag { font-size:2rem; margin-bottom:.5rem; display:block; }
+    .lang-name { font-size:0.9rem; font-weight:700; color:var(--text); }
+    .lang-level { font-size:0.75rem; color:var(--teal); margin-top:.2rem; }
+
+    /* Interests */
+    .interests-grid { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+    .interest-tag {
+      display:inline-flex; align-items:center; gap:.4rem;
+      background:var(--card); border:1px solid var(--border);
+      padding:8px 14px; border-radius:50px;
+      font-size:0.82rem; color:var(--text2);
+      transition:all .2s;
+    }
+    .interest-tag:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); }
+    .interest-tag i { color:var(--teal); font-size:0.8rem; }
+
+    @media(max-width:900px) {
+      .about-grid { grid-template-columns:1fr; }
+      .about-badge-wrap { bottom:-12px; right:12px; }
+      .lang-grid { grid-template-columns:repeat(3,1fr); }
+    }
+    @media(max-width:480px) {
+      .about-info-grid { grid-template-columns:1fr; }
+      .lang-grid { grid-template-columns:1fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrapper">
+  <div class="section">
+
+    <!-- ABOUT ME -->
+    <div class="about-grid fade-up">
+      <div class="about-photo-wrap">
+        <!-- Replace with: <img src="assets/images/profile.jpg" alt="Muhammad Mudassir Shah" class="about-photo"/> -->
+        <div class="about-photo-placeholder">
+          <i class="fas fa-user"></i>
+          <span>Add your photo here</span>
+        </div>
+        <div class="about-badge-wrap">
+          <span>3.4</span>CGPA
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">About Me</span>
+        <h1 class="section-title">Who I <span>Am</span></h1>
+        <div class="divider"></div>
+        <p>I am Muhammad Mudassir Shah — a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.</p>
+        <p>My journey has been one of learning through action — from helping digitize my father's business in Saudi Arabia, to launching and experimenting with my own ventures, to working with a UK-based company as a CSR. Every experience has added a new layer to my thinking.</p>
+        <p>I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter and grow into a well-rounded entrepreneur, strategist, and leader.</p>
+
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-calendar"></i></div>
+            <div><span class="info-label">Date of Birth</span><span class="info-value">3rd July 2006</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><span class="info-label">Location</span><span class="info-value">Batkhela, Pakistan</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div><span class="info-label">Degree</span><span class="info-value">BS Economics</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-university"></i></div>
+            <div><span class="info-label">University</span><span class="info-value">University of Malakand</span></div>
+          </div>
+        </div>
+
+        <a href="assets/docs/MyCv.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+    </div>
+
+    <!-- EDUCATION TIMELINE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Education</span>
+      <h2 class="section-title">Academic <span>Journey</span></h2>
+      <div class="divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2024 — Present</div>
+          <div class="timeline-title">BS Economics</div>
+          <div class="timeline-sub">University of Malakand, Pakistan</div>
+          <span class="timeline-result">CGPA: 3.4 &nbsp;·&nbsp; <span class="badge badge-current">Current</span></span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paused</div>
+          <div class="timeline-title">Bachelor of Business Administration (BBA)</div>
+          <div class="timeline-sub">University of the People — US-based Online University</div>
+          <span class="badge badge-paused">Paused</span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Completed</div>
+          <div class="timeline-title">FSC (Higher Secondary)</div>
+          <div class="timeline-sub">Oxford Education Academy, Batkhela</div>
+          <span class="timeline-result">74% &nbsp;·&nbsp; <span class="badge badge-completed">Completed</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <div class="divider"></div>
+
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Cold Caller / Customer Service Representative</div>
+            <div class="work-company"><i class="fas fa-building"></i> Finit Training & Recruitment — UK</div>
+          </div>
+          <span class="work-duration">~2 months</span>
+        </div>
+        <p class="work-desc">Handled English-speaking UK clients remotely, promoting ACCA and AAT accounting courses and certifications. Developed professional communication skills, client handling techniques, and English fluency through real-world sales calls.</p>
+        <div class="work-tags">
+          <span class="work-tag">Cold Calling</span>
+          <span class="work-tag">English Communication</span>
+          <span class="work-tag">Client Management</span>
+          <span class="work-tag">ACCA / AAT Courses</span>
+          <span class="work-tag">Remote Work</span>
+        </div>
+      </div>
+
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Pharmacy Assistant & Stock Manager</div>
+            <div class="work-company"><i class="fas fa-clinic-medical"></i> Farooq Enterprises, Batkhela</div>
+          </div>
+          <span class="work-duration">3–4 months</span>
+        </div>
+        <p class="work-desc">Managed pharmacy stock inventory, assisted customers in locating and dispensing medicines, and handled day-to-day store operations. Left to pursue personal growth, new skills, and entrepreneurial opportunities.</p>
+        <div class="work-tags">
+          <span class="work-tag">Stock Management</span>
+          <span class="work-tag">Customer Service</span>
+          <span class="work-tag">Inventory Control</span>
+          <span class="work-tag">Medicine Dispensing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Languages</span>
+      <h2 class="section-title">Languages I <span>Speak</span></h2>
+      <div class="divider"></div>
+      <div class="lang-grid">
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">🇵🇰</span>
+          <div class="lang-name">Pashto</div>
+          <div class="lang-level">Native</div>
+        </div>
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">🇵🇰</span>
+          <div class="lang-name">Urdu</div>
+          <div class="lang-level">Fluent</div>
+        </div>
+        <div class="card lang-card fade-up">
+          <span class="lang-flag">🇬🇧</span>
+          <div class="lang-name">English</div>
+          <div class="lang-level">Intermediate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERESTS -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Interests</span>
+      <h2 class="section-title">What Drives <span>Me</span></h2>
+      <div class="divider"></div>
+      <div class="interests-grid">
+        <span class="interest-tag"><i class="fas fa-lightbulb"></i> Motivational Content</span>
+        <span class="interest-tag"><i class="fas fa-chart-line"></i> Business & Investment Learning</span>
+        <span class="interest-tag"><i class="fas fa-wallet"></i> Personal Finance</span>
+        <span class="interest-tag"><i class="fas fa-tv"></i> Shark Tank (PK, IN, USA)</span>
+        <span class="interest-tag"><i class="fab fa-youtube"></i> YouTube Business Content</span>
+        <span class="interest-tag"><i class="fas fa-microchip"></i> Exploring New Technologies</span>
+        <span class="interest-tag"><i class="fas fa-book"></i> Reading About Entrepreneurs</span>
+        <span class="interest-tag"><i class="fas fa-compass"></i> Exploring New Ideas & Things</span>
+        <span class="interest-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+      </div>
+    </div>
+
+  </div><!-- /section -->
+</div><!-- /page-wrapper -->
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

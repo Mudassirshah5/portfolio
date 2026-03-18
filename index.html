@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Muhammad Mudassir Shah — Entrepreneur & Economics Student</title>
+  <meta name="description" content="Portfolio of Muhammad Mudassir Shah — Entrepreneur, Economics Student, Visionary & Strategist from Batkhela, Pakistan."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── Hero ── */
+    .hero {
+      min-height: calc(100vh - 68px);
+      display:flex; align-items:center;
+      padding: 60px 5% 80px;
+      position:relative; overflow:hidden;
+    }
+    .hero-content {
+      max-width:1200px; margin:0 auto; width:100%;
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; gap:4rem;
+    }
+    .hero-left { position:relative; z-index:1; }
+    .hero-tag {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:var(--teal-light); color:var(--teal);
+      border:1px solid rgba(26,188,156,0.3);
+      font-size:0.72rem; font-weight:600;
+      padding:6px 14px; border-radius:50px;
+      letter-spacing:1.2px; text-transform:uppercase;
+      margin-bottom:1.3rem;
+      animation: fadeUp .5s ease both;
+    }
+    .hero-tag i { font-size:0.75rem; }
+    .hero-name {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.2rem,5vw,3.6rem);
+      font-weight:900; line-height:1.1;
+      color:var(--text); margin-bottom:.6rem;
+      animation:fadeUp .6s ease both;
+    }
+    .hero-name span { color:var(--teal); }
+    .hero-typing {
+      font-size:1.1rem; font-weight:600;
+      color:var(--text2); margin-bottom:1.4rem;
+      min-height:1.8rem;
+      animation:fadeUp .7s ease both;
+    }
+    #typingText {
+      color:var(--teal);
+      border-right:2px solid var(--teal);
+      padding-right:3px;
+      animation: blink .75s step-end infinite;
+    }
+    .hero-desc {
+      font-size:0.93rem; color:var(--text2);
+      line-height:1.85; margin-bottom:1.4rem;
+      max-width:480px;
+      animation:fadeUp .8s ease both;
+    }
+    .hero-looking {
+      background:var(--teal-light);
+      border:1px solid rgba(26,188,156,0.25);
+      border-left:3px solid var(--teal);
+      border-radius:8px; padding:12px 16px;
+      font-size:0.82rem; color:var(--text2);
+      margin-bottom:2rem; line-height:1.6;
+      animation:fadeUp .85s ease both;
+    }
+    .hero-looking strong { color:var(--teal); }
+    .hero-btns {
+      display:flex; flex-wrap:wrap; gap:1rem;
+      animation:fadeUp .9s ease both;
+    }
+    /* Right — Photo */
+    .hero-right {
+      display:flex; justify-content:center; align-items:center;
+      animation:fadeIn 1s ease both;
+    }
+    .hero-photo-wrap {
+      position:relative; width:340px; height:340px;
+    }
+    .hero-photo-ring {
+      position:absolute; inset:-12px;
+      border-radius:50%;
+      border:2px dashed rgba(26,188,156,0.35);
+      animation: spin 18s linear infinite;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .hero-photo-ring2 {
+      position:absolute; inset:-28px;
+      border-radius:50%;
+      border:1px solid rgba(26,188,156,0.15);
+      animation: spin 30s linear infinite reverse;
+    }
+    .hero-photo {
+      width:100%; height:100%; border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--teal);
+      box-shadow:0 0 40px var(--teal-glow);
+      animation:float 4s ease-in-out infinite;
+    }
+    .hero-photo-placeholder {
+      width:100%; height:100%; border-radius:50%;
+      background:linear-gradient(135deg, var(--teal-light), var(--card));
+      border:4px solid var(--teal);
+      box-shadow:0 0 40px var(--teal-glow);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:.5rem; color:var(--teal);
+      animation:float 4s ease-in-out infinite;
+    }
+    .hero-photo-placeholder i { font-size:4rem; opacity:0.5; }
+    .hero-photo-placeholder span { font-size:0.75rem; opacity:0.6; font-weight:500; }
+    .hero-dot {
+      position:absolute; bottom:16px; right:16px;
+      width:18px; height:18px; border-radius:50%;
+      background:var(--teal);
+      border:3px solid var(--bg);
+      animation:pulse 2s infinite;
+    }
+    /* Quote */
+    .hero-quote {
+      margin-top:3rem; padding:2rem 5%;
+      background:var(--card);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      text-align:center;
+    }
+    .hero-quote blockquote {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.2rem,2.5vw,1.7rem);
+      font-weight:700; color:var(--text);
+      font-style:italic; max-width:600px; margin:0 auto;
+    }
+    .hero-quote blockquote span { color:var(--teal); }
+    /* Quick Stats */
+    .hero-stats {
+      padding:3rem 5%; max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
+    }
+    .stat-card {
+      text-align:center; padding:1.8rem 1rem;
+    }
+    .stat-num {
+      font-family:'Playfair Display',serif;
+      font-size:2.2rem; font-weight:900;
+      color:var(--teal); display:block;
+    }
+    .stat-label { font-size:0.8rem; color:var(--text2); font-weight:500; margin-top:.3rem; }
+
+    @media(max-width:900px) {
+      .hero-content { grid-template-columns:1fr; text-align:center; gap:2.5rem; }
+      .hero-desc { margin:0 auto 1.4rem; }
+      .hero-looking { text-align:left; }
+      .hero-btns { justify-content:center; }
+      .hero-right { order:-1; }
+      .hero-photo-wrap { width:240px; height:240px; }
+      .hero-stats { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:480px) {
+      .hero-stats { grid-template-columns:repeat(2,1fr); gap:1rem; }
+      .hero-photo-wrap { width:200px; height:200px; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="page-wrapper">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag"><i class="fas fa-map-marker-alt"></i> Batkhela, Pakistan</div>
+        <h1 class="hero-name">Muhammad<br><span>Mudassir Shah</span></h1>
+        <p class="hero-typing"><span id="typingText"></span></p>
+        <p class="hero-desc">
+          Growth-focused mindset, always looking for ways to improve and move forward.
+          Solution-oriented, independence-driven, and always eager to learn new things.
+        </p>
+        <div class="hero-looking">
+          <strong><i class="fas fa-search"></i> Currently open to:</strong><br>
+          Collaborating with early-stage startups and founders to help build and grow new businesses.
+          Also seeking roles that challenge me and sharpen my skills in business, marketing, and strategy.
+        </div>
+        <div class="hero-btns">
+          <a href="projects.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
+          <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="assets/docs/MyCv.pdf" download class="btn btn-ghost"><i class="fas fa-download"></i> Download CV</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring"></div>
+          <div class="hero-photo-ring2"></div>
+          <img src="assets/images/profile.jpeg" alt="Muhammad Mudassir Shah" class="hero-photo"/>
+          <div class="hero-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="hero-quote fade-up">
+    <blockquote>"Start now, <span>even if it's small.</span>"</blockquote>
+  </div>
+
+  <!-- STATS -->
+  <div class="hero-stats">
+    <div class="card stat-card fade-up">
+      <span class="stat-num">6+</span>
+      <span class="stat-label">Business Ventures</span>
+    </div>
+    <div class="card stat-card fade-up">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Certifications</span>
+    </div>
+    <div class="card stat-card fade-up">
+      <span class="stat-num">3.4</span>
+      <span class="stat-label">University CGPA</span>
+    </div>
+    <div class="card stat-card fade-up">
+      <span class="stat-num">3+</span>
+      <span class="stat-label">Languages</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

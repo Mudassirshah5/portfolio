@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Skills — Muhammad Mudassir Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .skills-categories { display:grid; grid-template-columns:repeat(2,1fr); gap:1.8rem; margin-top:1rem; }
+    .skill-cat-card { padding:2rem; }
+    .skill-cat-header {
+      display:flex; align-items:center; gap:.75rem;
+      margin-bottom:1.5rem; padding-bottom:1rem;
+      border-bottom:1px solid var(--border);
+    }
+    .skill-cat-icon {
+      width:42px; height:42px; border-radius:10px;
+      background:var(--teal-light); color:var(--teal);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem; flex-shrink:0;
+    }
+    .skill-cat-title { font-size:1rem; font-weight:700; color:var(--text); }
+
+    .skill-item { margin-bottom:1.1rem; }
+    .skill-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.4rem; }
+    .skill-name { font-size:0.82rem; font-weight:500; color:var(--text); }
+    .skill-pct { font-size:0.75rem; font-weight:700; color:var(--teal); }
+    .skill-bar { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+    .skill-bar-fill {
+      height:100%; width:0; border-radius:3px;
+      background:linear-gradient(90deg, var(--teal), var(--teal-dark));
+      transition:width 1.2s cubic-bezier(.4,0,.2,1);
+    }
+
+    .skill-tags { display:flex; flex-wrap:wrap; gap:.6rem; }
+    .skill-pill {
+      display:inline-flex; align-items:center; gap:.35rem;
+      background:var(--bg); border:1px solid var(--border);
+      color:var(--text2); font-size:0.78rem; font-weight:500;
+      padding:6px 12px; border-radius:50px;
+      transition:all .2s; cursor:default;
+    }
+    .skill-pill:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); }
+    .skill-pill i { font-size:0.75rem; color:var(--teal); }
+
+    @media(max-width:768px) { .skills-categories { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="skills.html" class="active">Skills</a></li><li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle"></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrapper">
+  <div class="section">
+    <span class="section-tag">What I Can Do</span>
+    <h1 class="section-title">My <span>Skills</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">A mix of business, digital, design, and communication skills built through real-world experience, self-study, and entrepreneurship.</p>
+
+    <div class="skills-categories">
+
+      <!-- Social Media & Marketing -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="skill-cat-title">Social Media & Marketing</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">FB/IG Business Pages</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Caption & Content Writing</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Google Business Profile & SEO</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Hashtag Research</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Email Marketing (Basic)</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Facebook/Instagram Ads</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div></div>
+      </div>
+
+      <!-- Design & Creative -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-palette"></i></div>
+          <div class="skill-cat-title">Design & Creative</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Logo Design (Canva)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Business Card Design</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Poster & Banner Design</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">CV / Resume Design</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Presentation Design</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="78"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Basic Photo Editing</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div></div>
+      </div>
+
+      <!-- Tech & Tools -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="skill-cat-title">Tech & Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-robot"></i> ChatGPT & AI Tools</span>
+          <span class="skill-pill"><i class="fas fa-pen-fancy"></i> Prompt Writing</span>
+          <span class="skill-pill"><i class="fas fa-globe"></i> Blogger / Landing Pages</span>
+          <span class="skill-pill"><i class="fab fa-whatsapp"></i> WhatsApp Business</span>
+          <span class="skill-pill"><i class="fas fa-store"></i> Daraz / Haraj / OLX</span>
+          <span class="skill-pill"><i class="fab fa-google"></i> Google Docs & Sheets</span>
+          <span class="skill-pill"><i class="fab fa-microsoft"></i> MS Word & Excel</span>
+          <span class="skill-pill"><i class="fas fa-video"></i> Video Editing (Reels)</span>
+          <span class="skill-pill"><i class="fab fa-canva"></i> Canva</span>
+        </div>
+      </div>
+
+      <!-- Business Skills -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="skill-cat-title">Business</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-phone"></i> Cold Calling & Sales</span>
+          <span class="skill-pill"><i class="fas fa-users"></i> Customer Handling</span>
+          <span class="skill-pill"><i class="fas fa-search-dollar"></i> Market Research</span>
+          <span class="skill-pill"><i class="fas fa-tags"></i> Product Pricing & Costing</span>
+          <span class="skill-pill"><i class="fas fa-boxes"></i> Inventory Management</span>
+          <span class="skill-pill"><i class="fas fa-file-contract"></i> Business Proposals</span>
+          <span class="skill-pill"><i class="fas fa-lightbulb"></i> Business Planning</span>
+          <span class="skill-pill"><i class="fas fa-handshake"></i> Client Relations</span>
+        </div>
+      </div>
+
+      <!-- Writing & Communication -->
+      <div class="card skill-cat-card fade-up" style="grid-column:1/-1;">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-pen"></i></div>
+          <div class="skill-cat-title">Writing & Communication</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-envelope"></i> English Business Writing</span>
+          <span class="skill-pill"><i class="fas fa-keyboard"></i> Urdu Writing & Typing</span>
+          <span class="skill-pill"><i class="fas fa-file-alt"></i> Report Writing</span>
+          <span class="skill-pill"><i class="fas fa-spell-check"></i> Article Editing & Proofreading</span>
+          <span class="skill-pill"><i class="fas fa-language"></i> Translation (Urdu / English / Arabic)</span>
+          <span class="skill-pill"><i class="fas fa-comments"></i> Pashto Communication</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact — Muhammad Mudassir Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }
+
+    .contact-info-cards { display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem; }
+    .contact-info-item {
+      display:flex; align-items:center; gap:1rem; padding:1.2rem 1.5rem;
+    }
+    .contact-info-icon {
+      width:44px; height:44px; border-radius:10px; flex-shrink:0;
+      background:var(--teal-light); color:var(--teal);
+      display:flex; align-items:center; justify-content:center; font-size:1rem;
+    }
+    .contact-info-label { font-size:0.72rem; color:var(--text2); display:block; font-weight:500; }
+    .contact-info-value { font-size:0.9rem; font-weight:600; color:var(--text); }
+    .contact-info-value a { color:var(--text); text-decoration:none; transition:color .2s; }
+    .contact-info-value a:hover { color:var(--teal); }
+
+    .social-connect { margin-top:1.5rem; }
+    .social-connect h3 { font-size:0.85rem; font-weight:600; color:var(--text2); margin-bottom:1rem; }
+    .social-links { display:flex; gap:.75rem; flex-wrap:wrap; }
+    .social-link {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:9px 16px; border-radius:8px;
+      background:var(--card); border:1px solid var(--border);
+      color:var(--text2); font-size:0.8rem; font-weight:500;
+      text-decoration:none; transition:all .2s;
+    }
+    .social-link:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-light); transform:translateY(-2px); }
+    .social-link i { font-size:0.9rem; }
+
+    /* Form */
+    .contact-form { display:flex; flex-direction:column; gap:1.2rem; }
+    .form-group { display:flex; flex-direction:column; gap:.4rem; }
+    .form-group label { font-size:0.8rem; font-weight:600; color:var(--text); }
+    .form-group input, .form-group textarea, .form-group select {
+      padding:12px 16px; border-radius:8px;
+      border:1.5px solid var(--border);
+      background:var(--bg); color:var(--text);
+      font-family:'Poppins',sans-serif; font-size:0.85rem;
+      transition:border-color .2s, box-shadow .2s;
+      outline:none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color:var(--teal);
+      box-shadow:0 0 0 3px var(--teal-light);
+    }
+    .form-group textarea { resize:vertical; min-height:130px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+    .form-success {
+      display:none; padding:14px 18px; border-radius:8px;
+      background:rgba(26,188,156,0.12); border:1px solid rgba(26,188,156,0.3);
+      color:var(--teal); font-size:0.85rem; font-weight:500;
+      text-align:center;
+    }
+
+    /* Map */
+    .map-wrap {
+      margin-top:3.5rem; border-radius:16px; overflow:hidden;
+      border:1px solid var(--border); box-shadow:var(--shadow);
+    }
+    .map-wrap iframe { width:100%; height:350px; border:none; display:block; }
+    .map-label {
+      background:var(--card); padding:1rem 1.5rem;
+      display:flex; align-items:center; gap:.6rem;
+      font-size:0.85rem; font-weight:500; color:var(--text2);
+    }
+    .map-label i { color:var(--teal); }
+
+    @media(max-width:900px) { .contact-grid { grid-template-columns:1fr; } }
+    @media(max-width:480px) { .form-row { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle"></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrapper">
+  <div class="section">
+    <span class="section-tag">Get In Touch</span>
+    <h1 class="section-title">Let's <span>Connect</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Whether you want to collaborate on a startup, discuss a project, or simply connect — I'd love to hear from you.</p>
+
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div>
+        <div class="contact-info-cards">
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <!-- Replace with your actual email -->
+              <span class="contact-info-value"><a href="mailto:youremail@example.com">youremail@example.com</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <span class="contact-info-label">WhatsApp</span>
+              <!-- Replace with your actual number -->
+              <span class="contact-info-value"><a href="https://wa.me/92XXXXXXXXXX">+92 XXX XXX XXXX</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Batkhela, KPK, Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-connect fade-up">
+          <h3>Connect on social media</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://x.com/MMudassirsha" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="card fade-up" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;">Send me a message</h3>
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="fname" placeholder="e.g. Ahmed Khan"/>
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" id="femail" placeholder="you@example.com"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="fsubject">
+              <option value="">Select a reason...</option>
+              <option>Startup Collaboration</option>
+              <option>Freelance / Project Work</option>
+              <option>Job Opportunity</option>
+              <option>General Inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="fmessage" placeholder="Tell me what's on your mind..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13134.5!2d71.9818!3d34.6167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d91e9e9e9e9e9e%3A0x1!2sBatkhela%2C+Khyber+Pakhtunkhwa%2C+Pakistan!5e0!3m2!1sen!2s!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="map-label">
+        <i class="fas fa-map-marker-alt"></i>
+        Batkhela, Malakand District, Khyber Pakhtunkhwa, Pakistan
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+<script>
+function submitForm() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fsubject').value = '';
+  document.getElementById('fmessage').value = '';
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+}
+</script>
+</body>
+</html>

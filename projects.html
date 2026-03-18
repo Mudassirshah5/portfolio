@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Projects — Muhammad Mudassir Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .projects-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.8rem; }
+    .project-card { padding:2rem; position:relative; overflow:hidden; }
+    .project-card::before {
+      content:''; position:absolute; top:0; left:0;
+      width:4px; height:100%;
+      background:var(--teal);
+    }
+    .project-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; }
+    .project-icon {
+      width:48px; height:48px; border-radius:12px;
+      background:var(--teal-light); color:var(--teal);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem; flex-shrink:0;
+    }
+    .project-badges { display:flex; flex-wrap:wrap; gap:.4rem; justify-content:flex-end; }
+    .project-title { font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:.3rem; }
+    .project-subtitle { font-size:0.8rem; color:var(--teal); font-weight:600; margin-bottom:.75rem; }
+    .project-desc { font-size:0.85rem; color:var(--text2); line-height:1.75; margin-bottom:1rem; }
+    .project-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .project-tag {
+      font-size:0.72rem; background:var(--bg); color:var(--text2);
+      border:1px solid var(--border); padding:3px 10px; border-radius:50px;
+      transition:all .2s;
+    }
+    .project-tag:hover { border-color:var(--teal); color:var(--teal); }
+
+    .lesson-box {
+      margin-top:1rem; padding:10px 14px;
+      background:var(--teal-light);
+      border-left:3px solid var(--teal);
+      border-radius:0 8px 8px 0;
+      font-size:0.78rem; color:var(--text2); line-height:1.6;
+    }
+    .lesson-box strong { color:var(--teal); }
+
+    .lovcus-logo {
+      width:40px; height:40px; border-radius:10px;
+      object-fit:contain; background:var(--bg); padding:4px;
+      border:1px solid var(--border);
+    }
+    .lovcus-placeholder {
+      width:40px; height:40px; border-radius:10px;
+      background:var(--teal-light); border:1px solid rgba(26,188,156,0.3);
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.6rem; font-weight:700; color:var(--teal); letter-spacing:0.5px;
+    }
+
+    @media(max-width:768px) { .projects-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<nav>
+  <a href="index.html" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li><li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle"></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrapper">
+  <div class="section">
+    <span class="section-tag">What I've Built</span>
+    <h1 class="section-title">Projects & <span>Ventures</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Every project — successful or not — has been a stepping stone. Here's an honest look at what I've built, attempted, and learned from.</p>
+
+    <div class="projects-grid">
+
+      <!-- Fazal Stone Shining -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-gem"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-family">Family Business</span>
+            <span class="badge badge-completed">Completed</span>
+          </div>
+        </div>
+        <div class="project-title">Fazal Stone Shining</div>
+        <div class="project-subtitle">Digital Presence Setup — Saudi Arabia</div>
+        <p class="project-desc">Helped digitize my father's marble and tile cleaning business in KSA. Designed a professional logo, set up a WhatsApp Business account for client communication, and created a Haraj marketplace account for client hunting and lead generation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Logo Design</span>
+          <span class="project-tag">WhatsApp Business</span>
+          <span class="project-tag">Haraj Marketplace</span>
+          <span class="project-tag">Digital Marketing</span>
+        </div>
+      </div>
+
+      <!-- LOVCUS -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <div class="project-icon"><i class="fas fa-ring"></i></div>
+            <!-- Replace with: <img src="assets/images/lovcus-logo.png" alt="LOVCUS" class="lovcus-logo"/> -->
+            <div class="lovcus-placeholder">LOVCUS</div>
+          </div>
+          <div class="project-badges">
+            <span class="badge badge-active">Active</span>
+          </div>
+        </div>
+        <div class="project-title">LOVCUS</div>
+        <div class="project-subtitle">Artificial Beaded Jewelry Brand</div>
+        <p class="project-desc">Founded and currently running LOVCUS — an artificial beaded jewelry brand selling locally and online. Managing everything from product design and pricing to customer orders and marketing. Navigating challenges around investment, competition, and scaling.</p>
+        <div class="project-tags">
+          <span class="project-tag">Entrepreneurship</span>
+          <span class="project-tag">Product Design</span>
+          <span class="project-tag">Pricing & Costing</span>
+          <span class="project-tag">Local & Online Sales</span>
+          <span class="project-tag">Brand Building</span>
+        </div>
+      </div>
+
+      <!-- Local Business Digital Setup -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-solar-panel"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-client">Client Project</span>
+            <span class="badge badge-completed">Completed</span>
+          </div>
+        </div>
+        <div class="project-title">Local Business — Digital Setup</div>
+        <div class="project-subtitle">Google Business Profile + Social Media</div>
+        <p class="project-desc">Set up a complete digital presence for a local business — including Google Business Profile creation and optimization for local search visibility, plus social media account setup and initial content strategy.</p>
+        <div class="project-tags">
+          <span class="project-tag">Google Business Profile</span>
+          <span class="project-tag">Local SEO</span>
+          <span class="project-tag">Social Media Setup</span>
+          <span class="project-tag">Client Work</span>
+        </div>
+      </div>
+
+      <!-- Fiverr -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-attempted">Freelance Attempt</span>
+          </div>
+        </div>
+        <div class="project-title">Fiverr — Freelance Design</div>
+        <div class="project-subtitle">Business Card Design Gig</div>
+        <p class="project-desc">Created and launched a freelance business card design gig on Fiverr. While the gig did not generate orders at the time, the experience taught me about positioning services, writing gig descriptions, and understanding the freelance marketplace.</p>
+        <div class="project-tags">
+          <span class="project-tag">Canva</span>
+          <span class="project-tag">Business Card Design</span>
+          <span class="project-tag">Freelancing</span>
+          <span class="project-tag">Marketplace Strategy</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Positioning and reviews matter more than the product itself on competitive platforms.</div>
+      </div>
+
+      <!-- Blogging -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-blog"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-attempted">Attempted Venture</span>
+          </div>
+        </div>
+        <div class="project-title">Blogging</div>
+        <div class="project-subtitle">Multi-Topic English Blog — Blogger Platform</div>
+        <p class="project-desc">Researched, built, and published English blog posts on Blogger covering business, lifestyle, and technology topics. Paused after realizing the investment needed for a custom domain and the time required conflicted with studies.</p>
+        <div class="project-tags">
+          <span class="project-tag">Content Writing</span>
+          <span class="project-tag">Blogger</span>
+          <span class="project-tag">Research</span>
+          <span class="project-tag">SEO Basics</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Consistency and investment are prerequisites for blogging success — timing matters.</div>
+      </div>
+
+      <!-- Dry Fruits -->
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-seedling"></i></div>
+          <div class="project-badges">
+            <span class="badge badge-failed">Early-Stage Experiment</span>
+          </div>
+        </div>
+        <div class="project-title">Dry Fruits Processing</div>
+        <div class="project-subtitle">Dehydrated Fruit Venture</div>
+        <p class="project-desc">Independently conceived and launched a fruit dehydration business — processing mangoes, bananas, and strawberries for local and online sale. After operational challenges with production speed and efficiency, the venture was closed.</p>
+        <div class="project-tags">
+          <span class="project-tag">Product Development</span>
+          <span class="project-tag">Market Research</span>
+          <span class="project-tag">Operations</span>
+          <span class="project-tag">Own Initiative</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Validating production capacity before scaling is critical — key lessons learned about operations.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

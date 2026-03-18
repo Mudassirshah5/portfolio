@@ -1,0 +1,143 @@
+// ============================================================
+//  Muhammad Mudassir Shah — Portfolio
+//  script.js
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ── Dark Mode ──────────────────────────────────────────────
+  const html = document.documentElement;
+  const toggle = document.getElementById('darkToggle');
+  const saved = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  // ── Active Nav Link ────────────────────────────────────────
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if (a.getAttribute('href') === currentPage) a.classList.add('active');
+  });
+
+  // ── Hamburger Menu ─────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
+
+  // ── Scroll Fade-Up Animations ──────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Typing Effect (Hero) ────────────────────────────────────
+  const typingEl = document.getElementById('typingText');
+  if (typingEl) {
+    const texts = [
+      'Entrepreneur',
+      'Economics Student',
+      'Visionary',
+      'Strategist',
+      'Business Builder'
+    ];
+    let i = 0, charIndex = 0, deleting = false;
+    const speed = 90, deleteSpeed = 50, pause = 1800;
+
+    function type() {
+      const current = texts[i];
+      if (!deleting) {
+        typingEl.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(type, pause);
+          return;
+        }
+      } else {
+        typingEl.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          i = (i + 1) % texts.length;
+        }
+      }
+      setTimeout(type, deleting ? deleteSpeed : speed);
+    }
+    type();
+  }
+
+  // ── Skill Bar Animation ────────────────────────────────────
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => { bar.style.width = width + '%'; }, 200);
+        skillObserver.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.3 });
+  skillBars.forEach(bar => skillObserver.observe(bar));
+
+  // ── Smooth Nav Highlight on Scroll (single page only) ─────
+  const sections = document.querySelectorAll('section[id]');
+  if (sections.length > 0) {
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+  }
+
+  // ── Cert Modal (lightbox) ──────────────────────────────────
+  const modal = document.getElementById('certModal');
+  const modalImg = document.getElementById('certModalImg');
+  const modalClose = document.getElementById('certModalClose');
+
+  document.querySelectorAll('.cert-card[data-src]').forEach(card => {
+    card.addEventListener('click', () => {
+      if (modal && modalImg) {
+        modalImg.src = card.getAttribute('data-src');
+        modal.classList.add('open');
+      }
+    });
+  });
+  if (modalClose) modalClose.addEventListener('click', () => modal.classList.remove('open'));
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+
+  // ── Navbar shadow on scroll ────────────────────────────────
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
+  });
+
+});
