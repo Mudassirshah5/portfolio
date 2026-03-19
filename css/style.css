@@ -222,7 +222,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 .cert-card::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:12px;right:14px;font-size:0.8rem;color:var(--teal);opacity:0;transition:opacity .2s;}
 .cert-card:hover::after{opacity:1;}
 .cert-img-wrap{width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin-bottom:1.2rem;border:1px solid var(--border);background:linear-gradient(135deg,var(--teal-light),var(--bg));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;}
-.cert-img-wrap img{width:100%;height:100%;object-fit:cover;display:none;}
+.cert-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
 .cert-img-wrap i{font-size:2.5rem;color:var(--teal);opacity:0.5;}
 .cert-img-wrap .cert-placeholder-text{font-size:0.72rem;color:var(--text2);font-weight:500;padding:0 1rem;text-align:center;line-height:1.5;}
 .cert-issuer{font-size:0.72rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;}
