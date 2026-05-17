@@ -139,3 +139,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+function sendEmail() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  const mailto = `mailto:mmudassirshah634@gmail.com?subject=${encodeURIComponent('Portfolio Contact - ' + (document.getElementById('fsubject').value || 'General'))}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+  window.location.href = mailto;
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fsubject').value = '';
+  document.getElementById('fmessage').value = '';
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'block'; }, 100);
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+}
+
+function sendWhatsapp() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const message = document.getElementById('fmessage').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  const text = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  window.open(`https://wa.me/923143027272?text=${encodeURIComponent(text)}`);
+  document.getElementById('fname').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fsubject').value = '';
+  document.getElementById('fmessage').value = '';
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'block'; }, 100);
+  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+}
