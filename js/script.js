@@ -139,17 +139,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-// ── Contact Form Submit ────────────────────────────────────
-function submitForm() {
-  const name = document.getElementById('fname').value.trim();
-  const email = document.getElementById('femail').value.trim();
-  const message = document.getElementById('fmessage').value.trim();
-  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-  document.getElementById('formSuccess').style.display = 'block';
-  document.getElementById('fname').value = '';
-  document.getElementById('femail').value = '';
-  document.getElementById('fsubject').value = '';
-  document.getElementById('fmessage').value = '';
-  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
-}
