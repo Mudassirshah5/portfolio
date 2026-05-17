@@ -4,7 +4,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Blog — Muhammad Mudassir Shah</title>
-  <meta name="description" content="Thoughts, insights, and lessons on entrepreneurship by Muhammad Mudassir Shah."/>
   
   <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -12,48 +11,69 @@
   <link rel="stylesheet" href="css/style.css"/>
 
   <style>
-    .full-article {
-      display: none;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-    .full-article p {
-      margin-bottom: 1rem;
-    }
-    .full-article h3 {
-      font-size: 1.2rem;
-      color: var(--text);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .full-article.show {
-      display: block;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-    .read-more-btn {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      padding: 0;
-      margin-top: 1rem;
-      font-family: inherit;
-      display: inline-flex;
+    .blog-modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      display: none; /* Hidden by default */
       align-items: center;
-      gap: 5px;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(5px);
     }
-    .read-more-btn:hover {
-      text-decoration: underline;
+    .blog-modal.active {
+      display: flex;
+      opacity: 1;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
+    .blog-modal-content {
+      background: var(--bg);
+      width: 100%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .blog-modal-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: 0.3s;
+    }
+    .blog-modal-close:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .blog-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      padding-right: 2rem;
+    }
+    .blog-modal-body p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+    .blog-modal-body h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-size: 1.4rem;
     }
   </style>
 </head>
@@ -68,27 +88,14 @@
     <li><a href="certifications.html">Certifications</a></li>
     <li><a href="blog.html" class="active" style="color:var(--accent);">Blog</a></li>
   </ul>
-  <div class="nav-right">
-    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#home">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="certifications.html">Certifications</a>
-  <a href="blog.html" style="color:var(--accent);">Blog</a>
-</div>
-<br>
 
 <section id="blog" style="min-height: 80vh; padding-top: 8rem; padding-bottom: 4rem;">
   <div class="section">
     <span class="section-tag">Insights & Thoughts</span>
     <h1 class="section-title">My <span>Blog</span></h1>
     <div class="divider"></div>
-    <p class="section-subtitle">Thoughts on business, building minimum viable products (MVPs), and my personal journey. Click 'Read Full Article' to expand.</p>
+    <p class="section-subtitle">Thoughts on business, building minimum viable products (MVPs), and my personal journey.</p>
 
     <div class="projects-grid">
       
@@ -97,11 +104,12 @@
           <div class="project-icon"><i class="fas fa-road"></i></div>
           <div class="project-badges"><span class="badge badge-active">My Story</span></div>
         </div>
-        <div class="project-title">From Batkhela to Business: My Unfiltered Journey as a 19-Year-Old Founder</div>
         
-        <p class="project-desc short-desc">Every founder has a starting line. For me, it began in Batkhela with a desire to build independence. This is a transparent look at the early failures that shaped my business acumen, fighting geographic and financial barriers, and how I turned to the internet to build my own digital infrastructure.</p>
+        <div class="project-title card-title-text">From Batkhela to Business: My Unfiltered Journey as a 19-Year-Old Founder</div>
         
-        <div class="full-article">
+        <p class="project-desc">Every founder has a starting line. For me, it began in Batkhela with a desire to build independence. This is a transparent look at the early failures that shaped my business acumen...</p>
+        
+        <div class="secret-full-article" style="display: none;">
           <p>We live in a digital culture that aggressively romanticizes the entrepreneur. But behind every founder who builds something of actual consequence, there is a quiet, often painful phase of absolute ambiguity. My journey began in that exact place of blur and uncertainty.</p>
           <p>Looking back at the opening days of 2025, I had no roadmap. I was nineteen, living in Batkhela, Pakistan, and constantly overwhelmed by my own ambitions. I knew I wanted to build something substantial, but I lacked both the "what" and the "how."</p>
           <h3>Fighting the Gravity of My Environment</h3>
@@ -115,7 +123,9 @@
           <p>Today, my journey has brought me to an incredible intersection. I am pursuing a BS in Economics while simultaneously building an AI-powered social media management agency from the ground up. To anyone reading this who feels limited by their bank account or geography: Stop waiting for perfect conditions. Start with the internet, master free digital tools, expect the failures, and put your skin in the game. Let's build.</p>
         </div>
 
-        <button class="read-more-btn" onclick="toggleArticle(this)">Read Full Article <i class="fas fa-chevron-down"></i></button>
+        <button class="btn btn-outline" style="margin-top:1rem;" onclick="openBlogPopup(this)">
+          <i class="fas fa-book-open"></i> Read Full Article
+        </button>
       </div>
 
       <div class="card project-card fade-up">
@@ -123,18 +133,21 @@
           <div class="project-icon"><i class="fas fa-bolt"></i></div>
           <div class="project-badges"><span class="badge badge-completed">Business Strategy</span></div>
         </div>
-        <div class="project-title">The Lean Startup Approach: Why Building an MVP Fast Matters</div>
         
-        <p class="project-desc short-desc">Perfection is the enemy of progress in the modern startup ecosystem. Waiting months to launch a 'perfect' product often leads to wasted resources. Instead, focusing on rapid validation through a Minimum Viable Product (MVP) allows founders to test assumptions against real market feedback.</p>
+        <div class="project-title card-title-text">The Lean Startup Approach: Why Building an MVP Fast Matters</div>
         
-        <div class="full-article">
+        <p class="project-desc">Perfection is the enemy of progress in the modern startup ecosystem. Waiting months to launch a 'perfect' product often leads to wasted resources...</p>
+        
+        <div class="secret-full-article" style="display: none;">
           <p>One of the biggest mistakes a new founder can make is building in a vacuum. You spend weeks, months, or even years trying to polish every single feature of your product or service before showing it to a single customer. The problem? You might be building something nobody actually wants to pay for.</p>
           <p>The Lean Startup methodology changes this completely. Instead of a massive launch, you build a "Minimum Viable Product" (MVP). This is the absolute bare-bones version of your idea that still solves the core problem for the user.</p>
           <h3>Why Speed Beats Polish</h3>
           <p>By launching fast, you get immediate, real-world data. If customers complain about a missing feature, you know exactly what to build next. If nobody buys it, you saved yourself months of wasted time and money. Prioritizing speed over aesthetics allows your startup to stay agile, preserve cash flow, and pivot rapidly based on what the market actually demands.</p>
         </div>
 
-        <button class="read-more-btn" onclick="toggleArticle(this)">Read Full Article <i class="fas fa-chevron-down"></i></button>
+        <button class="btn btn-outline" style="margin-top:1rem;" onclick="openBlogPopup(this)">
+          <i class="fas fa-book-open"></i> Read Full Article
+        </button>
       </div>
 
       <div class="card project-card fade-up">
@@ -142,53 +155,63 @@
           <div class="project-icon"><i class="fas fa-robot"></i></div>
           <div class="project-badges"><span class="badge badge-client">Technology</span></div>
         </div>
-        <div class="project-title">Leveraging AI to Automate Manual Workflows</div>
         
-        <p class="project-desc short-desc">Artificial Intelligence is no longer just a buzzword; it's a digital employee ready to handle your repetitive tasks. By integrating AI tools for data entry, customer communication, and content generation, small businesses can operate with the efficiency of much larger corporations.</p>
+        <div class="project-title card-title-text">Leveraging AI to Automate Manual Workflows</div>
         
-        <div class="full-article">
+        <p class="project-desc">Artificial Intelligence is no longer just a buzzword; it's a digital employee ready to handle your repetitive tasks. By integrating AI tools, small businesses can operate with massive efficiency...</p>
+        
+        <div class="secret-full-article" style="display: none;">
           <p>For solo founders and small businesses, the biggest bottleneck is always time. You are the CEO, the marketing department, the customer service rep, and the janitor. Traditionally, scaling meant hiring a large team, which required massive capital. Today, AI bridges that gap.</p>
           <h3>Building Your Digital Workforce</h3>
           <p>By setting up smart workflows, you can automate up to 70% of your daily operational friction. Large Language Models (like ChatGPT or Claude) can draft your emails and write your social media captions. Image generators (like Midjourney) can handle your graphic design. Voice synthesis (like ElevenLabs) can create professional voiceovers for your content in minutes.</p>
           <p>Adopting AI isn't about replacing human creativity; it's about eliminating the boring, manual mechanics of business so you have the mental energy to focus on high-level strategy and client acquisition.</p>
         </div>
 
-        <button class="read-more-btn" onclick="toggleArticle(this)">Read Full Article <i class="fas fa-chevron-down"></i></button>
+        <button class="btn btn-outline" style="margin-top:1rem;" onclick="openBlogPopup(this)">
+          <i class="fas fa-book-open"></i> Read Full Article
+        </button>
       </div>
 
     </div>
   </div>
 </section>
 
+<div class="blog-modal" id="blogModal">
+  <div class="blog-modal-content">
+    <button class="blog-modal-close" onclick="closeBlogPopup()"><i class="fas fa-times"></i></button>
+    <h2 class="blog-modal-title" id="blogModalTitle">Blog Title Goes Here</h2>
+    <div class="blog-modal-body" id="blogModalBody">
+      </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-inner">
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://wa.me/923143027272" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-    </div>
     <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
   </div>
 </footer>
 
 <script>
-  function toggleArticle(btn) {
+  function openBlogPopup(btn) {
+    // 1. Find the card that was clicked
     const card = btn.closest('.project-card');
-    const shortDesc = card.querySelector('.short-desc');
-    const fullArticle = card.querySelector('.full-article');
     
-    if (fullArticle.classList.contains('show')) {
-      // Hide full article, show snippet
-      fullArticle.classList.remove('show');
-      shortDesc.style.display = 'block';
-      btn.innerHTML = 'Read Full Article <i class="fas fa-chevron-down"></i>';
-    } else {
-      // Show full article, hide snippet
-      fullArticle.classList.add('show');
-      shortDesc.style.display = 'none';
-      btn.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
-    }
+    // 2. Get the Title and the Hidden Content from that card
+    const titleText = card.querySelector('.card-title-text').innerText;
+    const fullContentHTML = card.querySelector('.secret-full-article').innerHTML;
+    
+    // 3. Put them into the Popup Window
+    document.getElementById('blogModalTitle').innerText = titleText;
+    document.getElementById('blogModalBody').innerHTML = fullContentHTML;
+    
+    // 4. Show the Popup
+    document.getElementById('blogModal').classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stops the background page from scrolling
+  }
+
+  function closeBlogPopup() {
+    document.getElementById('blogModal').classList.remove('active');
+    document.body.style.overflow = 'auto'; // Allows scrolling again
   }
 </script>
 
