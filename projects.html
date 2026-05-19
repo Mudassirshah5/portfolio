@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Projects & Ventures | AI Social Media Manager — Muhammad Mudassir Shah</title>
+  <meta name="description" content="Explore 9 real projects and ventures by Muhammad Mudassir Shah — from AI-powered tools and social media agencies to entrepreneurship experiments."/>
+  <meta name="keywords" content="Muhammad Mudassir Shah projects, BizMentor AI, social media agency Pakistan, entrepreneur Batkhela"/>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* Filter Buttons */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      color: var(--text2);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    /* Section divider label */
+    .projects-section-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+    .projects-section-label span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+    .projects-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Hidden project cards */
+    .project-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<nav>
+  <a href="index.html#home" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="projects.html" class="active" style="color:var(--teal);">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#skills">Skills</a>
+  <a href="projects.html" style="color:var(--teal);">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a>
+  <a href="cv.html">CV</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+<br>
+
+<section id="projects" style="padding-top:8rem;padding-bottom:5rem;min-height:80vh;">
+  <div class="section">
+    <span class="section-tag">What I've Built</span>
+    <h1 class="section-title">Projects &amp; <span>Ventures</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Every project — successful or not — has been a stepping stone. An honest look at what I've built, attempted, and learned from.</p>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">All (9)</button>
+      <button class="filter-btn" onclick="filterProjects('active', this)">🚀 Active</button>
+      <button class="filter-btn" onclick="filterProjects('completed', this)">✅ Completed</button>
+      <button class="filter-btn" onclick="filterProjects('competition', this)">🏆 Competition</button>
+      <button class="filter-btn" onclick="filterProjects('experiment', this)">🔬 Experiments</button>
+    </div>
+
+    <!-- ══ ACTIVE PROJECTS ══ -->
+    <div class="projects-section-label"><span>🚀 Active & In Progress</span></div>
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- 1. Agency -->
+      <div class="card project-card fade-up" data-category="active">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-rocket"></i></div>
+          <div class="project-badges"><span class="badge badge-active">In Progress</span></div>
+        </div>
+        <div class="project-title">Social Media Management Agency</div>
+        <div class="project-subtitle">AI-Powered Agency — Solo Founder</div>
+        <p class="project-desc">Building a solo AI-powered social media management agency targeting local Pakistani businesses and international clients. Services include Reels creation and editing, caption and content writing, full page management, posting schedules, and AI-generated content including images and voiceovers.</p>
+        <div class="project-tags">
+          <span class="project-tag">Social Media Management</span>
+          <span class="project-tag">Reels Creation</span>
+          <span class="project-tag">Content Writing</span>
+          <span class="project-tag">ElevenLabs</span>
+          <span class="project-tag">Midjourney</span>
+          <span class="project-tag">Leonardo AI</span>
+          <span class="project-tag">Entrepreneurship</span>
+        </div>
+      </div>
+
+      <!-- 2. BizMentor -->
+      <div class="card project-card fade-up" data-category="competition">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-brain"></i></div>
+          <div class="project-badges"><span class="badge badge-client">Competition Project</span></div>
+        </div>
+        <div class="project-title">BizMentor</div>
+        <div class="project-subtitle">AI-Powered Business Mentoring Tool — Google AI Sekho</div>
+        <p class="project-desc">Conceptualized and developed BizMentor — an AI-powered mentoring tool designed to help early-stage entrepreneurs get instant business guidance. Built and pitched at the Google AI Sekho competition. Uses AI to answer business questions, suggest strategies, and guide users through startup challenges.</p>
+        <div class="project-tags">
+          <span class="project-tag">Artificial Intelligence</span>
+          <span class="project-tag">Prompt Engineering</span>
+          <span class="project-tag">Business Strategy</span>
+          <span class="project-tag">Startup Ideation</span>
+          <span class="project-tag">Google AI Sekho</span>
+        </div>
+        <div class="lesson-box"><strong>Status:</strong> Parked — plan to revisit with a technical co-founder and investment capital.</div>
+      </div>
+
+    </div>
+
+    <!-- ══ COMPLETED PROJECTS ══ -->
+    <div class="projects-section-label"><span>✅ Completed</span></div>
+    <div class="projects-grid">
+
+      <!-- 3. Portfolio Website -->
+      <div class="card project-card fade-up" data-category="completed">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="project-badges"><span class="badge badge-completed">Completed</span></div>
+        </div>
+        <div class="project-title">Personal Portfolio Website</div>
+        <div class="project-subtitle">Built with HTML, CSS, JavaScript &amp; AI Tools</div>
+        <p class="project-desc">Designed and developed this personal portfolio website from scratch using HTML, CSS, and JavaScript. Used vibe coding techniques with AI code editors to build, refine, and deploy on GitHub Pages. Fully responsive with dark mode, animations, and multi-page architecture.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML / CSS / JS</span>
+          <span class="project-tag">Vibe Coding</span>
+          <span class="project-tag">AI Code Editors</span>
+          <span class="project-tag">GitHub Pages</span>
+          <span class="project-tag">Responsive Design</span>
+          <span class="project-tag">Prompt Engineering</span>
+        </div>
+        <div class="project-tags" style="margin-top:.6rem;">
+          <a href="https://mudassirshah5.github.io/portfolio/" target="_blank" style="color:var(--teal);font-weight:700;font-size:.82rem;text-decoration:none;"><i class="fas fa-external-link-alt"></i> View Live →</a>
+        </div>
+      </div>
+
+      <!-- 4. Fazal Stone Shining -->
+      <div class="card project-card fade-up" data-category="completed">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-gem"></i></div>
+          <div class="project-badges"><span class="badge badge-family">Family Business</span><span class="badge badge-completed">Completed</span></div>
+        </div>
+        <div class="project-title">Fazal Stone Shining</div>
+        <div class="project-subtitle">Digital Presence Setup — Saudi Arabia</div>
+        <p class="project-desc">Helped digitize my father's marble and tile cleaning business in KSA. Designed a professional logo, set up WhatsApp Business for client communication, and created a Haraj marketplace account for client hunting and lead generation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Logo Design</span>
+          <span class="project-tag">WhatsApp Business</span>
+          <span class="project-tag">Haraj Marketplace</span>
+          <span class="project-tag">Digital Marketing</span>
+        </div>
+      </div>
+
+      <!-- 5. Local Business Client -->
+      <div class="card project-card fade-up" data-category="completed">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-store"></i></div>
+          <div class="project-badges"><span class="badge badge-client">Client Project</span><span class="badge badge-completed">Completed</span></div>
+        </div>
+        <div class="project-title">Local Business — Digital Setup</div>
+        <div class="project-subtitle">Google Business Profile + Social Media</div>
+        <p class="project-desc">Set up a complete digital presence for a local business client — including Google Business Profile creation and optimization for local search visibility, social media account setup, and an initial content strategy to help attract more customers online.</p>
+        <div class="project-tags">
+          <span class="project-tag">Google Business Profile</span>
+          <span class="project-tag">Local SEO</span>
+          <span class="project-tag">Social Media Setup</span>
+          <span class="project-tag">Content Strategy</span>
+          <span class="project-tag">Client Work</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ EXPERIMENTS ══ -->
+    <div class="projects-section-label"><span>🔬 Experiments & Learning Ventures</span></div>
+    <div class="projects-grid">
+
+      <!-- 6. LOVCUS -->
+      <div class="card project-card fade-up" data-category="experiment">
+        <div class="project-top">
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <div class="project-icon"><i class="fas fa-ring"></i></div>
+            <div class="lovcus-placeholder">LOVCUS</div>
+          </div>
+          <div class="project-badges"><span class="badge badge-failed">Closed</span></div>
+        </div>
+        <div class="project-title">LOVCUS</div>
+        <div class="project-subtitle">Artificial Beaded Jewelry Brand</div>
+        <p class="project-desc">Founded and operated LOVCUS independently — managing product design, pricing, customer orders, and full social media across Facebook, Instagram, TikTok, and WhatsApp Catalogue. Set up a Google Business Profile and created all content using AI tools. Closed due to limited investment capital.</p>
+        <div class="project-tags">
+          <span class="project-tag">Brand Building</span>
+          <span class="project-tag">Facebook &amp; Instagram</span>
+          <span class="project-tag">TikTok</span>
+          <span class="project-tag">WhatsApp Catalogue</span>
+          <span class="project-tag">Google Business Profile</span>
+          <span class="project-tag">AI Content Creation</span>
+          <span class="project-tag">Cash Flow Tracking</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Cash flow is the heartbeat of any business. Starting with low capital taught me to be resourceful and scrappy.</div>
+      </div>
+
+      <!-- 7. Fiverr -->
+      <div class="card project-card fade-up" data-category="experiment">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="project-badges"><span class="badge badge-attempted">Freelance Attempt</span></div>
+        </div>
+        <div class="project-title">Fiverr — Freelance Design</div>
+        <div class="project-subtitle">Business Card Design Gig</div>
+        <p class="project-desc">Created and launched a freelance business card design gig on Fiverr. While the gig did not generate orders at the time, the experience taught me about positioning services, writing compelling gig descriptions, and understanding how competitive freelance marketplaces work.</p>
+        <div class="project-tags">
+          <span class="project-tag">Canva</span>
+          <span class="project-tag">Business Card Design</span>
+          <span class="project-tag">Freelancing</span>
+          <span class="project-tag">Marketplace Strategy</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Positioning and reviews matter more than the product itself on competitive platforms.</div>
+      </div>
+
+      <!-- 8. Blogging -->
+      <div class="card project-card fade-up" data-category="experiment">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-blog"></i></div>
+          <div class="project-badges"><span class="badge badge-attempted">Attempted</span></div>
+        </div>
+        <div class="project-title">Blogging</div>
+        <div class="project-subtitle">Multi-Topic English Blog — Blogger Platform</div>
+        <p class="project-desc">Researched, built, and published English blog posts on Blogger covering business, lifestyle, and technology topics. Paused after realizing the investment needed for a custom domain and the time required conflicted with university studies.</p>
+        <div class="project-tags">
+          <span class="project-tag">Content Writing</span>
+          <span class="project-tag">Blogger</span>
+          <span class="project-tag">Research</span>
+          <span class="project-tag">SEO Basics</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Consistency and investment are prerequisites for blogging success — timing matters.</div>
+      </div>
+
+      <!-- 9. Dry Fruits -->
+      <div class="card project-card fade-up" data-category="experiment">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-seedling"></i></div>
+          <div class="project-badges"><span class="badge badge-failed">Early Experiment</span></div>
+        </div>
+        <div class="project-title">Dry Fruits Processing</div>
+        <div class="project-subtitle">Dehydrated Fruit Venture</div>
+        <p class="project-desc">Independently conceived and launched a fruit dehydration business — processing mangoes, bananas, and strawberries for local and online sale. Closed after operational challenges with production speed and efficiency.</p>
+        <div class="project-tags">
+          <span class="project-tag">Product Development</span>
+          <span class="project-tag">Market Research</span>
+          <span class="project-tag">Operations</span>
+          <span class="project-tag">Own Initiative</span>
+        </div>
+        <div class="lesson-box"><strong>Lesson:</strong> Validate production capacity before scaling. Operations need as much planning as marketing.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  function filterProjects(category, btn) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Show/hide section labels
+    document.querySelectorAll('.projects-section-label').forEach(label => {
+      label.style.display = category === 'all' ? 'flex' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
