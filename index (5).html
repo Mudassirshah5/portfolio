@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <!-- SEO: Title & Description -->
+  <title>Muhammad Mudassir Shah — Social Media Manager & AI Entrepreneur | Batkhela, Pakistan</title>
+  <meta name="description" content="Muhammad Mudassir Shah — Entrepreneur, AI-powered Social Media Manager, and Economics Student from Batkhela, KPK, Pakistan. Building brands with AI tools."/>
+  <meta name="keywords" content="social media manager Pakistan, AI content creator KPK, freelance social media Batkhela, Muhammad Mudassir Shah, social media management agency Pakistan, AI tools expert Pakistan"/>
+  <meta name="author" content="Muhammad Mudassir Shah"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://mudassirshah5.github.io/portfolio/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mudassirshah5.github.io/portfolio/"/>
+  <meta property="og:title" content="Muhammad Mudassir Shah — Social Media Manager & AI Entrepreneur"/>
+  <meta property="og:description" content="Entrepreneur, AI-powered Social Media Manager, and Economics Student from Batkhela, Pakistan."/>
+  <meta property="og:image" content="https://mudassirshah5.github.io/portfolio/assets/images/profile.jpeg"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Muhammad Mudassir Shah — Social Media Manager & AI Entrepreneur"/>
+  <meta name="twitter:description" content="Entrepreneur, AI-powered Social Media Manager, and Economics Student from Batkhela, Pakistan."/>
+  <meta name="twitter:image" content="https://mudassirshah5.github.io/portfolio/assets/images/profile.jpeg"/>
+
+  <!-- Schema Markup (Structured Data for Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Mudassir Shah",
+    "jobTitle": "Social Media Manager & Entrepreneur",
+    "description": "AI-powered Social Media Manager and Economics Student from Batkhela, Pakistan",
+    "url": "https://mudassirshah5.github.io/portfolio/",
+    "image": "https://mudassirshah5.github.io/portfolio/assets/images/profile.jpeg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Batkhela",
+      "addressRegion": "Khyber Pakhtunkhwa",
+      "addressCountry": "PK"
+    },
+    "email": "mmudassirshah634@gmail.com",
+    "telephone": "+92-314-3027272",
+    "sameAs": [
+      "https://www.linkedin.com/in/muhammad-mudassir-shah-855190318",
+      "https://github.com/mudassirshah5",
+      "https://x.com/MMudassirsha"
+    ],
+    "knowsAbout": ["Social Media Management", "Artificial Intelligence", "Prompt Engineering", "Content Creation", "Business Strategy", "Economics"]
+  }
+  </script>
+
+  <!-- Assets -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    /* ── Currently Building Banner ── */
+    .building-banner {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: #fff;
+      text-align: center;
+      padding: 10px 5%;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 999;
+    }
+    .building-banner span { opacity: 0.85; margin: 0 .5rem; }
+    .building-banner strong { font-weight: 800; }
+    .building-banner .blink {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      margin-right: 6px;
+      animation: blink-dot 1.2s infinite;
+    }
+    @keyframes blink-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    /* ── Skills Progress Visual ── */
+    .skills-progress-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0 3rem;
+    }
+    .sp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform .25s, border-color .25s;
+    }
+    .sp-card:hover { transform: translateY(-3px); border-color: var(--teal); }
+    .sp-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--teal);
+      display: block;
+    }
+    .sp-label {
+      font-size: 0.78rem;
+      color: var(--text2);
+      font-weight: 500;
+      margin-top: .3rem;
+      line-height: 1.4;
+    }
+    @media(max-width: 768px) { .skills-progress-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* ── Currently Learning ── */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .learning-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .learning-card .l-icon {
+      font-size: 1.3rem;
+      color: var(--teal);
+      margin-bottom: .5rem;
+    }
+    .learning-card .l-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .25rem;
+    }
+    .learning-card .l-desc {
+      font-size: 0.78rem;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+    .learning-card .l-status {
+      display: inline-block;
+      margin-top: .6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--teal);
+      background: var(--teal-light);
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+    @media(max-width: 768px) { .learning-grid { grid-template-columns: 1fr; } }
+
+    /* ── Last Updated ── */
+    .last-updated {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text2);
+      padding: .5rem;
+      margin-top: -.5rem;
+      margin-bottom: 1rem;
+    }
+    .last-updated i { color: var(--teal); margin-right: .3rem; }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<!-- ══ Currently Building Banner ══ -->
+<div class="building-banner">
+  <span class="blink"></span>
+  <strong>Currently Building:</strong>
+  <span>AI-Powered Social Media Management Agency — Targeting Local & International Clients</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a>
+  <a href="cv.html">CV</a>
+  <a href="#contact">Contact</a>
+</div>
+<br>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<section id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag"><i class="fas fa-map-marker-alt"></i> Batkhela, Pakistan</div>
+        <h1 class="hero-name">Muhammad<br><span>Mudassir Shah</span></h1>
+        <p class="hero-typing"><span id="typingText"></span></p>
+        <p class="hero-desc">
+          Growth-focused mindset, always looking for ways to improve and move forward.
+          Solution-oriented, independence-driven, and always eager to learn new things.
+        </p>
+        <div class="hero-looking">
+          <strong><i class="fas fa-search"></i> Currently open to:</strong><br>
+          Providing social media management services — Reels creation, content writing,
+          page management, and AI-powered content for businesses ready to grow online.
+          Also open to collaborating with early-stage startups on business, marketing, and strategy.
+        </div>
+        <div class="hero-btns">
+          <a href="projects.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="assets/docs/Muhammad Mudassir Shah — CV.pdf" target="_blank" class="btn btn-ghost"><i class="fas fa-eye"></i> View CV</a>
+          <a href="assets/docs/Muhammad Mudassir Shah — CV.pdf" download class="btn btn-ghost"><i class="fas fa-download"></i> Download CV</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring"></div>
+          <div class="hero-photo-ring2"></div>
+          <img src="assets/images/profile.jpeg" alt="Muhammad Mudassir Shah — Social Media Manager and Entrepreneur from Batkhela Pakistan" class="hero-photo"/>
+          <div class="hero-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero-quote fade-up">
+    <blockquote>"Start now, <span>even if it's small.</span>"</blockquote>
+  </div>
+
+  <div class="hero-stats">
+    <div class="card stat-card fade-up"><span class="stat-num">8+</span><span class="stat-label">Business Ventures</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num">6</span><span class="stat-label">Certifications</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num">3.17</span><span class="stat-label">University CGPA</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num">3+</span><span class="stat-label">Languages</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about">
+  <div class="section">
+
+    <div class="about-grid fade-up">
+      <div class="about-photo-wrap">
+        <img src="assets/images/profile.jpeg" alt="Muhammad Mudassir Shah" class="about-photo"/>
+        <div class="about-badge-wrap"><span>3.17</span>CGPA</div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I <span>Am</span></h2>
+        <div class="divider"></div>
+        <p>I am Muhammad Mudassir Shah — a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.</p>
+        <p>My journey has been one of learning through action — from digitizing my father's business in Saudi Arabia, to managing full social media operations for my own brand, to working with a UK-based company as a CSR, and building AI-powered tools. Every experience has sharpened my thinking and expanded my skill set.</p>
+        <p>I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter — powered by the latest technology.</p>
+
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-calendar"></i></div>
+            <div><span class="info-label">Date of Birth</span><span class="info-value">3rd July 2006</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><span class="info-label">Location</span><span class="info-value">Batkhela, Pakistan</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div><span class="info-label">Degree</span><span class="info-value">BS Economics</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-university"></i></div>
+            <div><span class="info-label">University</span><span class="info-value">University of Malakand</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <a href="cv.html" class="btn btn-outline"><i class="fas fa-id-card"></i> View Online CV</a>
+          <a href="assets/docs/Muhammad Mudassir Shah — CV.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+          <a href="https://github.com/mudassirshah5" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION TIMELINE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Education</span>
+      <h2 class="section-title">Academic <span>Journey</span></h2>
+      <div class="divider"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Present</div>
+          <div class="timeline-title">BS Economics — Semester 2</div>
+          <div class="timeline-sub">University of Malakand, Pakistan</div>
+          <span class="timeline-result">CGPA: 3.17 &nbsp;—&nbsp; <span class="badge badge-current">Current</span></span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paused</div>
+          <div class="timeline-title">Bachelor of Business Administration (BBA)</div>
+          <div class="timeline-sub">University of the People — US-based Online University</div>
+          <span class="badge badge-paused">Paused</span>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 — Completed</div>
+          <div class="timeline-title">FSC (Higher Secondary)</div>
+          <div class="timeline-sub">Oxford Education Academy, Batkhela</div>
+          <span class="timeline-result">73.9% &nbsp;—&nbsp; <span class="badge badge-completed">Completed</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Experience</span>
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <div class="divider"></div>
+
+      <!-- 1. Agency -->
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Founder &amp; Social Media Manager</div>
+            <div class="work-company"><i class="fas fa-rocket"></i> Social Media Management Agency — Self-Employed</div>
+          </div>
+          <span class="work-duration">2025 — Present</span>
+        </div>
+        <p class="work-desc">Building and operating a solo AI-powered social media management agency. Creating Reels, writing captions, managing posting schedules, and producing AI-generated content using ElevenLabs, Midjourney, and Leonardo AI. Handling all client communication and business development independently.</p>
+        <div class="work-tags">
+          <span class="work-tag">Social Media Management</span>
+          <span class="work-tag">Reels Creation</span>
+          <span class="work-tag">AI Content Generation</span>
+          <span class="work-tag">Client Handling</span>
+          <span class="work-tag">Business Development</span>
+        </div>
+      </div>
+
+      <!-- 2. UK Remote -->
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Cold Caller / Customer Service Representative</div>
+            <div class="work-company"><i class="fas fa-building"></i> Finit Training &amp; Recruitment — UK (Remote)</div>
+          </div>
+          <span class="work-duration">~2 months</span>
+        </div>
+        <p class="work-desc">Handled English-speaking UK clients remotely, promoting ACCA and AAT accounting certifications. Built strong professional communication and business English fluency through high-volume real-world sales calls with international clients.</p>
+        <div class="work-tags">
+          <span class="work-tag">Cold Calling</span>
+          <span class="work-tag">Business English</span>
+          <span class="work-tag">Client Management</span>
+          <span class="work-tag">Remote Work</span>
+          <span class="work-tag">International Clients</span>
+        </div>
+      </div>
+
+      <!-- 3. LOVCUS -->
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Brand Founder &amp; Digital Marketing Manager</div>
+            <div class="work-company"><i class="fas fa-ring"></i> LOVCUS — Artificial Beaded Jewelry Brand</div>
+          </div>
+          <span class="work-duration">Self-Employed</span>
+        </div>
+        <p class="work-desc">Founded and independently managed LOVCUS — handling product design, pricing, inventory, and customer orders. Ran full social media operations across Facebook, Instagram, TikTok, and WhatsApp Catalogue. Created all content using AI tools and set up a Google Business Profile for local visibility. Managed day-to-day business operations and basic cash flow tracking.</p>
+        <div class="work-tags">
+          <span class="work-tag">Facebook &amp; Instagram</span>
+          <span class="work-tag">TikTok</span>
+          <span class="work-tag">WhatsApp Catalogue</span>
+          <span class="work-tag">Google Business Profile</span>
+          <span class="work-tag">AI Content Creation</span>
+          <span class="work-tag">Cash Flow Tracking</span>
+          <span class="work-tag">Business Operations</span>
+        </div>
+      </div>
+
+      <!-- 4. Freelance Client -->
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Freelance Digital Marketing Consultant</div>
+            <div class="work-company"><i class="fas fa-store"></i> Local Business Client — Batkhela</div>
+          </div>
+          <span class="work-duration">Project-Based</span>
+        </div>
+        <p class="work-desc">Set up a complete digital presence for a local business — including Google Business Profile creation and optimization for local search visibility, social media account setup, and an initial content strategy to attract more customers online.</p>
+        <div class="work-tags">
+          <span class="work-tag">Google Business Profile</span>
+          <span class="work-tag">Local SEO</span>
+          <span class="work-tag">Social Media Setup</span>
+          <span class="work-tag">Content Strategy</span>
+        </div>
+      </div>
+
+      <!-- 5. Pharmacy -->
+      <div class="card work-card fade-up">
+        <div class="work-header">
+          <div>
+            <div class="work-role">Pharmacy Assistant &amp; Stock Manager</div>
+            <div class="work-company"><i class="fas fa-clinic-medical"></i> Farooq Enterprises, Batkhela</div>
+          </div>
+          <span class="work-duration">3—4 months</span>
+        </div>
+        <p class="work-desc">Managed pharmacy stock inventory, assisted customers in locating medicines, and handled day-to-day store operations. Gained practical experience in inventory management, customer service, and retail business operations.</p>
+        <div class="work-tags">
+          <span class="work-tag">Stock Management</span>
+          <span class="work-tag">Customer Service</span>
+          <span class="work-tag">Inventory Control</span>
+          <span class="work-tag">Business Operations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Languages</span>
+      <h2 class="section-title">Languages I <span>Speak</span></h2>
+      <div class="divider"></div>
+      <div class="lang-grid">
+        <div class="card lang-card fade-up"><span class="lang-flag">🇬🇧</span><div class="lang-name">English</div><div class="lang-level">Professional / Business Level</div></div>
+        <div class="card lang-card fade-up"><span class="lang-flag">🇵🇰</span><div class="lang-name">Urdu</div><div class="lang-level">Fluent</div></div>
+        <div class="card lang-card fade-up"><span class="lang-flag">🇵🇰</span><div class="lang-name">Pashto</div><div class="lang-level">Native</div></div>
+      </div>
+    </div>
+
+    <!-- INTERESTS — reordered: most productive first -->
+    <div style="margin-top:5rem;" class="fade-up">
+      <span class="section-tag">Interests</span>
+      <h2 class="section-title">What Drives <span>Me</span></h2>
+      <div class="divider"></div>
+      <div class="interests-grid">
+        <span class="interest-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+        <span class="interest-tag"><i class="fas fa-chart-line"></i> Business &amp; Investment Learning</span>
+        <span class="interest-tag"><i class="fas fa-microchip"></i> Exploring New Technologies</span>
+        <span class="interest-tag"><i class="fas fa-wallet"></i> Personal Finance</span>
+        <span class="interest-tag"><i class="fas fa-tv"></i> Shark Tank (PK, IN, USA)</span>
+        <span class="interest-tag"><i class="fab fa-youtube"></i> YouTube Business Content</span>
+        <span class="interest-tag"><i class="fas fa-book"></i> Reading About Entrepreneurs</span>
+        <span class="interest-tag"><i class="fas fa-lightbulb"></i> Motivational Content</span>
+        <span class="interest-tag"><i class="fas fa-compass"></i> Exploring New Ideas</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<section id="skills">
+  <div class="section">
+    <span class="section-tag">What I Can Do</span>
+    <h1 class="section-title">My <span>Skills</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">AI-powered, business-ready, and built through real-world experience — not just theory.</p>
+
+    <!-- Skills Progress Visual -->
+    <div class="skills-progress-grid fade-up">
+      <div class="sp-card"><span class="sp-num">12+</span><div class="sp-label">AI Tools Mastered</div></div>
+      <div class="sp-card"><span class="sp-num">4</span><div class="sp-label">Platforms Managed Simultaneously</div></div>
+      <div class="sp-card"><span class="sp-num">8+</span><div class="sp-label">Ventures Built & Launched</div></div>
+      <div class="sp-card"><span class="sp-num">3</span><div class="sp-label">Languages for Client Communication</div></div>
+    </div>
+
+    <div class="skills-categories">
+
+      <!-- 1. AI Tools — most impressive, first -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-robot"></i></div>
+          <div class="skill-cat-title">AI Tools &amp; Technology</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-robot"></i> ChatGPT</span>
+          <span class="skill-pill"><i class="fas fa-robot"></i> Claude (Anthropic)</span>
+          <span class="skill-pill"><i class="fab fa-google"></i> Gemini</span>
+          <span class="skill-pill"><i class="fas fa-search"></i> Perplexity AI</span>
+          <span class="skill-pill"><i class="fab fa-microsoft"></i> Microsoft Copilot</span>
+          <span class="skill-pill"><i class="fas fa-microphone"></i> ElevenLabs</span>
+          <span class="skill-pill"><i class="fas fa-image"></i> Midjourney</span>
+          <span class="skill-pill"><i class="fas fa-image"></i> Leonardo AI</span>
+          <span class="skill-pill"><i class="fas fa-pen-fancy"></i> Prompt Engineering</span>
+          <span class="skill-pill"><i class="fas fa-code"></i> Vibe Coding</span>
+          <span class="skill-pill"><i class="fas fa-laptop-code"></i> AI App Building</span>
+          <span class="skill-pill"><i class="fas fa-tools"></i> AI Code Editors</span>
+        </div>
+      </div>
+
+      <!-- 2. Social Media -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="skill-cat-title">Social Media &amp; Marketing</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">FB / IG Business Pages</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Reels Creation &amp; Editing</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Caption &amp; Content Writing</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Google Business Profile &amp; SEO</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Hashtag Research</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Email Marketing (Basic)</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div></div>
+      </div>
+
+      <!-- 3. Business -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="skill-cat-title">Business</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-lightbulb"></i> Business Planning</span>
+          <span class="skill-pill"><i class="fas fa-file-contract"></i> Business Proposals</span>
+          <span class="skill-pill"><i class="fas fa-search-dollar"></i> Market Research</span>
+          <span class="skill-pill"><i class="fas fa-handshake"></i> Client Relations</span>
+          <span class="skill-pill"><i class="fas fa-phone"></i> Cold Calling &amp; Sales</span>
+          <span class="skill-pill"><i class="fas fa-users"></i> Customer Handling</span>
+          <span class="skill-pill"><i class="fas fa-tags"></i> Product Pricing &amp; Costing</span>
+          <span class="skill-pill"><i class="fas fa-boxes"></i> Inventory Management</span>
+          <span class="skill-pill"><i class="fas fa-money-bill-wave"></i> Cash Flow Management (Basic)</span>
+          <span class="skill-pill"><i class="fas fa-cogs"></i> Business Operations</span>
+        </div>
+      </div>
+
+      <!-- 4. Design -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-palette"></i></div>
+          <div class="skill-cat-title">Design &amp; Creative</div>
+        </div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">AI Image Generation</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Presentation Design</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">CV / Resume Design</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Logo &amp; Brand Design (Canva)</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-top"><span class="skill-name">Poster &amp; Banner Design</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+      </div>
+
+      <!-- 5. Tech & Tools -->
+      <div class="card skill-cat-card fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="skill-cat-title">Tech &amp; Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fab fa-github"></i> GitHub Pages</span>
+          <span class="skill-pill"><i class="fas fa-code"></i> HTML &amp; CSS (Basic)</span>
+          <span class="skill-pill"><i class="fas fa-globe"></i> Blogger / Landing Pages</span>
+          <span class="skill-pill"><i class="fab fa-whatsapp"></i> WhatsApp Business</span>
+          <span class="skill-pill"><i class="fas fa-store"></i> Daraz / Haraj / OLX</span>
+          <span class="skill-pill"><i class="fab fa-google"></i> Google Docs &amp; Sheets</span>
+          <span class="skill-pill"><i class="fab fa-microsoft"></i> MS Word &amp; Excel</span>
+          <span class="skill-pill"><i class="fas fa-video"></i> Video Editing (Reels)</span>
+          <span class="skill-pill"><i class="fab fa-canva"></i> Canva</span>
+        </div>
+      </div>
+
+      <!-- 6. Writing & Communication — full width -->
+      <div class="card skill-cat-card fade-up" style="grid-column:1/-1;">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fas fa-pen"></i></div>
+          <div class="skill-cat-title">Writing &amp; Communication</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-pill"><i class="fas fa-briefcase"></i> Business Communication</span>
+          <span class="skill-pill"><i class="fas fa-envelope"></i> Professional English Writing</span>
+          <span class="skill-pill"><i class="fas fa-comment-dots"></i> Client Correspondence</span>
+          <span class="skill-pill"><i class="fas fa-hashtag"></i> Content Writing (Captions, Scripts, Articles)</span>
+          <span class="skill-pill"><i class="fas fa-file-alt"></i> Report &amp; Proposal Writing</span>
+          <span class="skill-pill"><i class="fas fa-spell-check"></i> Proofreading &amp; Editing</span>
+          <span class="skill-pill"><i class="fas fa-keyboard"></i> Urdu Writing &amp; Typing</span>
+          <span class="skill-pill"><i class="fas fa-comments"></i> Pashto Communication</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Currently Learning -->
+    <div style="margin-top:4rem;" class="fade-up">
+      <span class="section-tag">Always Growing</span>
+      <h2 class="section-title">Currently <span>Learning</span></h2>
+      <div class="divider"></div>
+      <div class="learning-grid">
+        <div class="learning-card">
+          <div class="l-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="l-title">BS Economics</div>
+          <div class="l-desc">Microeconomics, Macroeconomics, Statistics, and Business Mathematics at University of Malakand.</div>
+          <span class="l-status">📚 Semester 2 — In Progress</span>
+        </div>
+        <div class="learning-card">
+          <div class="l-icon"><i class="fas fa-robot"></i></div>
+          <div class="l-title">Advanced AI Tools</div>
+          <div class="l-desc">Continuously exploring new AI tools for content creation, automation, productivity, and business growth.</div>
+          <span class="l-status">🤖 Active — Daily Practice</span>
+        </div>
+        <div class="learning-card">
+          <div class="l-icon"><i class="fas fa-rocket"></i></div>
+          <div class="l-title">Agency Building</div>
+          <div class="l-desc">Learning client acquisition, service packaging, pricing strategy, and agency operations for my social media business.</div>
+          <span class="l-status">🚀 Building — In Progress</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PROJECTS TEASER ═══ -->
+<section id="projects" style="background-color:var(--bg2);padding:4rem 0;">
+  <div class="section" style="text-align:center;">
+    <span class="section-tag">Portfolio Highlights</span>
+    <h1 class="section-title">Featured <span>Projects</span></h1>
+    <div class="divider" style="margin:0 auto;"></div>
+    <p class="section-subtitle" style="margin:1rem auto 2rem;">Built 8+ ventures — from AI tools to digital agencies. Click below to see everything.</p>
+    <div class="projects-grid" style="text-align:left;margin-bottom:2rem;">
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-rocket"></i></div>
+          <div class="project-badges"><span class="badge badge-active">Active</span></div>
+        </div>
+        <div class="project-title">Social Media Management Agency</div>
+        <p class="project-desc">Building a solo AI-powered agency targeting local Pakistani businesses and international clients using ElevenLabs, Midjourney, and Leonardo AI.</p>
+      </div>
+      <div class="card project-card fade-up">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-brain"></i></div>
+          <div class="project-badges"><span class="badge badge-client">Competition Project</span></div>
+        </div>
+        <div class="project-title">BizMentor</div>
+        <p class="project-desc">AI-powered mentoring tool for early-stage entrepreneurs. Built and pitched at the Google AI Sekho competition.</p>
+      </div>
+    </div>
+    <a href="projects.html" class="btn btn-primary" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;">
+      <i class="fas fa-folder-open" style="margin-right:8px;"></i> View All 9 Projects
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS TEASER ═══ -->
+<section id="certifications" style="padding:4rem 0;">
+  <div class="section" style="text-align:center;">
+    <span class="section-tag">Credentials</span>
+    <h1 class="section-title">My <span>Certifications</span></h1>
+    <div class="divider" style="margin:0 auto;"></div>
+    <p class="section-subtitle" style="margin:1rem auto 2rem;">Certified across AI, business, leadership, and communication from HP Foundation and more.</p>
+    <a href="certifications.html" class="btn btn-outline" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;">
+      <i class="fas fa-certificate" style="margin-right:8px;"></i> View My 6+ Certifications
+    </a>
+  </div>
+</section>
+
+<!-- ═══ BLOG TEASER ═══ -->
+<section id="blog" style="background-color:var(--bg2);padding:4rem 0;">
+  <div class="section" style="text-align:center;">
+    <span class="section-tag">Insights &amp; Thoughts</span>
+    <h1 class="section-title">My <span>Blog</span></h1>
+    <div class="divider" style="margin:0 auto;"></div>
+    <p class="section-subtitle" style="margin:1rem auto 2rem;">Real lessons from someone still figuring it out — entrepreneurship, AI, and building things from scratch.</p>
+    <a href="blog.html" class="btn btn-primary" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;">
+      <i class="fas fa-book-open" style="margin-right:8px;"></i> Read My Blog
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact">
+  <div class="section">
+    <span class="section-tag">Get In Touch</span>
+    <h1 class="section-title">Let's <span>Connect</span></h1>
+    <div class="divider"></div>
+    <p class="section-subtitle">Whether you want social media management, want to collaborate on a startup, or simply want to connect — I'd love to hear from you.</p>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-cards">
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <span class="contact-info-value"><a href="mailto:mmudassirshah634@gmail.com">mmudassirshah634@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <span class="contact-info-label">WhatsApp</span>
+              <span class="contact-info-value"><a href="https://wa.me/923143027272">+92 314 3027272</a></span>
+            </div>
+          </div>
+          <div class="card contact-info-item fade-up">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Batkhela, KPK, Pakistan</span>
+            </div>
+          </div>
+        </div>
+        <div class="social-connect fade-up">
+          <h3>Connect on social media</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://github.com/mudassirshah5" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://x.com/MMudassirsha" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;">Send me a message</h3>
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label>Your Name</label><input type="text" id="fname" placeholder="e.g. Ahmed Khan"/></div>
+            <div class="form-group"><label>Your Email</label><input type="email" id="femail" placeholder="you@example.com"/></div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select id="fsubject">
+              <option value="">Select a reason...</option>
+              <option>Social Media Management Services</option>
+              <option>Startup Collaboration</option>
+              <option>Freelance / Project Work</option>
+              <option>Job Opportunity</option>
+              <option>General Inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea id="fmessage" placeholder="Tell me what's on your mind..."></textarea></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="sendEmail()" style="flex:1;justify-content:center;"><i class="fas fa-envelope"></i> Send via Email</button>
+            <button class="btn" onclick="sendWhatsapp()" style="flex:1;justify-content:center;background:#25D366;color:#fff;border:none;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+          </div>
+          <div class="form-success" id="formSuccess" style="display:none;">✅ Opening your message now!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/mudassirshah5" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/923143027272" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="last-updated"><i class="fas fa-clock"></i> Last updated: May 2026</p>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  function sendEmail() {
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const subject = document.getElementById('fsubject').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+    if (!name || !message) { alert('Please fill in your name and message.'); return; }
+    const body = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`;
+    window.location.href = `mailto:mmudassirshah634@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(body)}`;
+    document.getElementById('formSuccess').style.display = 'block';
+    setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+  }
+
+  function sendWhatsapp() {
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const subject = document.getElementById('fsubject').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+    if (!name || !message) { alert('Please fill in your name and message.'); return; }
+    const text = `Hello Mudassir!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Subject:* ${encodeURIComponent(subject)}%0A%0A*Message:*%0A${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/923143027272?text=${text}`, '_blank');
+    document.getElementById('formSuccess').style.display = 'block';
+    setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+  }
+</script>
+</body>
+</html>
