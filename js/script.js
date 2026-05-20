@@ -1,8 +1,13 @@
-// ============================================================
-//  Muhammad Mudassir Shah — Portfolio  |  script.js
-// ============================================================
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ── Loading Screen ──────────────────────────────────────────
+  const loader = document.getElementById('loader');
+  if (loader) {
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 400); // removes from DOM after fade
+    }, 1200); // Stays for 1.2 seconds
+  }
 
   // ── Dark Mode ──────────────────────────────────────────────
   const html = document.documentElement;
@@ -44,19 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   // ── Typing Effect (Hero) ────────────────────────────────────
   const typingEl = document.getElementById('typingText');
   if (typingEl) {
-    const texts = [
-      'Entrepreneur',
-      'Economics Student',
-      'Visionary',
-      'Strategist',
-      'Business Builder'
-    ];
+    const texts = ['Entrepreneur', 'Economics Student', 'Visionary', 'Strategist', 'Business Builder'];
     let i = 0, charIndex = 0, deleting = false;
     const speed = 90, deleteSpeed = 50, pause = 1800;
 
@@ -65,18 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!deleting) {
         typingEl.textContent = current.slice(0, charIndex + 1);
         charIndex++;
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(type, pause);
-          return;
-        }
+        if (charIndex === current.length) { deleting = true; setTimeout(type, pause); return; }
       } else {
         typingEl.textContent = current.slice(0, charIndex - 1);
         charIndex--;
-        if (charIndex === 0) {
-          deleting = false;
-          i = (i + 1) % texts.length;
-        }
+        if (charIndex === 0) { deleting = false; i = (i + 1) % texts.length; }
       }
       setTimeout(type, deleting ? deleteSpeed : speed);
     }
@@ -89,44 +80,45 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const bar = entry.target;
-        const width = bar.getAttribute('data-width');
-        setTimeout(() => { bar.style.width = width + '%'; }, 200);
+        setTimeout(() => { bar.style.width = bar.getAttribute('data-width') + '%'; }, 200);
         skillObserver.unobserve(bar);
       }
     });
   }, { threshold: 0.3 });
   skillBars.forEach(bar => skillObserver.observe(bar));
 
-  // ── Active Nav Highlight on Scroll ─────────────────────────
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  function updateActiveNav() {
-    let currentId = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) {
-        currentId = sec.id;
-      }
-    });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+  // ── Filter Logic (For Skills & Blogs) ──────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterItems = document.querySelectorAll('.filter-item');
+  
+  if(filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filterValue = btn.getAttribute('data-filter');
+        
+        filterItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+            item.style.display = 'block';
+            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            setTimeout(() => { item.style.display = 'none'; }, 300);
+          }
+        });
+      });
     });
   }
 
-  window.addEventListener('scroll', updateActiveNav);
-  updateActiveNav(); // run once on load
-
-  // ── Cert Modal (lightbox) ──────────────────────────────────
+  // ── Cert Modal ─────────────────────────────────────────────
   const modal = document.getElementById('certModal');
   const modalImg = document.getElementById('certModalImg');
   const modalClose = document.getElementById('certModalClose');
-
   document.querySelectorAll('.cert-card[data-src]').forEach(card => {
     card.addEventListener('click', () => {
-      if (modal && modalImg) {
-        modalImg.src = card.getAttribute('data-src');
-        modal.classList.add('open');
-      }
+      if (modal && modalImg) { modalImg.src = card.getAttribute('data-src'); modal.classList.add('open'); }
     });
   });
   if (modalClose) modalClose.addEventListener('click', () => modal.classList.remove('open'));
@@ -137,35 +129,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
     if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
   });
-
 });
 
-function sendEmail() {
-  const name = document.getElementById('fname').value.trim();
-  const email = document.getElementById('femail').value.trim();
-  const message = document.getElementById('fmessage').value.trim();
-  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-  const mailto = `mailto:mmudassirshah634@gmail.com?subject=${encodeURIComponent('Portfolio Contact - ' + (document.getElementById('fsubject').value || 'General'))}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
-  window.location.href = mailto;
-  document.getElementById('fname').value = '';
-  document.getElementById('femail').value = '';
-  document.getElementById('fsubject').value = '';
-  document.getElementById('fmessage').value = '';
-  setTimeout(() => { document.getElementById('formSuccess').style.display = 'block'; }, 100);
-  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+// ── Contact Form Functions ───────────────────────────────────
+function getFormData() {
+  return {
+    name: document.getElementById('fname').value,
+    email: document.getElementById('femail').value,
+    subject: document.getElementById('fsubject').value,
+    message: document.getElementById('fmessage').value
+  };
 }
-
+function sendEmail() {
+  const data = getFormData();
+  if (!data.name || !data.message) return alert("Please fill in your Name and Message.");
+  window.location.href = `mailto:mmudassirshah634@gmail.com?subject=${encodeURIComponent(data.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent("Name: " + data.name + "\nEmail: " + data.email + "\n\nMessage:\n" + data.message)}`;
+}
 function sendWhatsapp() {
-  const name = document.getElementById('fname').value.trim();
-  const email = document.getElementById('femail').value.trim();
-  const message = document.getElementById('fmessage').value.trim();
-  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-  const text = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-  window.open(`https://wa.me/923143027272?text=${encodeURIComponent(text)}`);
-  document.getElementById('fname').value = '';
-  document.getElementById('femail').value = '';
-  document.getElementById('fsubject').value = '';
-  document.getElementById('fmessage').value = '';
-  setTimeout(() => { document.getElementById('formSuccess').style.display = 'block'; }, 100);
-  setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+  const data = getFormData();
+  if (!data.name || !data.message) return alert("Please fill in your Name and Message.");
+  window.open(`https://wa.me/923143027272?text=${encodeURIComponent("Hello Mudassir, my name is " + data.name + ". \n\nSubject: " + data.subject + "\n\nMessage: " + data.message)}`, '_blank');
 }
