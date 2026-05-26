@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>CV — Muhammad Mudassir Shah | Entrepreneur & Economics Student</title>
+  <meta name="description" content="Online CV of Muhammad Mudassir Shah — Entrepreneur, AI Tools Expert, and Economics Student from Batkhela, Pakistan."/>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+
+    /* ── CV Layout ── */
+    .cv-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 5% 5rem;
+    }
+
+    /* ── Action Bar ── */
+    .cv-action-bar {
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cv-action-bar span {
+      font-size: .8rem;
+      color: var(--text2);
+      font-weight: 500;
+    }
+    .cv-action-bar span i { color: var(--teal); margin-right: .4rem; }
+    .cv-action-btns { display: flex; gap: .75rem; }
+
+    /* ── CV Header ── */
+    .cv-header {
+      display: grid;
+      grid-template-columns: 1fr 150px;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 3px solid var(--teal);
+      margin-bottom: 2.5rem;
+    }
+    .cv-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: #111111;
+      line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+    [data-theme="dark"] .cv-name { color: #f0f0f0; }
+    .cv-name span { color: var(--teal); }
+
+    .cv-title {
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 1rem;
+      letter-spacing: .3px;
+    }
+    .cv-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .cv-contact-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: #444444;
+      text-decoration: none;
+      transition: color .2s;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .cv-contact-item { color: #aaaaaa; }
+    .cv-contact-item:hover { color: var(--teal); }
+    .cv-contact-item i { color: var(--teal); font-size: .78rem; width: 14px; }
+
+    .cv-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+    .cv-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: var(--teal-light);
+      color: var(--teal);
+      border: 1px solid rgba(26,188,156,.3);
+    }
+
+    /* ── Profile Photo ── */
+    .cv-photo-wrap {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid var(--teal);
+      box-shadow: 0 8px 30px rgba(26,188,156,.25);
+      flex-shrink: 0;
+    }
+    .cv-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .cv-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--teal);
+    }
+
+    /* ── Section Titles — FIXED: strong dark color ── */
+    .cv-section { margin-bottom: 2.5rem; }
+    .cv-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #111111 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--teal);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    [data-theme="dark"] .cv-section-title { color: #f0f0f0 !important; }
+    .cv-section-title i { color: var(--teal); font-size: .85rem; }
+
+    /* ── Summary ── */
+    .cv-summary {
+      font-size: .88rem;
+      color: #444444;
+      line-height: 1.85;
+      border-left: 3px solid var(--teal);
+      padding: 1rem 1.2rem;
+      background: var(--teal-light);
+      border-radius: 0 8px 8px 0;
+    }
+    [data-theme="dark"] .cv-summary { color: #bbbbbb; }
+
+    /* ── Experience Items — FIXED: role title dark ── */
+    .cv-item {
+      margin-bottom: 1.8rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .cv-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+    .cv-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: .15rem;
+    }
+
+    /* FIXED: Role title — bold dark, NOT teal */
+    .cv-item-role {
+      font-size: .95rem;
+      font-weight: 800;
+      color: #111111 !important;
+    }
+    [data-theme="dark"] .cv-item-role { color: #f0f0f0 !important; }
+
+    .cv-item-duration {
+      font-size: .72rem;
+      color: #666666;
+      background: var(--teal-light);
+      padding: 2px 10px;
+      border-radius: 50px;
+      font-weight: 700;
+      white-space: nowrap;
+      color: var(--teal) !important;
+    }
+    .cv-item-company {
+      font-size: .82rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: .6rem;
+    }
+    .cv-item-points { list-style: none; padding: 0; }
+    .cv-item-points li {
+      font-size: .82rem;
+      color: #555555;
+      line-height: 1.7;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: .3rem;
+    }
+    [data-theme="dark"] .cv-item-points li { color: #999999; }
+    .cv-item-points li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: .72rem;
+      top: 3px;
+    }
+
+    /* ── Education — FIXED: degree name dark ── */
+    .cv-edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: 1.3rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .cv-edu-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* FIXED: Degree name — dark not teal */
+    .cv-edu-degree {
+      font-size: .92rem;
+      font-weight: 800;
+      color: #111111 !important;
+    }
+    [data-theme="dark"] .cv-edu-degree { color: #f0f0f0 !important; }
+
+    .cv-edu-school { font-size: .8rem; color: var(--teal); font-weight: 600; margin-top: .1rem; }
+    .cv-edu-detail { font-size: .76rem; color: #666666; margin-top: .1rem; }
+    [data-theme="dark"] .cv-edu-detail { color: #888888; }
+    .cv-edu-right { text-align: right; }
+    .cv-edu-year { font-size: .76rem; color: #666666; font-weight: 600; margin-bottom: .3rem; }
+
+    /* ── Skills Grid ── */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+    .cv-skill-label {
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .5rem;
+    }
+    .cv-skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .cv-skill-tag {
+      font-size: .72rem;
+      background: var(--bg);
+      color: #555555;
+      border: 1px solid var(--border);
+      padding: 3px 9px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .cv-skill-tag { color: #999999; }
+
+    /* ── Projects — FIXED: project name dark ── */
+    .cv-project-item {
+      margin-bottom: 1.2rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .cv-project-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    .cv-project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: .3rem;
+    }
+
+    /* FIXED: Project name — dark not teal */
+    .cv-project-name {
+      font-size: .9rem;
+      font-weight: 800;
+      color: #111111 !important;
+    }
+    [data-theme="dark"] .cv-project-name { color: #f0f0f0 !important; }
+
+    .cv-project-type {
+      font-size: .68rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 50px;
+      background: var(--teal-light);
+      color: var(--teal);
+    }
+    .cv-project-desc {
+      font-size: .81rem;
+      color: #555555;
+      line-height: 1.65;
+    }
+    [data-theme="dark"] .cv-project-desc { color: #999999; }
+
+    /* ── Certifications ── */
+    .cv-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .65rem;
+    }
+    .cv-cert-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .81rem;
+      color: #555555;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .cv-cert-item { color: #999999; }
+    .cv-cert-item i { color: var(--teal); font-size: .8rem; flex-shrink: 0; }
+
+    /* ── Languages — FIXED: flag emoji ── */
+    .cv-lang-grid { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .cv-lang-item { text-align: center; }
+    .cv-lang-flag { font-size: 1.6rem; margin-bottom: .3rem; display: block; }
+    .cv-lang-name { font-size: .85rem; font-weight: 700; color: #111111; }
+    [data-theme="dark"] .cv-lang-name { color: #f0f0f0; }
+    .cv-lang-level { font-size: .72rem; color: var(--teal); margin-top: .15rem; font-weight: 600; }
+
+    /* ── Interests ── */
+    .cv-interests-wrap { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .cv-interest-tag {
+      font-size: .75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: #555555;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .cv-interest-tag { color: #999999; }
+
+    /* ── Footer ── */
+    .cv-footer-note {
+      text-align: center;
+      font-size: .72rem;
+      color: #888888;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .cv-footer-note i { color: var(--teal); margin-right: .3rem; }
+    .cv-footer-note a { color: var(--teal); text-decoration: none; }
+
+    /* ── Print Styles ── */
+    @media print {
+      nav, .mobile-menu, .cv-action-bar, .bg-pattern, footer { display: none !important; }
+      body { background: #ffffff !important; }
+      .cv-page { padding: 0 1.5rem; }
+      .cv-name { color: #111111 !important; }
+      .cv-section-title { color: #111111 !important; border-bottom-color: #1abc9c !important; }
+      .cv-item-role { color: #111111 !important; }
+      .cv-edu-degree { color: #111111 !important; }
+      .cv-project-name { color: #111111 !important; }
+      .cv-summary { background: #f0faf7 !important; }
+      .cv-skill-tag { border-color: #cccccc !important; color: #444444 !important; }
+      .cv-item-points li { color: #444444 !important; }
+      .cv-project-desc { color: #444444 !important; }
+      .cv-cert-item { color: #444444 !important; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+
+    /* ── Responsive ── */
+    @media(max-width: 768px) {
+      .cv-header { grid-template-columns: 1fr; text-align: center; }
+      .cv-photo-wrap { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto; }
+      .cv-contacts { justify-content: center; }
+      .cv-badges { justify-content: center; }
+      .cv-skills-grid { grid-template-columns: 1fr; }
+      .cv-certs-grid { grid-template-columns: 1fr; }
+      .cv-lang-grid { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html#home" class="nav-logo">M<span>.</span>Mudassir</a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html" class="active" style="color:var(--teal);">CV</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="blog.html">Blog</a>
+  <a href="cv.html" style="color:var(--teal);">CV</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+<br>
+
+<!-- Action Bar -->
+<div class="cv-action-bar">
+  <span><i class="fas fa-clock"></i> Last Updated: May 2026</span>
+  <div class="cv-action-btns">
+    <button class="btn btn-ghost" onclick="window.print()" style="padding:8px 18px;font-size:.82rem;">
+      <i class="fas fa-print"></i> Print / Save as PDF
+    </button>
+    <a href="assets/docs/Muhammad Mudassir Shah — CV.pdf" download class="btn btn-primary" style="padding:8px 18px;font-size:.82rem;">
+      <i class="fas fa-download"></i> Download PDF
+    </a>
+  </div>
+</div>
+
+<!-- CV Content -->
+<div class="cv-page" style="margin-top:2rem;">
+
+  <!-- HEADER -->
+  <div class="cv-header fade-up">
+    <div>
+      <h1 class="cv-name">Muhammad <span>Mudassir Shah</span></h1>
+      <div class="cv-title">Entrepreneur | AI Tools Expert | Economics Student</div>
+      <div class="cv-contacts">
+        <a href="mailto:mmudassirshah634@gmail.com" class="cv-contact-item">
+          <i class="fas fa-envelope"></i> mmudassirshah634@gmail.com
+        </a>
+        <a href="https://wa.me/923143027272" class="cv-contact-item">
+          <i class="fab fa-whatsapp"></i> +92 314 3027272
+        </a>
+        <a href="https://mudassirshah5.github.io/portfolio/" target="_blank" class="cv-contact-item">
+          <i class="fas fa-globe"></i> Portfolio
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="cv-contact-item">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/mudassirshah5" target="_blank" class="cv-contact-item">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <span class="cv-contact-item">
+          <i class="fas fa-map-marker-alt"></i> Batkhela, KPK, Pakistan
+        </span>
+      </div>
+      <div class="cv-badges">
+        <span class="cv-badge"><i class="fas fa-wifi"></i> Available for Remote Work</span>
+        <span class="cv-badge"><i class="fas fa-graduation-cap"></i> BS Economics — CGPA 3.17</span>
+        <span class="cv-badge"><i class="fas fa-user"></i> 19 Years Old</span>
+      </div>
+    </div>
+    <!-- PHOTO: Square rounded, bigger, top-aligned -->
+    <div class="cv-photo-wrap">
+      <img
+        src="assets/images/profile.jpeg"
+        alt="Muhammad Mudassir Shah"
+        onerror="this.parentElement.innerHTML='<div class=\'cv-photo-placeholder\'><i class=\'fas fa-user\'></i></div>'"
+      />
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-user-tie"></i> Professional Summary</div>
+    <div class="cv-summary">
+      I'm 19 and already building things — from a small city in Pakistan with nothing but a laptop and a refusal to wait. I've launched multiple ventures, worked remotely with UK clients, managed real social media operations, and built an AI-powered tool for a national competition. Not everything worked. All of it taught me something. Right now I'm studying Economics at the University of Malakand while deepening my expertise in AI tools, digital marketing, and business strategy. I learn fast, work independently, and bring real-world experience to everything I do.
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+
+    <div class="cv-item">
+      <div class="cv-item-header">
+        <div class="cv-item-role">Cold Caller / Customer Service Representative</div>
+        <span class="cv-item-duration">2024 · ~2 Months</span>
+      </div>
+      <div class="cv-item-company"><i class="fas fa-building"></i> Finit Training &amp; Recruitment Ltd — UK (Remote)</div>
+      <ul class="cv-item-points">
+        <li>Conducted high-volume outbound sales calls in professional English to UK-based clients promoting ACCA and AAT accounting certifications.</li>
+        <li>Explained AAT, ACCA, Xero, Sage, and QuickBooks qualifications clearly and confidently to prospective students.</li>
+        <li>Booked Zoom consultations with career advisors and followed up consistently with leads.</li>
+        <li>Built strong business English communication and objection-handling skills through daily real-world international calls.</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item-header">
+        <div class="cv-item-role">Brand Founder &amp; Digital Marketing Manager</div>
+        <span class="cv-item-duration">Jan 2026 — Apr 2026</span>
+      </div>
+      <div class="cv-item-company"><i class="fas fa-ring"></i> LOVCUS — Artificial Beaded Jewelry Brand</div>
+      <ul class="cv-item-points">
+        <li>Founded and independently operated LOVCUS — managing product design, pricing, inventory, and customer orders.</li>
+        <li>Ran full social media operations across Facebook, Instagram, TikTok, and WhatsApp Catalogue.</li>
+        <li>Created all content including photos, captions, and promotional posts using AI tools.</li>
+        <li>Set up and optimized a Google Business Profile for local search visibility.</li>
+        <li>Managed day-to-day business operations and basic cash flow tracking.</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item-header">
+        <div class="cv-item-role">Freelance Digital Marketing Consultant</div>
+        <span class="cv-item-duration">2024 · Project-Based</span>
+      </div>
+      <div class="cv-item-company"><i class="fas fa-store"></i> Local Business Client — Batkhela, Pakistan</div>
+      <ul class="cv-item-points">
+        <li>Set up a complete digital presence including Google Business Profile creation and optimization for local SEO.</li>
+        <li>Established social media accounts and developed an initial content strategy to attract customers online.</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item-header">
+        <div class="cv-item-role">Business Support Assistant (Remote)</div>
+        <span class="cv-item-duration">2024</span>
+      </div>
+      <div class="cv-item-company"><i class="fas fa-gem"></i> Fazal Stone Shining — Saudi Arabia</div>
+      <ul class="cv-item-points">
+        <li>Designed a professional logo and set up WhatsApp Business for a marble cleaning business in KSA.</li>
+        <li>Created a Haraj marketplace account for client hunting and lead generation.</li>
+        <li>Supported customer communication and online business growth efforts remotely.</li>
+      </ul>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item-header">
+        <div class="cv-item-role">Pharmacy Assistant &amp; Stock Manager</div>
+        <span class="cv-item-duration">2023 — 2024 · 3–4 Months</span>
+      </div>
+      <div class="cv-item-company"><i class="fas fa-clinic-medical"></i> Farooq Enterprises — Batkhela, Pakistan</div>
+      <ul class="cv-item-points">
+        <li>Managed pharmacy stock inventory and ensured accurate record-keeping of medicines and supplies.</li>
+        <li>Assisted customers in locating and dispensing medicines with clear communication.</li>
+        <li>Gained practical experience in retail operations, inventory control, and customer service.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+
+    <div class="cv-edu-item">
+      <div>
+        <div class="cv-edu-degree">BS Economics</div>
+        <div class="cv-edu-school">University of Malakand · KPK, Pakistan</div>
+        <div class="cv-edu-detail">CGPA: 3.17 — Semester 2</div>
+      </div>
+      <div class="cv-edu-right">
+        <div class="cv-edu-year">2025 — Present</div>
+        <span class="badge badge-current" style="font-size:.66rem;">Current</span>
+      </div>
+    </div>
+
+    <div class="cv-edu-item">
+      <div>
+        <div class="cv-edu-degree">Bachelor of Business Administration (BBA)</div>
+        <div class="cv-edu-school">University of the People · US-Based Online University</div>
+      </div>
+      <div class="cv-edu-right">
+        <div class="cv-edu-year">2025</div>
+        <span class="badge badge-paused" style="font-size:.66rem;">Paused</span>
+      </div>
+    </div>
+
+    <div class="cv-edu-item">
+      <div>
+        <div class="cv-edu-degree">FSC — Higher Secondary Certificate</div>
+        <div class="cv-edu-school">Oxford Education Academy · Batkhela, Pakistan</div>
+        <div class="cv-edu-detail">73.9%</div>
+      </div>
+      <div class="cv-edu-right">
+        <div class="cv-edu-year">2022 — 2024</div>
+        <span class="badge badge-completed" style="font-size:.66rem;">Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-brain"></i> Skills</div>
+    <div class="cv-skills-grid">
+      <div>
+        <div class="cv-skill-label">AI Tools &amp; Technology</div>
+        <div class="cv-skill-tags">
+          <span class="cv-skill-tag">ChatGPT</span>
+          <span class="cv-skill-tag">Claude</span>
+          <span class="cv-skill-tag">Gemini</span>
+          <span class="cv-skill-tag">Perplexity</span>
+          <span class="cv-skill-tag">Copilot</span>
+          <span class="cv-skill-tag">ElevenLabs</span>
+          <span class="cv-skill-tag">Midjourney</span>
+          <span class="cv-skill-tag">Leonardo AI</span>
+          <span class="cv-skill-tag">Prompt Engineering</span>
+          <span class="cv-skill-tag">Vibe Coding</span>
+          <span class="cv-skill-tag">AI App Building</span>
+        </div>
+      </div>
+      <div>
+        <div class="cv-skill-label">Social Media &amp; Marketing</div>
+        <div class="cv-skill-tags">
+          <span class="cv-skill-tag">Facebook &amp; Instagram</span>
+          <span class="cv-skill-tag">TikTok</span>
+          <span class="cv-skill-tag">Google Business Profile</span>
+          <span class="cv-skill-tag">SEO</span>
+          <span class="cv-skill-tag">Reels Creation</span>
+          <span class="cv-skill-tag">Content Writing</span>
+          <span class="cv-skill-tag">Hashtag Research</span>
+        </div>
+      </div>
+      <div>
+        <div class="cv-skill-label">Business</div>
+        <div class="cv-skill-tags">
+          <span class="cv-skill-tag">Business Planning</span>
+          <span class="cv-skill-tag">Market Research</span>
+          <span class="cv-skill-tag">Cold Calling &amp; Sales</span>
+          <span class="cv-skill-tag">Client Relations</span>
+          <span class="cv-skill-tag">Pricing &amp; Costing</span>
+          <span class="cv-skill-tag">Inventory Management</span>
+          <span class="cv-skill-tag">Cash Flow (Basic)</span>
+          <span class="cv-skill-tag">Business Operations</span>
+        </div>
+      </div>
+      <div>
+        <div class="cv-skill-label">Design &amp; Tech Tools</div>
+        <div class="cv-skill-tags">
+          <span class="cv-skill-tag">Canva</span>
+          <span class="cv-skill-tag">AI Image Generation</span>
+          <span class="cv-skill-tag">Video Editing</span>
+          <span class="cv-skill-tag">GitHub Pages</span>
+          <span class="cv-skill-tag">HTML &amp; CSS (Basic)</span>
+          <span class="cv-skill-tag">MS Office</span>
+          <span class="cv-skill-tag">Google Docs &amp; Sheets</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-rocket"></i> Projects &amp; Ventures</div>
+
+    <div class="cv-project-item">
+      <div class="cv-project-header">
+        <div class="cv-project-name">BizMentor — AI-Powered Business Mentoring Tool</div>
+        <span class="cv-project-type">Competition Project</span>
+      </div>
+      <div class="cv-project-desc">Conceptualized and built BizMentor — an AI tool that helps early-stage entrepreneurs get instant business guidance. Built and pitched at the Google AI Sekho national competition using prompt engineering and AI development techniques.</div>
+    </div>
+
+    <div class="cv-project-item">
+      <div class="cv-project-header">
+        <div class="cv-project-name">Personal Portfolio Website</div>
+        <span class="cv-project-type">Completed</span>
+      </div>
+      <div class="cv-project-desc">Designed and developed a fully responsive multi-page portfolio website from scratch using HTML, CSS, and JavaScript. Used vibe coding with AI code editors and deployed on GitHub Pages.</div>
+    </div>
+
+    <div class="cv-project-item">
+      <div class="cv-project-header">
+        <div class="cv-project-name">Local Business — Digital Presence Setup</div>
+        <span class="cv-project-type">Client Project</span>
+      </div>
+      <div class="cv-project-desc">Set up Google Business Profile and social media accounts for a local business client, improving their local search visibility and online presence.</div>
+    </div>
+
+    <div class="cv-project-item">
+      <div class="cv-project-header">
+        <div class="cv-project-name">Blogging — Multi-Topic English Blog</div>
+        <span class="cv-project-type">Self-Initiated</span>
+      </div>
+      <div class="cv-project-desc">Researched, built, and published English blog posts on Blogger covering business, lifestyle, and technology. Gained hands-on experience in content writing, SEO, and web publishing.</div>
+    </div>
+
+    <div class="cv-project-item">
+      <div class="cv-project-header">
+        <div class="cv-project-name">Dry Fruits Processing Venture</div>
+        <span class="cv-project-type">Early Experiment</span>
+      </div>
+      <div class="cv-project-desc">Independently launched a fruit dehydration venture processing mangoes, bananas, and strawberries for local and online sale. Gained key lessons in operations, product validation, and startup execution.</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-certificate"></i> Certifications</div>
+    <div class="cv-certs-grid">
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> AI for Beginners — HP Foundation</div>
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> Starting a Small Business — HP Foundation</div>
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> Effective Leadership — HP Foundation</div>
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> Resume Writing &amp; Job Interviewing — HP Foundation</div>
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> Introduction to Cyber Security Awareness — HP Foundation</div>
+      <div class="cv-cert-item"><i class="fas fa-check-circle"></i> English Communication — Fondi App</div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES — FIXED: proper flag text instead of emoji -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-language"></i> Languages</div>
+    <div class="cv-lang-grid">
+      <div class="cv-lang-item">
+        <span class="cv-lang-flag">🇬🇧</span>
+        <div class="cv-lang-name">English</div>
+        <div class="cv-lang-level">Professional / Business Level</div>
+      </div>
+      <div class="cv-lang-item">
+        <span class="cv-lang-flag">🇵🇰</span>
+        <div class="cv-lang-name">Urdu</div>
+        <div class="cv-lang-level">Fluent</div>
+      </div>
+      <div class="cv-lang-item">
+        <span class="cv-lang-flag">🇵🇰</span>
+        <div class="cv-lang-name">Pashto</div>
+        <div class="cv-lang-level">Native</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERESTS -->
+  <div class="cv-section fade-up">
+    <div class="cv-section-title"><i class="fas fa-heart"></i> Interests</div>
+    <div class="cv-interests-wrap">
+      <span class="cv-interest-tag">Artificial Intelligence</span>
+      <span class="cv-interest-tag">Business &amp; Investment</span>
+      <span class="cv-interest-tag">Startups &amp; Entrepreneurship</span>
+      <span class="cv-interest-tag">Personal Finance</span>
+      <span class="cv-interest-tag">Shark Tank (PK, IN, USA)</span>
+      <span class="cv-interest-tag">YouTube Business Content</span>
+      <span class="cv-interest-tag">Reading About Entrepreneurs</span>
+      <span class="cv-interest-tag">Exploring New Technologies</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="cv-footer-note">
+    <i class="fas fa-clock"></i> Last Updated: May 2026 &nbsp;·&nbsp;
+    <a href="https://mudassirshah5.github.io/portfolio/" target="_blank">mudassirshah5.github.io/portfolio</a>
+  </div>
+
+</div>
+
+<footer style="margin-top:3rem;">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/mudassirshah5" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/923143027272" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
