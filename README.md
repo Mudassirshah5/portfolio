@@ -53,7 +53,7 @@ The project is split into three core files for maximum maintainability:
 - This will automatically populate the interactive certificate gallery.
 
 ### 3. **Manage Your CV**
-- Save your resume/CV as `assets/docs/MyCv.pdf` for the download button.
+- Save your resume/CV as `assets/docs/MudassirShah.pdf` for the download button.
 
 ### 4. **Update Contact Info**
 - Replace placeholder emails and phone numbers in `index.html`.
