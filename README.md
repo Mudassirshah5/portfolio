@@ -75,5 +75,5 @@ The project is split into three core files for maximum maintainability:
 ---
 
 <div align="center">
-  Built with ✨ for <b>Muhammad Mudassir Shah</b> — Batkhela, Pakistan
+  Built by <b>Muhammad Mudassir Shah</b> — Batkhela, Pakistan
 </div>
