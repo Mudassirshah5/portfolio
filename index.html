@@ -68,17 +68,17 @@
 </div>
 
 <div class="top-banner">
-  <i class="fas fa-rocket"></i> Currently Building: BazUp Media — International Social Media Management Agency
+  <i class="fas fa-rocket"></i> <span id="topBannerText">Currently Building: BazUp Media — International Social Media Management Agency</span>
 </div>
 
 <div class="bg-pattern"></div>
 
 <nav>
-  <a href="#home" class="nav-logo">M<span>.</span>Mudassir</a>
+  <a href="index.html#home" class="nav-logo">M<span>.</span>Mudassir</a>
   <ul class="nav-links">
-    <li><a href="index.html#home" class="active">Home</a></li>
+    <li><a href="index.html#home" class="active" style="color:var(--teal);">Home</a></li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="certifications.html">Certifications</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -87,16 +87,14 @@
   </ul>
   <div class="nav-right">
     <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#home">Home</a>
+  <a href="index.html#home" style="color:var(--teal);">Home</a>
   <a href="index.html#about">About</a>
-  <a href="skills.html">Skills</a>
+  <a href="index.html#skills">Skills</a>
   <a href="projects.html">Projects</a>
   <a href="certifications.html">Certifications</a>
   <a href="blog.html">Blog</a>
@@ -109,22 +107,22 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-left">
-        <div class="hero-tag"><i class="fas fa-map-marker-alt"></i> Batkhela, Pakistan</div>
-        <h1 class="hero-name">Muhammad<br><span>Mudassir Shah</span></h1>
+        <div class="hero-tag" id="heroTag"><i class="fas fa-map-marker-alt"></i> <span id="heroLocationText">Batkhela, Pakistan</span></div>
+        <h1 class="hero-name" id="heroNameHeading">Muhammad<br><span>Mudassir Shah</span></h1>
         <p class="hero-typing"><span id="typingText"></span></p>
-       <p class="hero-desc">
+       <p class="hero-desc" id="heroDescText">
   Economics student, aspiring data and business professional, and entrepreneur
   focused on SQL, data analytics, AI, business research, and startup building.
   I use data, economics, and technology to understand problems, discover
   opportunities, build practical solutions, and help turn promising ideas into
   scalable businesses.
 </p>
-       <div class="hero-looking">
+       <div class="hero-looking" id="heroLookingText">
   <strong><i class="fas fa-search"></i> Currently open to:</strong><br>
-  Data analytics, SQL, business research, AI-related opportunities, internships,
+  <span id="heroLookingContent">Data analytics, SQL, business research, AI-related opportunities, internships,
   entrepreneurial collaborations, startup-building opportunities, and social media
   management projects. I am especially interested in helping early-stage founders
-  turn promising ideas into practical, scalable businesses.
+  turn promising ideas into practical, scalable businesses.</span>
 </div>
         <div class="hero-btns">
           <a href="projects.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
@@ -143,10 +141,10 @@
   </section>
 
   <div class="hero-stats">
-    <div class="card stat-card fade-up"><span class="stat-num">8+</span><span class="stat-label">Business Ventures</span></div>
-    <div class="card stat-card fade-up"><span class="stat-num">6</span><span class="stat-label">Certifications</span></div>
-    <div class="card stat-card fade-up"><span class="stat-num">3.17</span><span class="stat-label">University CGPA</span></div>
-    <div class="card stat-card fade-up"><span class="stat-num">3+</span><span class="stat-label">Languages</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num" id="statVenturesNum">8+</span><span class="stat-label">Business Ventures</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num" id="statCertsNum">6</span><span class="stat-label">Certifications</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num" id="statCgpaNum">3.17</span><span class="stat-label">University CGPA</span></div>
+    <div class="card stat-card fade-up"><span class="stat-num" id="statLangNum">3+</span><span class="stat-label">Languages</span></div>
   </div>
 </section>
 
@@ -155,14 +153,14 @@
     <div class="about-grid fade-up">
       <div class="about-photo-wrap">
         <img src="assets/images/profile.jpeg" alt="Muhammad Mudassir Shah" class="about-photo"/>
-        <div class="about-badge-wrap"><span>3.17</span>CGPA</div>
+        <div class="about-badge-wrap"><span id="aboutCgpaBadge">3.17</span>CGPA</div>
       </div>
       <div class="about-text">
         <span class="section-tag">About Me</span>
         <h2 class="section-title">Who I <span>Am</span></h2>
         <div class="divider"></div>
-        <p>I am Muhammad Mudassir Shah — a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.</p>
-        <p>I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter and grow into a well-rounded entrepreneur, strategist, and leader — powered by the latest technology.</p>
+        <p id="aboutBioP1">I am Muhammad Mudassir Shah — a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.</p>
+        <p id="aboutBioP2">I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter and grow into a well-rounded entrepreneur, strategist, and leader — powered by the latest technology.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
           <a href="cv.html" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Full CV & Timeline</a>
         </div>
@@ -174,52 +172,25 @@
 <section id="skills" style="background-color: var(--card-bg); padding: 4rem 0;">
   <div class="section" style="text-align: center;">
     <span class="section-tag">What I Can Do</span>
-    <h1 class="section-title">My <span>Capabilities Or Skills</span></h1>
+    <h1 class="section-title">My <span>Capabilities &amp; Skills</span></h1>
     <div class="divider" style="margin: 0 auto;"></div>
+    <p class="section-subtitle" style="margin: 1rem auto 2.5rem; max-width: 780px;">A comprehensive, entrepreneurship-focused skill set combining business building, data analytics, AI workflows, and digital marketing.</p>
     
-    <div class="skills-categories" style="text-align: left; margin-top: 2rem;">
-      <div class="card skill-cat-card fade-up">
-        <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fas fa-robot"></i></div><div class="skill-cat-title">AI & Technology</div></div>
-        <div class="skill-tags"><span class="skill-pill">ChatGPT & Gemini</span><span class="skill-pill">Midjourney & ElevenLabs</span></div>
-      </div>
-      <div class="card skill-cat-card fade-up">
-        <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fas fa-chart-bar"></i></div><div class="skill-cat-title">Business</div></div>
-        <div class="skill-tags"><span class="skill-pill">Cash Flow Management</span><span class="skill-pill">Sales & Cold Calling</span></div>
-      </div>
-      <div class="card skill-cat-card fade-up">
-        <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fas fa-bullhorn"></i></div><div class="skill-cat-title">Marketing</div></div>
-        <div class="skill-tags"><span class="skill-pill">Social Media Management</span><span class="skill-pill">Reels Editing</span></div>
-      </div>
-      <div class="card skill-cat-card fade-up">
-        <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fas fa-pen"></i></div><div class="skill-cat-title">Communication</div></div>
-        <div class="skill-tags"><span class="skill-pill">Business English</span><span class="skill-pill">Report Writing</span></div>
-      </div>
+    <div class="skills-categories" id="allSkillsContainer" style="text-align: left; margin-top: 2rem;">
+      <!-- Populated dynamically with ALL skills grouped by category -->
     </div>
-
-    <a href="skills.html" class="btn btn-primary" style="margin-top: 2rem; display: inline-flex; align-items: center; padding: 14px 28px;">
-      <i class="fas fa-layer-group" style="margin-right: 8px;"></i> View Full Skills List
-    </a>
   </div>
 </section>
-
 
 <section id="projects" style="background-color: var(--card-bg); padding: 4rem 0;">
   <div class="section" style="text-align: center;">
     <span class="section-tag">Portfolio Highlights</span>
-    <h1 class="section-title">Featured <span>Projects Or Experience</span></h1>
+    <h1 class="section-title">Featured <span>Projects &amp; Ventures</span></h1>
     <div class="divider" style="margin: 0 auto;"></div>
+    <p class="section-subtitle" style="margin: 1rem auto 2rem; max-width: 780px;">Every project has been a stepping stone. An honest look at what I've built, attempted, and learned from.</p>
     
-    <div class="projects-grid" style="text-align: left; margin-bottom: 2rem; margin-top: 2rem;">
-      <div class="card project-card fade-up">
-        <div class="project-top"><div class="project-icon"><i class="fas fa-rocket"></i></div><div class="project-badges"><span class="badge badge-active">Active</span></div></div>
-        <div class="project-title" style="font-size:1.1rem;">BazUp Media — Social Media Management Agency</div>
-        <p class="project-desc">Co-founded a two-person social media management agency targeting international (US/UK/UAE) clients. Leading client outreach and acquisition while a partner manages execution and delivery.</p>
-      </div>
-      <div class="card project-card fade-up">
-        <div class="project-top"><div class="project-icon"><i class="fas fa-laptop-code"></i></div><div class="project-badges"><span class="badge badge-completed">Completed</span></div></div>
-        <div class="project-title" style="font-size:1.1rem;">Personal Portfolio Website</div>
-        <p class="project-desc">Designed and developed this multi-page portfolio website from scratch using HTML, CSS, JavaScript, and AI tools.</p>
-      </div>
+    <div class="projects-grid" id="homeProjectsGrid" style="text-align: left; margin-bottom: 2rem; margin-top: 2rem;">
+      <!-- Populated dynamically from /api/content -->
     </div>
 
     <a href="projects.html" class="btn btn-outline" style="display: inline-flex; align-items: center; padding: 14px 28px;">
@@ -228,25 +199,47 @@
   </div>
 </section>
 
-<section id="certifications">
+<section id="certifications" style="padding: 4rem 0;">
   <div class="section" style="text-align: center;">
     <span class="section-tag">Continuous Learning</span>
     <h1 class="section-title">My <span>Certifications</span></h1>
     <div class="divider" style="margin: 0 auto;"></div>
-    <a href="certifications.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-flex; align-items: center; padding: 14px 28px;">
-      <i class="fas fa-certificate" style="margin-right: 8px;"></i> View My 6 Certifications
+    
+    <div class="certs-grid" id="homeCertsPreview" style="margin-top: 2.5rem; margin-bottom: 2rem; text-align: left;">
+      <!-- Populated dynamically -->
+    </div>
+
+    <a href="certifications.html" id="btnHomeCertCount" class="btn btn-primary" style="margin-top: 1rem; display: inline-flex; align-items: center; padding: 14px 28px;">
+      <i class="fas fa-certificate" style="margin-right: 8px;"></i> View All Certifications
     </a>
   </div>
 </section>
 
-<section id="blog" style="background-color: var(--card-bg); padding: 4rem 0;">
+<section id="achievements" style="background-color: var(--card-bg); padding: 4rem 0;">
   <div class="section" style="text-align: center;">
-    <span class="section-tag">Insights & Thoughts</span>
+    <span class="section-tag">Track Record &amp; Honors</span>
+    <h1 class="section-title">Key <span>Achievements</span></h1>
+    <div class="divider" style="margin: 0 auto;"></div>
+    
+    <div class="projects-grid" id="achievementsGridPublic" style="text-align: left; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<section id="blog" style="padding: 4rem 0;">
+  <div class="section" style="text-align: center;">
+    <span class="section-tag">Insights &amp; Thoughts</span>
     <h1 class="section-title">My <span>Blog</span></h1>
     <div class="divider" style="margin: 0 auto;"></div>
-    <p class="section-subtitle" style="margin: 1rem auto 2.5rem;">Read my latest thoughts on entrepreneurship, business building, and my personal journey.</p>
+    <p class="section-subtitle" style="margin: 1rem auto 2.5rem; max-width: 780px;">Read my latest thoughts on entrepreneurship, business building, and my personal journey.</p>
+    
+    <div class="projects-grid" id="homeBlogsGrid" style="text-align: left; margin-top: 2rem; margin-bottom: 2.5rem;">
+      <!-- Populated dynamically from /api/content -->
+    </div>
+
     <a href="blog.html" class="btn btn-outline" style="display: inline-flex; align-items: center; padding: 14px 28px;">
-      <i class="fas fa-book-open" style="margin-right: 8px;"></i> Visit My Blog Page
+      <i class="fas fa-book-open" style="margin-right: 8px;"></i> Visit Full Blog Page
     </a>
   </div>
 </section>
@@ -262,19 +255,19 @@
         <div class="contact-info-cards">
           <div class="card contact-info-item fade-up">
             <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-            <div><span class="contact-info-label">Email</span><span class="contact-info-value"><a href="mailto:mmudassirshah634@gmail.com">mmudassirshah634@gmail.com</a></span></div>
+            <div><span class="contact-info-label">Email</span><span class="contact-info-value"><a href="mailto:mmudassirshah634@gmail.com" id="contactEmailLink">mmudassirshah634@gmail.com</a></span></div>
           </div>
           <div class="card contact-info-item fade-up">
             <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
-            <div><span class="contact-info-label">WhatsApp</span><span class="contact-info-value"><a href="https://wa.me/923143027272">+92 314 3027272</a></span></div>
+            <div><span class="contact-info-label">WhatsApp</span><span class="contact-info-value"><a href="https://wa.me/923143027272" id="contactWhatsappLink">+92 314 3027272</a></span></div>
           </div>
         </div>
         <div class="social-connect fade-up">
           <h3>Connect on social media</h3>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://x.com/MMudassirsha" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+            <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-link" id="contactSocialLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-link" id="contactSocialFacebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://x.com/MMudassirsha" target="_blank" class="social-link" id="contactSocialTwitter"><i class="fab fa-x-twitter"></i> X / Twitter</a>
           </div>
         </div>
       </div>
@@ -309,15 +302,26 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-social">
-      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://wa.me/923143027272" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/in/muhammad-mudassir-shah-855190318" target="_blank" class="social-icon" id="footerSocialLinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/share/18CXUXec1J/" target="_blank" class="social-icon" id="footerSocialFacebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MMudassirsha" target="_blank" class="social-icon" id="footerSocialTwitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://wa.me/923143027272" target="_blank" class="social-icon" id="footerSocialWhatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p class="footer-copy" style="margin-bottom: 5px;">© 2026 Muhammad Mudassir Shah · Batkhela, Pakistan</p>
     <p style="font-size: 0.8rem; opacity: 0.7; margin: 0;">Last Updated: August 2026</p>
   </div>
 </footer>
+
+<!-- Blog Article Modal Popup -->
+<div class="blog-modal" id="blogModal">
+  <div class="blog-modal-content">
+    <div class="blog-modal-header">
+      <h2 class="blog-modal-title" id="blogModalTitle">Article</h2>
+      <button class="blog-modal-close" onclick="closeBlogPopup()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="blog-modal-body" id="blogModalBody"></div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>

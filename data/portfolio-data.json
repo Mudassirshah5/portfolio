@@ -1,0 +1,760 @@
+{
+  "siteText": {
+    "hero": {
+      "name": "Muhammad Mudassir Shah",
+      "location": "Batkhela, Pakistan",
+      "typingWords": [
+        "Entrepreneur",
+        "Economics Student",
+        "Visionary",
+        "Strategist",
+        "Business Builder"
+      ],
+      "description": "Economics student, aspiring data and business professional, and entrepreneur focused on SQL, data analytics, AI, business research, and startup building. I use data, economics, and technology to understand problems, discover opportunities, build practical solutions, and help turn promising ideas into scalable businesses.",
+      "lookingFor": "Data analytics, SQL, business research, AI-related opportunities, internships, entrepreneurial collaborations, startup-building opportunities, and social media management projects. I am especially interested in helping early-stage founders turn promising ideas into practical, scalable businesses.",
+      "bannerText": "Currently Building: BazUp Media — International Social Media Management Agency"
+    },
+    "about": {
+      "bio1": "I am Muhammad Mudassir Shah — a motivated young entrepreneur and economics student from Batkhela, Pakistan. With a growth-focused mindset and strong entrepreneurial drive, I consistently look for opportunities to create value, solve real problems, and build meaningful ventures.",
+      "bio2": "I believe deeply in starting small, learning fast, and never stopping. My goal is to build businesses that matter and grow into a well-rounded entrepreneur, strategist, and leader — powered by the latest technology.",
+      "cgpa": "3.17"
+    },
+    "stats": {
+      "ventures": "8+",
+      "certifications": "6",
+      "cgpa": "3.17",
+      "languages": "3+"
+    },
+    "contact": {
+      "email": "mmudassirshah634@gmail.com",
+      "phone": "+92 314 3027272",
+      "whatsapp": "923143027272",
+      "location": "Batkhela, Pakistan"
+    },
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/muhammad-mudassir-shah-855190318",
+      "facebook": "https://www.facebook.com/share/18CXUXec1J/",
+      "twitter": "https://x.com/MMudassirsha",
+      "github": "https://github.com/Mudassirshah5",
+      "instagram": "https://www.instagram.com/muhammadmudassir.shah/",
+      "youtube": "https://www.youtube.com/@TheMUdassirShah"
+    }
+  },
+  "certifications": [
+    {
+      "id": "cert-1",
+      "title": "AI for Beginners",
+      "issuer": "HP Foundation",
+      "date": "2024",
+      "description": "Foundational training in Artificial Intelligence principles and real-world tools by HP Foundation.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180142/portfolio/certifications/cert-1_m4u3ik.jpg",
+      "verificationLink": ""
+    },
+    {
+      "id": "cert-2",
+      "title": "Resume Writing & Job Interviewing",
+      "issuer": "HP Foundation",
+      "date": "2024",
+      "description": "Professional job application, interview preparation, and corporate communication skills.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180144/portfolio/certifications/cert-2_cov4g2.jpg",
+      "verificationLink": ""
+    },
+    {
+      "id": "cert-3",
+      "title": "Introduction to Cyber Security Awareness",
+      "issuer": "HP Foundation",
+      "date": "2024",
+      "description": "Core cybersecurity defense concepts, data protection, and digital threat prevention.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180146/portfolio/certifications/cert-3_wdkyh7.jpg",
+      "verificationLink": ""
+    },
+    {
+      "id": "cert-4",
+      "title": "Starting a Small Business",
+      "issuer": "HP Foundation",
+      "date": "2024",
+      "description": "Venture ideation, business planning, market feasibility, and basic financial management.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180147/portfolio/certifications/cert-4_thwpfk.jpg",
+      "verificationLink": ""
+    },
+    {
+      "id": "cert-5",
+      "title": "Effective Leadership",
+      "issuer": "HP Foundation",
+      "date": "2024",
+      "description": "Leadership strategies, team management, decision making, and conflict resolution.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180149/portfolio/certifications/cert-5_yif583.jpg",
+      "verificationLink": ""
+    },
+    {
+      "id": "cert-6",
+      "title": "English Communication",
+      "issuer": "Fondi App",
+      "date": "2024",
+      "description": "Advanced conversational English fluency and international professional communication.",
+      "image": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180150/portfolio/certifications/cert-6_pe0gmh.jpg",
+      "verificationLink": ""
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "BazUp Media — Social Media Management Agency",
+      "subtitle": "SMM Agency — Founder",
+      "category": "Digital Marketing",
+      "date": "2025 - Present",
+      "tags": [
+        "Social Media Management",
+        "Reels Creation",
+        "Content Writing",
+        "ElevenLabs",
+        "Midjourney",
+        "Leonardo AI",
+        "Entrepreneurship"
+      ],
+      "description": "Founded a social media management agency targeting clients in the US, UK, and UAE. Leading client outreach and acquisition strategy, manages execution and delivery of content, video editing, and AI-driven creative workflows.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 1,
+      "updatedAt": "2026-10-05T07:05:37.987Z"
+    },
+    {
+      "id": "proj-2",
+      "title": "BizMentor",
+      "subtitle": "AI-Powered Business Mentoring Tool — Google AI Sekho",
+      "category": "Tech & AI",
+      "date": "2025",
+      "tags": [
+        "Artificial Intelligence",
+        "Prompt Engineering",
+        "Business Strategy",
+        "Startup Ideation",
+        "Google AI Sekho"
+      ],
+      "description": "Conceptualized and developed BizMentor — an AI-powered mentoring tool designed to help early-stage entrepreneurs get instant business guidance. Built and pitched for Google AI Sekho.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 2,
+      "updatedAt": "2026-10-05T07:05:40.577Z"
+    },
+    {
+      "id": "proj-3",
+      "title": "Concrete Compressive Strength Prediction",
+      "subtitle": "Machine Learning Regression Project — KPITB AI & ML Training",
+      "category": "Data Analytics",
+      "date": "2025",
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "Gradient Boosting",
+        "NumPy / Pandas",
+        "KPITB"
+      ],
+      "description": "Built a Gradient Boosting regression model to predict concrete compressive strength, completed as the solo project for the KPITB AI & ML training program.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 3,
+      "updatedAt": "2026-10-05T07:05:40.982Z"
+    },
+    {
+      "id": "proj-4",
+      "title": "Personal Portfolio Website",
+      "subtitle": "Built with HTML, CSS, JavaScript & AI Tools",
+      "category": "Tech & AI",
+      "date": "2026",
+      "tags": [
+        "HTML / CSS / JS",
+        "Vibe Coding",
+        "AI Code Editors",
+        "GitHub Pages",
+        "Responsive Design",
+        "Prompt Engineering"
+      ],
+      "description": "Designed and developed this personal portfolio website from scratch using HTML, CSS, and JavaScript. Used vibe coding techniques with AI code editors to build, refine, and deploy a responsive modern developer showcase.",
+      "link": "https://mudassirshah5.github.io/portfolio/",
+      "image": "",
+      "proof_url": "",
+      "order": 4,
+      "updatedAt": "2026-10-05T07:05:42.053Z"
+    },
+    {
+      "id": "proj-5",
+      "title": "Fazal Stone Shining",
+      "subtitle": "Digital Presence Setup — Saudi Arabia",
+      "category": "Business & Entrepreneurship",
+      "date": "2024 - 2025",
+      "tags": [
+        "Logo Design",
+        "WhatsApp Business",
+        "Haraj Marketplace",
+        "Digital Marketing"
+      ],
+      "description": "Helped digitize my father's marble and tile cleaning business in KSA. Designed a professional logo, set up WhatsApp Business for client communication, and created listings on Haraj marketplace to drive inbound service inquiries.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 5,
+      "updatedAt": "2026-10-05T07:05:42.567Z"
+    },
+    {
+      "id": "proj-6",
+      "title": "Local Business — Digital Setup",
+      "subtitle": "Google Business Profile + Social Media",
+      "category": "Digital Marketing",
+      "date": "2024",
+      "tags": [
+        "Google Business Profile",
+        "Local SEO",
+        "Social Media Setup",
+        "Content Strategy",
+        "Client Work"
+      ],
+      "description": "Set up a complete digital presence for a local business client — including Google Business Profile creation and optimization for local search visibility, social media business accounts, and foundational content strategy.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 6,
+      "updatedAt": "2026-10-05T07:05:43.514Z"
+    },
+    {
+      "id": "proj-7",
+      "title": "LOVCUS",
+      "subtitle": "Artificial Beaded Jewelry Brand",
+      "category": "Business & Entrepreneurship",
+      "date": "2024",
+      "tags": [
+        "Brand Building",
+        "Facebook & Instagram",
+        "TikTok",
+        "WhatsApp Catalogue",
+        "Google Business Profile",
+        "AI Content Creation",
+        "Cash Flow Tracking"
+      ],
+      "description": "Founded and operated LOVCUS independently — managing product design, pricing, customer orders, and full social media across Facebook, Instagram, TikTok, and WhatsApp. Taught invaluable lessons in cash flow and lean operations.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 7,
+      "updatedAt": "2026-10-05T07:05:44.020Z"
+    },
+    {
+      "id": "proj-8",
+      "title": "Fiverr — Freelance Design",
+      "subtitle": "Business Card Design Gig",
+      "category": "Digital Marketing",
+      "date": "2024",
+      "tags": [
+        "Canva",
+        "Business Card Design",
+        "Freelancing",
+        "Marketplace Strategy"
+      ],
+      "description": "Created and launched a freelance business card design gig on Fiverr. Provided practical experience in profile positioning, service packaging, client search intent, and competitive platform mechanics.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 8,
+      "updatedAt": "2026-10-05T07:05:44.977Z"
+    },
+    {
+      "id": "proj-9",
+      "title": "Blogging",
+      "subtitle": "Multi-Topic English Blog — Blogger Platform",
+      "category": "Digital Marketing",
+      "date": "2023 - 2024",
+      "tags": [
+        "Content Writing",
+        "Blogger",
+        "Research",
+        "SEO Basics"
+      ],
+      "description": "Researched, built, and published English blog posts on Blogger covering business, lifestyle, and technology topics. Learned foundational principles of SEO, keyword intent, and content structuring.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 9,
+      "updatedAt": "2026-10-05T07:05:45.508Z"
+    },
+    {
+      "id": "proj-10",
+      "title": "Dry Fruits Processing",
+      "subtitle": "Dehydrated Fruit Venture",
+      "category": "Economics",
+      "date": "2023",
+      "tags": [
+        "Product Development",
+        "Market Research",
+        "Operations",
+        "Own Initiative"
+      ],
+      "description": "Independently conceived and launched a fruit dehydration business — processing mangoes, bananas, and strawberries for local and online sale. Provided hands-on insights into production capacity, unit economics, and operational planning.",
+      "link": "",
+      "image": "",
+      "proof_url": "",
+      "order": 10,
+      "updatedAt": "2026-10-05T07:05:46.443Z"
+    }
+  ],
+  "cv": {
+    "url": "https://res.cloudinary.com/p3rufct7/image/upload/v1791180154/portfolio/cvs/MudassirShahCV_r4kgie.pdf",
+    "filename": "MudassirShahCV.pdf",
+    "size": 71324,
+    "mimetype": "application/pdf",
+    "updatedAt": "2026-10-05T06:02:46.302Z"
+  },
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "From Batkhela to Business: My Unfiltered Journey as a 19-Year-Old Founder",
+      "category": "My Story",
+      "date": "March 2026",
+      "readTime": "2 min read",
+      "excerpt": "Every founder has a starting line. For me, it began in Batkhela with a desire to build independence. This is a transparent look at the early failures that shaped my business acumen...",
+      "content": "We live in a digital culture that aggressively romanticizes the entrepreneur. But behind every founder who builds something of actual consequence, there is a quiet, often painful phase of absolute ambiguity. My journey began in that exact place of blur and uncertainty.\n\n\r\n          Looking back at the opening days of 2025, I had no roadmap. I was nineteen, living in Batkhela, Pakistan, and constantly overwhelmed by my own ambitions. I knew I wanted to build something substantial, but I lacked both the \"what\" and the \"how.\"\n\n\r\n          \n\n### Fighting the Gravity of My Environment\n\n\r\n          Choosing the path of a solo founder meant fighting a war of attrition on multiple fronts. The odds were heavily stacked against me: scarce capital, total geographic isolation from tech hubs, and a cultural environment that often ridiculed unconventional ambition.\n\n\r\n          \n\n### The Internet as the Ultimate Equalizer\n\n\r\n          Because my physical environment offered friction instead of answers, my bedroom became a global classroom, and the internet became my ultimate mentor. I studied the operational models of global icons and focused heavily on building elite communication skills. I realized a harsh truth: You can have the greatest business idea in the world, but if you cannot communicate its value to a stranger, it dies in your head.\n\n\r\n          \n\n### Paying the \"Tuition Fees\" of Real-World Failure\n\n\r\n          I started building. And almost immediately, I started failing. I launched freelance profiles with zero traction. I started a multi-topic blog that I couldn't afford to host. I researched dry fruit processing, and later launched LOVCUS, a physical jewelry brand that eventually had to close due to a lack of capital.\n\n\r\n          Society calls these closures \"failures.\" I firmly reject that word. They were the necessary tuition fees for my real-world business education. They taught me to look at data over emotion and to pivot when resources didn't align with reality.\n\n\r\n          \n\n### The Road Ahead\n\n\r\n          Today, my journey has brought me to an incredible intersection. I am pursuing a BS in Economics while simultaneously building an AI-powered social media management agency from the ground up. To anyone reading this who feels limited by their bank account or geography: Stop waiting for perfect conditions. Start with the internet, master free digital tools, expect the failures, and put your skin in the game. Let's build.",
+      "image": "",
+      "tags": [
+        "My Story",
+        "AI",
+        "Automation",
+        "Startup",
+        "Entrepreneurship",
+        "Business"
+      ],
+      "order": 1,
+      "updatedAt": "2026-10-05T07:21:47.940Z"
+    },
+    {
+      "id": "blog-2",
+      "title": "The Lean Startup Approach: Why Building an MVP Fast Matters",
+      "category": "Business Strategy",
+      "date": "March 2026",
+      "readTime": "2 min read",
+      "excerpt": "Perfection is the enemy of progress in the modern startup ecosystem. Waiting months to launch a 'perfect' product often leads to wasted resources...",
+      "content": "One of the biggest mistakes a new founder can make is building in a vacuum. You spend weeks, months, or even years trying to polish every single feature of your product or service before showing it to a single customer. The problem? You might be building something nobody actually wants to pay for.\n\n\r\n          The Lean Startup methodology changes this completely. Instead of a massive launch, you build a \"Minimum Viable Product\" (MVP). This is the absolute bare-bones version of your idea that still solves the core problem for the user.\n\n\r\n          \n\n### Why Speed Beats Polish\n\n\r\n          By launching fast, you get immediate, real-world data. If customers complain about a missing feature, you know exactly what to build next. If nobody buys it, you saved yourself months of wasted time and money. Prioritizing speed over aesthetics allows your startup to stay agile, preserve cash flow, and pivot rapidly based on what the market actually demands.",
+      "image": "",
+      "tags": [
+        "Business Strategy",
+        "AI",
+        "Automation",
+        "Startup",
+        "Entrepreneurship"
+      ],
+      "order": 2,
+      "updatedAt": "2026-10-05T07:21:50.278Z"
+    },
+    {
+      "id": "blog-3",
+      "title": "Leveraging AI to Automate Manual Workflows",
+      "category": "Technology",
+      "date": "March 2026",
+      "readTime": "2 min read",
+      "excerpt": "Artificial Intelligence is no longer just a buzzword; it's a digital employee ready to handle your repetitive tasks. By integrating AI tools, small businesses can operate with massive efficiency...",
+      "content": "For solo founders and small businesses, the biggest bottleneck is always time. You are the CEO, the marketing department, the customer service rep, and the janitor. Traditionally, scaling meant hiring a large team, which required massive capital. Today, AI bridges that gap.\n\n\r\n          \n\n### Building Your Digital Workforce\n\n\r\n          By setting up smart workflows, you can automate up to 70% of your daily operational friction. Large Language Models (like ChatGPT or Claude) can draft your emails and write your social media captions. Image generators (like Midjourney) can handle your graphic design. Voice synthesis (like ElevenLabs) can create professional voiceovers for your content in minutes.\n\n\r\n          Adopting AI isn't about replacing human creativity; it's about eliminating the boring, manual mechanics of business so you have the mental energy to focus on high-level strategy and client acquisition.",
+      "image": "",
+      "tags": [
+        "Technology",
+        "AI",
+        "Automation",
+        "Business"
+      ],
+      "order": 3,
+      "updatedAt": "2026-10-05T07:21:50.924Z"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "name": "Startup Idea Development",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "90%",
+      "icon": "fas fa-lightbulb",
+      "description": "Ideation, opportunity evaluation, and problem-solution fit.",
+      "order": 1,
+      "updatedAt": "2026-10-05T07:05:46.942Z"
+    },
+    {
+      "id": "skill-2",
+      "name": "Problem Identification",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-search",
+      "description": "Identifying real-world friction and market pain points.",
+      "order": 2,
+      "updatedAt": "2026-10-05T07:05:47.881Z"
+    },
+    {
+      "id": "skill-3",
+      "name": "Market Research",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-chart-line",
+      "description": "Target market analysis, competitor benchmarking, and customer surveys.",
+      "order": 3,
+      "updatedAt": "2026-10-05T07:05:48.588Z"
+    },
+    {
+      "id": "skill-4",
+      "name": "Business Model Development",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "88%",
+      "icon": "fas fa-sitemap",
+      "description": "Lean canvas, value proposition design, and revenue stream modeling.",
+      "order": 4,
+      "updatedAt": "2026-10-05T07:05:49.370Z"
+    },
+    {
+      "id": "skill-5",
+      "name": "Business Planning",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-clipboard-list",
+      "description": "Feasibility studies, operational roadmaps, and growth milestones.",
+      "order": 5,
+      "updatedAt": "2026-10-05T07:05:50.090Z"
+    },
+    {
+      "id": "skill-6",
+      "name": "Opportunity Analysis",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-bullseye",
+      "description": "Sizing market opportunities and evaluating early unit economics.",
+      "order": 6,
+      "updatedAt": "2026-10-05T07:05:50.883Z"
+    },
+    {
+      "id": "skill-7",
+      "name": "Early-Stage Startup Strategy",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "88%",
+      "icon": "fas fa-rocket",
+      "description": "Bootstrapping, lean startup execution, and agile MVP testing.",
+      "order": 7,
+      "updatedAt": "2026-10-05T07:05:51.630Z"
+    },
+    {
+      "id": "skill-8",
+      "name": "Founder & Startup Collaboration",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "90%",
+      "icon": "fas fa-handshake",
+      "description": "Team alignment, networking, co-founder dynamics, and cross-functional leadership.",
+      "order": 8,
+      "updatedAt": "2026-10-05T07:05:52.453Z"
+    },
+    {
+      "id": "skill-9",
+      "name": "Data Analytics (Foundations)",
+      "category": "Data & Analytics",
+      "level": "85%",
+      "icon": "fas fa-chart-line",
+      "description": "Statistical analysis, spreadsheet modeling, and exploratory data analysis.",
+      "order": 9,
+      "updatedAt": "2026-10-05T07:05:53.087Z"
+    },
+    {
+      "id": "skill-10",
+      "name": "SQL (Foundations)",
+      "category": "Data & Analytics",
+      "level": "80%",
+      "icon": "fas fa-database",
+      "description": "Relational queries, joins, aggregations, and business metrics extraction.",
+      "order": 10,
+      "updatedAt": "2026-10-05T07:05:53.985Z"
+    },
+    {
+      "id": "skill-11",
+      "name": "Python (Basic)",
+      "category": "Data & Analytics",
+      "level": "75%",
+      "icon": "fab fa-python",
+      "description": "Scripting, basic automation, and data wrangling with Pandas/NumPy.",
+      "order": 11,
+      "updatedAt": "2026-10-05T07:05:54.803Z"
+    },
+    {
+      "id": "skill-12",
+      "name": "Spreadsheet Analysis",
+      "category": "Data & Analytics",
+      "level": "88%",
+      "icon": "fas fa-table",
+      "description": "Advanced formulas, pivot tables, financial modeling, and dashboards.",
+      "order": 12,
+      "updatedAt": "2026-10-05T07:05:55.521Z"
+    },
+    {
+      "id": "skill-13",
+      "name": "Business Data Analysis",
+      "category": "Data & Analytics",
+      "level": "82%",
+      "icon": "fas fa-business-time",
+      "description": "Translating raw business data into actionable managerial insights.",
+      "order": 13,
+      "updatedAt": "2026-10-05T07:05:56.321Z"
+    },
+    {
+      "id": "skill-14",
+      "name": "FB/IG Business Pages",
+      "category": "Social Media & Marketing",
+      "level": "90%",
+      "icon": "fab fa-facebook",
+      "description": "Audience targeting, page optimization, Meta Business Suite, and analytics.",
+      "order": 14,
+      "updatedAt": "2026-10-05T07:05:56.960Z"
+    },
+    {
+      "id": "skill-15",
+      "name": "Caption & Content Writing",
+      "category": "Social Media & Marketing",
+      "level": "80%",
+      "icon": "fas fa-pen-nib",
+      "description": "High-converting ad copy, hook formulas, and brand storytelling.",
+      "order": 15,
+      "updatedAt": "2026-10-05T07:05:57.751Z"
+    },
+    {
+      "id": "skill-16",
+      "name": "Google Business Profile & SEO",
+      "category": "Social Media & Marketing",
+      "level": "85%",
+      "icon": "fab fa-google",
+      "description": "Local business optimization, organic visibility, and Google Maps ranking.",
+      "order": 16,
+      "updatedAt": "2026-10-05T07:05:58.401Z"
+    },
+    {
+      "id": "skill-17",
+      "name": "Reels Creation & Video Editing",
+      "category": "Social Media & Marketing",
+      "level": "82%",
+      "icon": "fas fa-video",
+      "description": "Short-form video storytelling, pacing, voiceover synthesis, and hooks.",
+      "order": 17,
+      "updatedAt": "2026-10-05T07:05:59.280Z"
+    },
+    {
+      "id": "skill-18",
+      "name": "Hashtag Research & Strategy",
+      "category": "Social Media & Marketing",
+      "level": "80%",
+      "icon": "fas fa-hashtag",
+      "description": "Audience discovery, trend monitoring, and algorithmic reach optimization.",
+      "order": 18,
+      "updatedAt": "2026-10-05T07:05:59.852Z"
+    },
+    {
+      "id": "skill-19",
+      "name": "Email Marketing (Basic)",
+      "category": "Social Media & Marketing",
+      "level": "65%",
+      "icon": "fas fa-envelope",
+      "description": "List segmentation, automated drip campaigns, and lead nurturing.",
+      "order": 19,
+      "updatedAt": "2026-10-05T07:06:00.832Z"
+    },
+    {
+      "id": "skill-20",
+      "name": "Logo Design (Canva)",
+      "category": "Design & Creative",
+      "level": "88%",
+      "icon": "fas fa-palette",
+      "description": "Brand identity, typography pairing, color psychology, and vector assets.",
+      "order": 20,
+      "updatedAt": "2026-10-05T07:06:01.280Z"
+    },
+    {
+      "id": "skill-21",
+      "name": "Business Card Design",
+      "category": "Design & Creative",
+      "level": "85%",
+      "icon": "fas fa-id-card",
+      "description": "Print-ready corporate stationery and tactile promotional collateral.",
+      "order": 21,
+      "updatedAt": "2026-10-05T07:06:02.402Z"
+    },
+    {
+      "id": "skill-22",
+      "name": "Poster & Banner Design",
+      "category": "Design & Creative",
+      "level": "80%",
+      "icon": "fas fa-image",
+      "description": "Digital advertising banners, event posters, and web display ads.",
+      "order": 22,
+      "updatedAt": "2026-10-05T07:06:02.771Z"
+    },
+    {
+      "id": "skill-23",
+      "name": "CV / Resume Design",
+      "category": "Design & Creative",
+      "level": "90%",
+      "icon": "fas fa-file-pdf",
+      "description": "ATS-friendly resume templates, visual hierarchy, and executive layout.",
+      "order": 23,
+      "updatedAt": "2026-10-05T07:06:03.920Z"
+    },
+    {
+      "id": "skill-24",
+      "name": "Presentation Design",
+      "category": "Design & Creative",
+      "level": "92%",
+      "icon": "fas fa-chart-pie",
+      "description": "Investor pitch decks, slide storytelling, and business presentations.",
+      "order": 24,
+      "updatedAt": "2026-10-05T07:06:04.280Z"
+    },
+    {
+      "id": "skill-25",
+      "name": "AI Image Generation",
+      "category": "Design & Creative",
+      "level": "85%",
+      "icon": "fas fa-wand-magic-sparkles",
+      "description": "Photorealistic asset creation using Midjourney, Leonardo, and prompt iteration.",
+      "order": 25,
+      "updatedAt": "2026-10-05T07:06:05.452Z"
+    },
+    {
+      "id": "skill-26",
+      "name": "ChatGPT & Claude",
+      "category": "AI Tools & Technology",
+      "level": "92%",
+      "icon": "fas fa-robot",
+      "description": "Context window utilization, custom system instructions, and advanced reasoning.",
+      "order": 26,
+      "updatedAt": "2026-10-05T07:06:05.815Z"
+    },
+    {
+      "id": "skill-27",
+      "name": "Gemini & Copilot",
+      "category": "AI Tools & Technology",
+      "level": "88%",
+      "icon": "fab fa-google",
+      "description": "Multimodal research, workspace integration, and deep document synthesis.",
+      "order": 27,
+      "updatedAt": "2026-10-05T07:06:06.991Z"
+    },
+    {
+      "id": "skill-28",
+      "name": "ElevenLabs (Voice AI)",
+      "category": "AI Tools & Technology",
+      "level": "85%",
+      "icon": "fas fa-microphone",
+      "description": "AI voice generation, audio cleanup, voice cloning, and narration workflows.",
+      "order": 28,
+      "updatedAt": "2026-10-05T07:06:07.360Z"
+    },
+    {
+      "id": "skill-29",
+      "name": "Midjourney & Leonardo AI",
+      "category": "AI Tools & Technology",
+      "level": "88%",
+      "icon": "fas fa-image",
+      "description": "Visual concepting, high-resolution upscaling, and marketing asset generation.",
+      "order": 29,
+      "updatedAt": "2026-10-05T07:06:08.521Z"
+    },
+    {
+      "id": "skill-30",
+      "name": "Prompt Engineering",
+      "category": "AI Tools & Technology",
+      "level": "90%",
+      "icon": "fas fa-terminal",
+      "description": "Few-shot prompting, chain-of-thought, and deterministic output shaping.",
+      "order": 30,
+      "updatedAt": "2026-10-05T07:06:08.890Z"
+    },
+    {
+      "id": "skill-31",
+      "name": "Vibe Coding",
+      "category": "AI Tools & Technology",
+      "level": "85%",
+      "icon": "fas fa-code",
+      "description": "Rapid full-stack prototyping with AI-assisted developer workflows.",
+      "order": 31,
+      "updatedAt": "2026-10-05T07:06:10.160Z"
+    },
+    {
+      "id": "skill-32",
+      "name": "Business Operations",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-tasks",
+      "description": "Workflow management, process documentation, and execution rhythm.",
+      "order": 32,
+      "updatedAt": "2026-10-05T07:06:10.711Z"
+    },
+    {
+      "id": "skill-33",
+      "name": "Cash Flow Management (Basic)",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "80%",
+      "icon": "fas fa-coins",
+      "description": "Monitoring working capital, revenue timing, and expense discipline.",
+      "order": 33,
+      "updatedAt": "2026-10-05T07:06:11.600Z"
+    },
+    {
+      "id": "skill-34",
+      "name": "Cold Calling & Sales",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "80%",
+      "icon": "fas fa-phone",
+      "description": "B2B outreach, discovery calls, objection handling, and deal closing.",
+      "order": 34,
+      "updatedAt": "2026-10-05T07:06:12.210Z"
+    },
+    {
+      "id": "skill-35",
+      "name": "Customer Handling",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "88%",
+      "icon": "fas fa-users",
+      "description": "Client onboarding, retention, relationship building, and support.",
+      "order": 35,
+      "updatedAt": "2026-10-05T07:06:13.230Z"
+    },
+    {
+      "id": "skill-36",
+      "name": "Product Pricing & Costing",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-tags",
+      "description": "Value-based pricing, unit margins, and competitive cost structures.",
+      "order": 36,
+      "updatedAt": "2026-10-05T07:06:13.654Z"
+    },
+    {
+      "id": "skill-37",
+      "name": "Basic Financial Analysis",
+      "category": "Data & Analytics",
+      "level": "80%",
+      "icon": "fas fa-calculator",
+      "description": "Break-even analysis, profit & loss projections, and basic return on investment.",
+      "order": 37,
+      "updatedAt": "2026-10-05T07:06:14.680Z"
+    },
+    {
+      "id": "skill-38",
+      "name": "Professional English Writing",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "90%",
+      "icon": "fas fa-envelope",
+      "description": "High-clarity executive emails, memoranda, and professional correspondence.",
+      "order": 38,
+      "updatedAt": "2026-10-05T07:06:15.090Z"
+    },
+    {
+      "id": "skill-39",
+      "name": "Report & Proposal Writing",
+      "category": "Entrepreneurship & Startup Building",
+      "level": "85%",
+      "icon": "fas fa-file-alt",
+      "description": "Client proposals, project scopes of work, and structured reports.",
+      "order": 39,
+      "updatedAt": "2026-10-05T07:06:16.130Z"
+    }
+  ]
+}

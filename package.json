@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Muhammad Mudassir Shah - Professional Portfolio and Admin Panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mudassirshah5/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "admin-panel"
+  ],
+  "author": "Muhammad Mudassir Shah",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mudassirshah5/portfolio/issues"
+  },
+  "homepage": "https://github.com/Mudassirshah5/portfolio#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^1.41.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "firebase-admin": "^14.5.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.4.0",
+    "multer-storage-cloudinary": "^4.0.0"
+  }
+}

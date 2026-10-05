@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Portfolio Management</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --teal: #1abc9c;
+      --teal-hover: #16a085;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: radial-gradient(circle at 10% 20%, #1e293b 0%, #0f172a 90%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .login-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: rgba(26, 188, 156, 0.15);
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .login-header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .login-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .form-group {
+      margin-bottom: 1.4rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .input-wrap {
+      position: relative;
+    }
+    .input-wrap i.prefix-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .input-wrap input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .input-wrap input:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+    }
+    .toggle-pwd {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .toggle-pwd:hover {
+      color: var(--text);
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .btn-submit:hover {
+      background: var(--teal-hover);
+    }
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .alert-box {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      margin-bottom: 1.2rem;
+    }
+    .alert-danger {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+    .alert-success {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+    }
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-home:hover {
+      color: var(--teal);
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-header">
+    <div class="login-icon">
+      <i class="fas fa-shield-halved"></i>
+    </div>
+    <h1>Admin Sign In</h1>
+    <p>Sign in to manage portfolio content safely</p>
+  </div>
+
+  <div id="alertBox" class="alert-box"></div>
+
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="email">Admin Email</label>
+      <div class="input-wrap">
+        <i class="fas fa-envelope prefix-icon"></i>
+        <input type="email" id="email" required placeholder="admin@example.com" autocomplete="email"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-wrap">
+        <i class="fas fa-lock prefix-icon"></i>
+        <input type="password" id="password" required placeholder="Enter your password" autocomplete="current-password"/>
+        <button type="button" class="toggle-pwd" id="togglePwd" aria-label="Toggle password visibility">
+          <i class="far fa-eye"></i>
+        </button>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit" id="submitBtn">
+      <span>Sign In</span>
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </form>
+
+  <a href="../" class="back-home"><i class="fas fa-arrow-left"></i> Return to Public Site</a>
+</div>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const alertBox = document.getElementById('alertBox');
+  const submitBtn = document.getElementById('submitBtn');
+  const pwdInput = document.getElementById('password');
+  const togglePwd = document.getElementById('togglePwd');
+
+  // Toggle password visibility
+  togglePwd.addEventListener('click', () => {
+    const isPwd = pwdInput.type === 'password';
+    pwdInput.type = isPwd ? 'text' : 'password';
+    togglePwd.querySelector('i').className = isPwd ? 'far fa-eye-slash' : 'far fa-eye';
+  });
+
+  function showAlert(msg, type = 'danger') {
+    alertBox.textContent = msg;
+    alertBox.className = `alert-box alert-${type}`;
+    alertBox.style.display = 'block';
+  }
+
+  const PRODUCTION_API_URL = 'https://your-future-render-url.onrender.com';
+  const isLocal = window.location.hostname === 'localhost' || 
+                  window.location.hostname === '127.0.0.1' || 
+                  window.location.protocol === 'file:';
+  const API_BASE_URL = isLocal ? 'http://localhost:3000' : (window.location.origin.includes('github.io') ? PRODUCTION_API_URL : '');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    alertBox.style.display = 'none';
+
+    const email = document.getElementById('email').value.trim();
+    const password = pwdInput.value;
+
+    if (!email || !password) {
+      showAlert('Please enter both email and password.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Login failed. Please check credentials.');
+      }
+
+      showAlert('Login successful! Redirecting to dashboard...', 'success');
+      setTimeout(() => {
+        window.location.href = './';
+      }, 700);
+    } catch (err) {
+      showAlert(err.message || 'An error occurred during login.');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<span>Sign In</span> <i class="fas fa-arrow-right"></i>';
+    }
+  });
+</script>
+
+</body>
+</html>
