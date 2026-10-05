@@ -532,16 +532,11 @@ function hydrateProjects(projects) {
   }
 }
 
-// E. Hydrate Skills (Render ALL Skills Grouped by Category)
+// E. Hydrate Skills (Home Preview vs. Dedicated skills.html Page)
 function hydrateSkills(skills) {
   if (!Array.isArray(skills) || skills.length === 0) return;
 
-  const containers = document.querySelectorAll('#allSkillsContainer');
-  if (containers.length === 0) return;
-
-  console.log(`[Hydrate Skills] Rendering ${skills.length} skills into ${containers.length} container(s)...`);
-
-  // Group skills by category
+  // 1. Group all skills by category
   const grouped = {};
   skills.forEach(skill => {
     const cat = (skill.category || 'Other Capabilities').trim();
@@ -569,54 +564,103 @@ function hydrateSkills(skills) {
     'writing & communication': 'all writing communication business'
   };
 
-  const skillsHtml = Object.entries(grouped).map(([category, items]) => {
-    const catKey = category.toLowerCase().trim();
-    const iconClass = categoryIcons[catKey] || 'fas fa-layer-group';
-    const filterKeyword = categoryFilterKeywords[catKey] || `all ${catKey.replace(/[^a-z0-9]/g, ' ')}`;
+  function renderCategoryCards(catGrouped, isFullPage = true) {
+    return Object.entries(catGrouped).map(([category, items]) => {
+      const catKey = category.toLowerCase().trim();
+      const iconClass = categoryIcons[catKey] || 'fas fa-layer-group';
+      const filterKeyword = categoryFilterKeywords[catKey] || `all ${catKey.replace(/[^a-z0-9]/g, ' ')}`;
+      const filterAttr = isFullPage ? `data-category="${escapeHtml(filterKeyword)}"` : '';
+      const filterClass = isFullPage ? 'filter-item' : '';
 
-    return `
-      <div class="card skill-cat-card fade-up filter-item" data-category="${escapeHtml(filterKeyword)}" style="display:flex;flex-direction:column;justify-content:space-between;">
-        <div>
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon"><i class="${iconClass}"></i></div>
-            <div class="skill-cat-title">${escapeHtml(category)}</div>
-          </div>
-          
-          <div style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.95rem;">
-            ${items.map(s => {
-              const numLevel = parseInt(s.level || '80', 10) || 80;
-              const isIconUrl = s.icon && (s.icon.startsWith('http') || s.icon.startsWith('/') || s.icon.startsWith('assets/'));
+      return `
+        <div class="card skill-cat-card fade-up ${filterClass}" ${filterAttr} style="display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="${iconClass}"></i></div>
+              <div class="skill-cat-title">${escapeHtml(category)}</div>
+            </div>
+            
+            <div style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.95rem;">
+              ${items.map(s => {
+                const numLevel = parseInt(s.level || '80', 10) || 80;
+                const isIconUrl = s.icon && (s.icon.startsWith('http') || s.icon.startsWith('/') || s.icon.startsWith('assets/'));
 
-              return `
-                <div class="skill-item">
-                  <div class="skill-top">
-                    <span class="skill-name" style="display:flex;align-items:center;gap:0.45rem;">
-                      ${isIconUrl 
-                        ? `<img src="${resolveAssetUrl(s.icon)}" alt="${escapeHtml(s.name)}" style="width:16px;height:16px;object-fit:contain;"/>` 
-                        : `<i class="${escapeHtml(s.icon || 'fas fa-check-circle')}" style="color:var(--teal);font-size:0.9rem;"></i>`}
-                      ${escapeHtml(s.name)}
-                    </span>
-                    <span class="skill-pct">${escapeHtml(s.level || '')}</span>
+                return `
+                  <div class="skill-item">
+                    <div class="skill-top">
+                      <span class="skill-name" style="display:flex;align-items:center;gap:0.45rem;">
+                        ${isIconUrl 
+                          ? `<img src="${resolveAssetUrl(s.icon)}" alt="${escapeHtml(s.name)}" style="width:16px;height:16px;object-fit:contain;"/>` 
+                          : `<i class="${escapeHtml(s.icon || 'fas fa-check-circle')}" style="color:var(--teal);font-size:0.9rem;"></i>`}
+                        ${escapeHtml(s.name)}
+                      </span>
+                      <span class="skill-pct">${escapeHtml(s.level || '')}</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill" data-width="${numLevel}"></div>
+                    </div>
+                    ${s.description ? `<p style="font-size:0.75rem;color:var(--text2);margin:0.25rem 0 0 0;line-height:1.4;">${escapeHtml(s.description)}</p>` : ''}
                   </div>
-                  <div class="skill-bar">
-                    <div class="skill-bar-fill" data-width="${numLevel}"></div>
-                  </div>
-                  ${s.description ? `<p style="font-size:0.75rem;color:var(--text2);margin:0.25rem 0 0 0;line-height:1.4;">${escapeHtml(s.description)}</p>` : ''}
-                </div>
-              `;
-            }).join('')}
+                `;
+              }).join('')}
+            </div>
           </div>
         </div>
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
+  }
 
-  containers.forEach(container => {
-    container.innerHTML = skillsHtml;
-  });
+  // 2. Hydrate Home Page Preview (#homeSkillsPreview)
+  const isHomePage = Boolean(
+    document.getElementById('homeProjectsGrid') ||
+    document.getElementById('homeSkillsPreview') ||
+    document.getElementById('typingText')
+  );
+
+  const homeSkillsPreview = document.getElementById('homeSkillsPreview') || (isHomePage ? document.getElementById('allSkillsContainer') : null);
+  if (homeSkillsPreview && isHomePage) {
+    // Select top 6 to 8 representative skills across primary categories
+    const categoryKeys = Object.keys(grouped);
+    let previewGrouped = {};
+
+    if (categoryKeys.length >= 2) {
+      // Pick top 2 categories with 3-4 skills each (total 6 to 8 skills)
+      const cat1 = categoryKeys[0];
+      const cat2 = categoryKeys[1];
+      previewGrouped[cat1] = grouped[cat1].slice(0, 4);
+      previewGrouped[cat2] = grouped[cat2].slice(0, 4);
+    } else if (categoryKeys.length === 1) {
+      previewGrouped[categoryKeys[0]] = grouped[categoryKeys[0]].slice(0, 8);
+    } else {
+      const topSkills = skills.slice(0, 8);
+      topSkills.forEach(s => {
+        const c = s.category || 'Core Capabilities';
+        if (!previewGrouped[c]) previewGrouped[c] = [];
+        previewGrouped[c].push(s);
+      });
+    }
+
+    const previewTotalCount = Object.values(previewGrouped).reduce((acc, curr) => acc + curr.length, 0);
+    console.log(`[Hydrate Skills] Rendering Home Preview of ${previewTotalCount} top skills into #homeSkillsPreview...`);
+    homeSkillsPreview.innerHTML = renderCategoryCards(previewGrouped, false);
+
+    // Update Home Skills Count button
+    const btnHomeSkillsCount = document.getElementById('btnHomeSkillsCount');
+    if (btnHomeSkillsCount) {
+      btnHomeSkillsCount.innerHTML = `<i class="fas fa-brain" style="margin-right: 8px;"></i> View All ${skills.length} Skills &amp; Capabilities`;
+    }
+  }
+
+  // 3. Hydrate Dedicated Skills Page (#allSkillsContainer on skills.html)
+  const allSkillsContainer = isHomePage ? null : document.getElementById('allSkillsContainer');
+  if (allSkillsContainer) {
+    console.log(`[Hydrate Skills] Rendering full catalog of ${skills.length} skills into #allSkillsContainer on skills.html...`);
+    allSkillsContainer.innerHTML = renderCategoryCards(grouped, true);
+
+    bindSkillsFilters();
+  }
 
   observeSkillBars();
-  bindSkillsFilters();
 }
 
 // F. Hydrate Blogs (Featured on Home & Complete on blog.html)
