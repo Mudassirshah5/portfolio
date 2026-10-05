@@ -10,7 +10,7 @@
 // Replace 'https://your-future-render-url.onrender.com' with your actual Render service URL.
 // When running locally, it automatically falls back to http://localhost:3000.
 // ============================================================================
-const PRODUCTION_API_URL = 'https://your-future-render-url.onrender.com';
+const PRODUCTION_API_URL = 'https://portfolio-7qpk.onrender.com';
 
 const isLocalEnvironment = (
   window.location.hostname === 'localhost' ||
