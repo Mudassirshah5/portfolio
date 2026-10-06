@@ -204,15 +204,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 @media(max-width:768px){.skills-categories{grid-template-columns:1fr;}}
 
 /* ── Projects ── */
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;}
-.project-card{padding:2rem;position:relative;overflow:hidden;}
-.project-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--teal);}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;align-items:stretch;}
+.project-card, .blog-card{display:flex;flex-direction:column;height:100%;padding:2rem;position:relative;overflow:hidden;}
+.project-card::before, .blog-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--teal);}
 .project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
 .project-icon{width:48px;height:48px;border-radius:12px;background:var(--teal-light);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
 .project-badges{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-end;}
 .project-title{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.3rem;}
 .project-subtitle{font-size:0.8rem;color:var(--teal);font-weight:600;margin-bottom:.75rem;}
-.project-desc{font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1rem;}
+.project-desc, .blog-desc, .card-desc, .cert-desc{font-size:0.85rem;color:var(--text2);line-height:1.75;margin-bottom:1rem;flex-grow:1;}
 .project-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
 .project-tag{font-size:0.72rem;background:var(--bg);color:var(--text2);border:1px solid var(--border);padding:3px 10px;border-radius:50px;transition:all .2s;}
 .project-tag:hover{border-color:var(--teal);color:var(--teal);}
@@ -222,8 +222,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 @media(max-width:768px){.projects-grid{grid-template-columns:1fr;}}
 
 /* ── Certifications ── */
-.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.cert-card{cursor:pointer;text-align:center;padding:2rem 1.5rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch;}
+.cert-card{display:flex;flex-direction:column;height:100%;cursor:pointer;text-align:center;padding:2rem 1.5rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;}
 .cert-card:hover{transform:translateY(-6px);border-color:var(--teal);box-shadow:0 12px 40px rgba(26,188,156,0.15);}
 .cert-card::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:12px;right:14px;font-size:0.8rem;color:var(--teal);opacity:0;transition:opacity .2s;}
 .cert-card:hover::after{opacity:1;}
@@ -232,7 +232,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 .cert-img-wrap i{font-size:2.5rem;color:var(--teal);opacity:0.5;}
 .cert-img-wrap .cert-placeholder-text{font-size:0.72rem;color:var(--text2);font-weight:500;padding:0 1rem;text-align:center;line-height:1.5;}
 .cert-issuer{font-size:0.72rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;}
-.cert-name{font-size:0.9rem;font-weight:700;color:var(--text);line-height:1.4;}
+.cert-name{font-size:0.9rem;font-weight:700;color:var(--text);line-height:1.4;flex-grow:1;}
 .cert-modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:2rem;}
 .cert-modal.open{display:flex;}
 .cert-modal-inner{position:relative;max-width:700px;width:100%;}
