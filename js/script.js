@@ -487,7 +487,7 @@ function hydrateAchievements(achievements) {
         ${achieve.date ? `<div class="project-badges"><span class="badge badge-active">${escapeHtml(achieve.date)}</span></div>` : ''}
       </div>
       <div class="project-title" style="font-size:1.1rem;">${escapeHtml(achieve.title)}</div>
-      <p class="project-desc">${escapeHtml(achieve.description || '')}</p>
+      ${renderTruncatedDescHtml(achieve.description || '', 25, 'project-desc')}
     </div>
   `).join('');
 }
@@ -680,7 +680,64 @@ function hydrateBlogs(blogs) {
   }
 }
 
-// ── 7. Render Card Template Helpers ──────────────────────────────────────────
+// ── 7. Render Card Template Helpers & Truncation ─────────────────────────────
+
+function renderTruncatedDescHtml(rawText, maxWords = 25, className = 'project-desc') {
+  if (!rawText || !String(rawText).trim()) {
+    return `<p class="${className}"></p>`;
+  }
+  const text = String(rawText).trim();
+  const words = text.split(/\s+/);
+
+  if (words.length <= maxWords) {
+    return `<p class="${className}">${escapeHtml(text)}</p>`;
+  }
+
+  const shortText = words.slice(0, maxWords).join(' ');
+  return `
+    <p class="${className}">
+      <span class="desc-short">${escapeHtml(shortText)}</span>
+      <span class="desc-full" style="display: none;">${escapeHtml(text)}</span>
+      <button type="button" class="see-more-link" onclick="toggleCardDesc(this, event)">... See More</button>
+    </p>
+  `;
+}
+
+window.toggleCardDesc = function (btn, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  if (!btn) return;
+  const now = Date.now();
+  if (btn._lastToggled && (now - btn._lastToggled < 100)) return;
+  btn._lastToggled = now;
+
+  const container = btn.closest('.project-desc, .cert-desc, .blog-desc, .card-desc') || btn.parentElement;
+  if (!container) return;
+
+  const shortSpan = container.querySelector('.desc-short');
+  const fullSpan = container.querySelector('.desc-full');
+  if (!shortSpan || !fullSpan) return;
+
+  const isExpanded = fullSpan.style.display !== 'none';
+  if (isExpanded) {
+    fullSpan.style.display = 'none';
+    shortSpan.style.display = 'inline';
+    btn.textContent = '... See More';
+  } else {
+    fullSpan.style.display = 'inline';
+    shortSpan.style.display = 'none';
+    btn.textContent = 'See Less';
+  }
+};
+
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('.see-more-link');
+  if (btn) {
+    toggleCardDesc(btn, e);
+  }
+});
 
 function renderProjectCardHtml(project) {
   const categoryIcons = {
@@ -714,7 +771,7 @@ function renderProjectCardHtml(project) {
       </div>
       <div class="project-title" style="font-size:1.15rem;margin-top:0.35rem;">${escapeHtml(project.title)}</div>
       ${project.subtitle ? `<div class="project-subtitle" style="color:var(--teal);font-weight:500;margin-bottom:0.5rem;font-size:0.85rem;">${escapeHtml(project.subtitle)}</div>` : ''}
-      <p class="project-desc">${escapeHtml(project.description || '')}</p>
+      ${renderTruncatedDescHtml(project.description || '', 25, 'project-desc')}
 
       ${tags.length > 0 ? `
         <div class="project-tags" style="margin-top:0.75rem;">
@@ -770,7 +827,7 @@ function renderBlogCardHtml(blog) {
       </div>
       
       <div class="project-title card-title-text" style="font-size:1.15rem;margin-top:0.4rem;">${escapeHtml(blog.title)}</div>
-      <p class="project-desc">${escapeHtml(blog.excerpt || '')}</p>
+      ${renderTruncatedDescHtml(blog.excerpt || blog.description || '', 25, 'project-desc blog-desc')}
 
       <div class="secret-full-article" style="display: none;">
         ${formattedContent}
@@ -800,6 +857,7 @@ function renderCertCardHtml(cert) {
       </div>
       <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
       <div class="cert-name">${escapeHtml(cert.title)}</div>
+      ${cert.description ? renderTruncatedDescHtml(cert.description, 25, 'cert-desc') : ''}
       ${cert.date ? `<div style="font-size:0.75rem;color:var(--text2);margin-top:0.3rem;"><i class="far fa-calendar"></i> ${escapeHtml(cert.date)}</div>` : ''}
       ${cert.verificationLink ? `
         <div style="margin-top:0.5rem;">
