@@ -1,5 +1,5 @@
 // Admin Panel JavaScript — Fully restructured for Certifications, Blog, CV, Projects, Skills & Site Text
-const PRODUCTION_API_URL = '[https://portfolio-7qpk.onrender.com](https://portfolio-7qpk.onrender.com)';
+const PRODUCTION_API_URL = 'https://portfolio-7qpk.onrender.com';
 const isLocal = window.location.hostname === 'localhost' || 
                 window.location.hostname === '127.0.0.1' || 
                 window.location.protocol === 'file:';
